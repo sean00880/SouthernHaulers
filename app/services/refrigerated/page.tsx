@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import Link from "next/link"
 import { Thermometer, Truck, Shield, Snowflake } from "lucide-react"
 
@@ -7,6 +8,7 @@ export default function RefrigeratedPage() {
   const features = [
     {
       title: "Temperature Control",
+      image: "/refrigerated-control.jpg",
       items: [
         {
           icon: Thermometer,
@@ -22,6 +24,7 @@ export default function RefrigeratedPage() {
     },
     {
       title: "Key Features",
+      image: "/refrigerated-features.jpg",
       items: [
         {
           icon: Snowflake,
@@ -46,45 +49,71 @@ export default function RefrigeratedPage() {
   ]
 
   return (
-    <>
-      <div className="text-center mb-12 bg-muted rounded-lg p-12">
-        <h1 className="text-4xl font-bold mb-4">Refrigerated Transport</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Temperature-controlled logistics ensuring product integrity throughout the supply chain.
-        </p>
+    <div>
+      <div className="relative h-[400px] rounded-lg overflow-hidden mb-16">
+        <Image
+          src="/refrigerated-hero.jpg"
+          alt="Refrigerated transport fleet"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <div className="max-w-3xl px-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Refrigerated Transport
+            </h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Temperature-controlled logistics ensuring product integrity throughout the supply chain.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="space-y-16">
+      <div className="space-y-24">
         {features.map((section, sectionIndex) => (
-          <section key={sectionIndex}>
-            <h2 className="text-3xl font-bold mb-8">{section.title}</h2>
-            <div className="grid gap-8 md:grid-cols-2">
-              {section.items.map((item, itemIndex) => (
-                <Card key={itemIndex}>
-                  <CardContent className="p-6">
-                    <item.icon className="h-12 w-12 text-primary mb-4" />
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    {'description' in item ? (
-                      <p className="text-muted-foreground">{item.description}</p>
-                    ) : (
-                      <ul className="space-y-2">
-                        {item.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center gap-2 text-muted-foreground">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
+          <section key={sectionIndex} className="relative">
+            <div className="grid gap-8 md:grid-cols-2 items-center">
+              <div className={`relative h-[300px] rounded-lg overflow-hidden ${sectionIndex % 2 === 1 ? 'md:order-last' : ''}`}>
+                <Image
+                  src={section.image}
+                  alt={section.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold mb-8">{section.title}</h2>
+                <div className="grid gap-8">
+                  {section.items.map((item, itemIndex) => (
+                    <Card key={itemIndex} className="hover:shadow-lg transition-shadow">
+                      <CardContent className="p-6">
+                        <item.icon className="h-12 w-12 text-primary mb-4" />
+                        <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                        {'description' in item ? (
+                          <p className="text-muted-foreground">{item.description}</p>
+                        ) : (
+                          <ul className="space-y-2">
+                            {item.features.map((feature, featureIndex) => (
+                              <li key={featureIndex} className="flex items-center gap-2 text-muted-foreground">
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
         ))}
       </div>
 
-      <div className="mt-12 bg-muted rounded-lg p-8 text-center">
+      <div className="mt-16 bg-muted rounded-lg p-8 text-center">
         <h2 className="text-2xl font-bold mb-4">Need Temperature-Controlled Shipping?</h2>
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
           Contact us today to learn more about our refrigerated transport solutions and how we can protect your temperature-sensitive cargo.
@@ -98,6 +127,6 @@ export default function RefrigeratedPage() {
           </Button>
         </div>
       </div>
-    </>
+    </div>
   )
 }

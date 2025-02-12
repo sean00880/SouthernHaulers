@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Warehouse, Container, Snowflake } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Services() {
   const services = [
@@ -10,6 +11,7 @@ export default function Services() {
       description: "State-of-the-art warehousing facilities with advanced inventory management and distribution capabilities.",
       icon: Warehouse,
       href: "/services/warehouse",
+      image: "/warehouse-hero.jpg",
       features: [
         "Climate-controlled storage",
         "Real-time inventory tracking",
@@ -22,6 +24,7 @@ export default function Services() {
       description: "Comprehensive container handling and transportation solutions ensuring efficient movement of your cargo.",
       icon: Container,
       href: "/services/containers",
+      image: "/containers-hero.jpg",
       features: [
         "Port drayage services",
         "Intermodal solutions",
@@ -34,6 +37,7 @@ export default function Services() {
       description: "Temperature-controlled logistics ensuring product integrity throughout the supply chain.",
       icon: Snowflake,
       href: "/services/refrigerated",
+      image: "/refrigerated-hero.jpg",
       features: [
         "Multi-temperature zones",
         "Real-time monitoring",
@@ -44,40 +48,70 @@ export default function Services() {
   ]
 
   return (
-    <>
-      <h1 className="text-4xl font-bold mb-8">What We Do</h1>
-      <div className="space-y-12">
+    <div className="container mx-auto px-4 py-12">
+      <div className="relative h-[400px] mb-16 rounded-lg overflow-hidden">
+        <Image
+          src="/services-hero.jpg"
+          alt="Logistics and transportation services"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <div className="max-w-3xl px-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Comprehensive Logistics Solutions
+            </h1>
+            <p className="text-xl text-white/90">
+              From warehousing to refrigerated transport, we provide end-to-end logistics services tailored to your needs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-16">
         {services.map((service, index) => (
-          <Card key={index} className="overflow-hidden">
-            <div className="p-6 lg:p-8">
-              <CardHeader className="p-0 mb-4">
-                <div className="flex items-center gap-4 mb-4">
-                  <service.icon className="h-8 w-8 text-primary" />
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="p-0">
-                <p className="text-muted-foreground mb-6">
-                  {service.description}
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild>
-                  <Link href={service.href}>Learn More</Link>
-                </Button>
-              </CardContent>
+          <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="relative h-64 lg:h-auto">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 lg:p-8">
+                <CardHeader className="p-0 mb-4">
+                  <div className="flex items-center gap-4 mb-4">
+                    <service.icon className="h-8 w-8 text-primary" />
+                    <CardTitle className="text-2xl">{service.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <p className="text-muted-foreground mb-6">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild>
+                    <Link href={service.href}>Learn More</Link>
+                  </Button>
+                </CardContent>
+              </div>
             </div>
           </Card>
         ))}
       </div>
 
-      <div className="mt-12 bg-muted rounded-lg p-8 text-center">
+      <div className="mt-16 bg-muted rounded-lg p-8 text-center">
         <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
           Contact us today to learn how our comprehensive logistics solutions can benefit your business.
@@ -91,6 +125,6 @@ export default function Services() {
           </Button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
