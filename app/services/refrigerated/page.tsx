@@ -8,7 +8,7 @@ export default function RefrigeratedPage() {
   const features = [
     {
       title: "Temperature Control",
-      image: "/refrigerated-control.jpg",
+      image: "https://images.unsplash.com/photo-1635348728281-a57a5341ae82?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
       items: [
         {
           icon: Thermometer,
@@ -24,7 +24,7 @@ export default function RefrigeratedPage() {
     },
     {
       title: "Key Features",
-      image: "/refrigerated-features.jpg",
+      image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
       items: [
         {
           icon: Snowflake,
@@ -52,7 +52,7 @@ export default function RefrigeratedPage() {
     <div>
       <div className="relative h-[400px] rounded-lg overflow-hidden mb-16">
         <Image
-          src="/refrigerated-hero.jpg"
+          src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
           alt="Refrigerated transport fleet"
           fill
           className="object-cover"

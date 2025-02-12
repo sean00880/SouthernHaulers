@@ -11,7 +11,7 @@ export default function Services() {
       description: "State-of-the-art warehousing facilities with advanced inventory management and distribution capabilities.",
       icon: Warehouse,
       href: "/services/warehouse",
-      image: "/warehouse-hero.jpg",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
       features: [
         "Climate-controlled storage",
         "Real-time inventory tracking",
@@ -24,7 +24,7 @@ export default function Services() {
       description: "Comprehensive container handling and transportation solutions ensuring efficient movement of your cargo.",
       icon: Container,
       href: "/services/containers",
-      image: "/containers-hero.jpg",
+      image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
       features: [
         "Port drayage services",
         "Intermodal solutions",
@@ -37,7 +37,7 @@ export default function Services() {
       description: "Temperature-controlled logistics ensuring product integrity throughout the supply chain.",
       icon: Snowflake,
       href: "/services/refrigerated",
-      image: "/refrigerated-hero.jpg",
+      image: "https://images.unsplash.com/photo-1595246140625-573b715d11dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
       features: [
         "Multi-temperature zones",
         "Real-time monitoring",
@@ -48,10 +48,10 @@ export default function Services() {
   ]
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="relative h-[400px] mb-16 rounded-lg overflow-hidden">
+    <div>
+      <div className="relative h-[400px] rounded-lg overflow-hidden mb-16">
         <Image
-          src="/services-hero.jpg"
+          src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
           alt="Logistics and transportation services"
           fill
           className="object-cover"
@@ -70,7 +70,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="space-y-16">
+      <div className="space-y-12">
         {services.map((service, index) => (
           <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
             <div className="grid grid-cols-1 lg:grid-cols-2">

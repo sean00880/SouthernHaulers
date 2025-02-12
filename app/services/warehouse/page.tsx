@@ -8,7 +8,7 @@ export default function WarehousePage() {
   const features = [
     {
       title: "Storage Solutions",
-      image: "/warehouse-storage.jpg",
+      image: "https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
       items: [
         {
           icon: Box,
@@ -24,7 +24,7 @@ export default function WarehousePage() {
     },
     {
       title: "Key Features",
-      image: "/warehouse-features.jpg",
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
       items: [
         {
           icon: BarChart3,
@@ -52,7 +52,7 @@ export default function WarehousePage() {
     <div>
       <div className="relative h-[400px] rounded-lg overflow-hidden mb-16">
         <Image
-          src="/warehouse-hero.jpg"
+          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
           alt="Modern warehouse facility"
           fill
           className="object-cover"
@@ -75,7 +75,7 @@ export default function WarehousePage() {
         {features.map((section, sectionIndex) => (
           <section key={sectionIndex} className="relative">
             <div className="grid gap-8 md:grid-cols-2 items-center">
-              <div className="relative h-[300px] rounded-lg overflow-hidden">
+              <div className={`relative h-[300px] rounded-lg overflow-hidden ${sectionIndex % 2 === 1 ? 'md:order-last' : ''}`}>
                 <Image
                   src={section.image}
                   alt={section.title}
