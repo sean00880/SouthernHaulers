@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { Layout } from "@/components/layout"
 import { ServicesSidebar } from "@/components/services-sidebar"
 import { Button } from "@/components/ui/button"
@@ -7,25 +8,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { Container, Truck, Route, BarChart3 } from "lucide-react"
 import { LucideIcon } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Container & Drayage Services | Southern Haulers',
-  description: 'Expert container handling and drayage services in South Georgia. Efficient port-to-door delivery, intermodal solutions, and real-time container tracking for your logistics needs.',
-  keywords: [
-    'container drayage Georgia',
-    'port drayage services',
-    'intermodal transportation',
-    'container tracking',
-    'port to door delivery',
-    'container logistics',
-    'South Georgia drayage',
-    'container shipping',
-    'port services Georgia',
-    'container transportation',
-    'EDI integration',
-    'container monitoring'
-  ]
-}
 
 interface ServiceSection {
   icon: LucideIcon

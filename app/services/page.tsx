@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { Layout } from "@/components/layout"
 import { ServicesSidebar } from "@/components/services-sidebar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -7,23 +8,6 @@ import { Warehouse, Container, Snowflake } from "lucide-react"
 import { LucideIcon } from 'lucide-react'
 import Link from "next/link"
 import Image from "next/image"
-
-export const metadata: Metadata = {
-  title: 'Transportation & Logistics Services | Southern Haulers',
-  description: 'Comprehensive logistics solutions including warehousing, container services, and refrigerated transport. Southern Haulers delivers excellence in South Georgia transportation.',
-  keywords: [
-    'logistics services Georgia',
-    'warehouse solutions',
-    'container drayage',
-    'refrigerated transport',
-    'cold chain logistics',
-    'intermodal transportation',
-    'South Georgia logistics',
-    'freight services',
-    'temperature controlled shipping',
-    'port services Georgia'
-  ]
-}
 
 interface Service {
   title: string

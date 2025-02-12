@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { Layout } from "@/components/layout"
 import { ServicesSidebar } from "@/components/services-sidebar"
 import { Button } from "@/components/ui/button"
@@ -7,25 +8,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { Box, ClipboardCheck, BarChart3, Warehouse } from "lucide-react"
 import { LucideIcon } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Warehouse Solutions & Distribution Services | Southern Haulers',
-  description: 'State-of-the-art warehousing facilities with advanced inventory management, climate-controlled storage, and comprehensive distribution solutions in South Georgia.',
-  keywords: [
-    'warehouse solutions Georgia',
-    'distribution services',
-    'climate controlled storage',
-    'inventory management',
-    'cross-docking services',
-    'warehouse management system',
-    'South Georgia warehousing',
-    'logistics storage',
-    'supply chain solutions',
-    'warehouse distribution',
-    'real-time inventory tracking',
-    'value-added warehousing'
-  ]
-}
 
 interface FeatureWithDescription {
   icon: LucideIcon

@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+"use client"
+
 import { Layout } from "@/components/layout"
 import { ServicesSidebar } from "@/components/services-sidebar"
 import { Button } from "@/components/ui/button"
@@ -7,25 +8,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { Snowflake, Thermometer, Shield, BarChart3 } from "lucide-react"
 import { LucideIcon } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Refrigerated Transport & Cold Chain Solutions | Southern Haulers',
-  description: 'Professional temperature-controlled transportation services ensuring product integrity. Advanced cold chain solutions with real-time monitoring and HACCP compliance.',
-  keywords: [
-    'refrigerated transport Georgia',
-    'cold chain logistics',
-    'temperature controlled shipping',
-    'reefer transport',
-    'cold storage transport',
-    'pharmaceutical transport',
-    'food grade transportation',
-    'temperature monitoring',
-    'HACCP compliant transport',
-    'cold chain integrity',
-    'perishable goods transport',
-    'frozen transport Georgia'
-  ]
-}
 
 interface ServiceSection {
   icon: LucideIcon
