@@ -31,6 +31,8 @@ function mergeConfig(baseConfig, userConfig) {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -45,30 +47,6 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
-  },
-  async redirects() {
-    return [
-      {
-        source: '/services/containers/page',
-        destination: '/services/containers',
-        permanent: true,
-      },
-      {
-        source: '/services/page',
-        destination: '/services',
-        permanent: true,
-      },
-      {
-        source: '/services/refrigerated/page',
-        destination: '/services/refrigerated',
-        permanent: true,
-      },
-      {
-        source: '/services/warehouse/page',
-        destination: '/services/warehouse',
-        permanent: true,
-      },
-    ]
   },
 }
 
