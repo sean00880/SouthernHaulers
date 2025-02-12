@@ -4,6 +4,7 @@ import { ServicesSidebar } from "@/components/services-sidebar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Warehouse, Container, Snowflake } from "lucide-react"
+import { LucideIcon } from 'lucide-react'
 import Link from "next/link"
 import Image from "next/image"
 
@@ -21,22 +22,19 @@ export const metadata: Metadata = {
     'freight services',
     'temperature controlled shipping',
     'port services Georgia'
-  ],
-  openGraph: {
-    title: 'Transportation & Logistics Services | Southern Haulers',
-    description: 'Comprehensive logistics solutions including warehousing, container services, and refrigerated transport. Southern Haulers delivers excellence in South Georgia transportation.',
-    images: [
-      {
-        url: '/services-overview.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Southern Haulers Services Overview'
-      }
-    ]
-  }
+  ]
 }
 
-const services = [
+interface Service {
+  title: string
+  description: string
+  icon: LucideIcon
+  href: string
+  image: string
+  features: string[]
+}
+
+const services: Service[] = [
   {
     title: "Warehouse Solutions",
     description: "State-of-the-art warehousing facilities with advanced inventory management and distribution capabilities.",

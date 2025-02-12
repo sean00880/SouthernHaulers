@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import { Container, Truck, Route, BarChart3 } from "lucide-react"
+import { LucideIcon } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Container & Drayage Services | Southern Haulers',
@@ -23,20 +24,63 @@ export const metadata: Metadata = {
     'container transportation',
     'EDI integration',
     'container monitoring'
-  ],
-  openGraph: {
-    title: 'Container & Drayage Services | Southern Haulers',
-    description: 'Expert container handling and drayage services in South Georgia. Efficient port-to-door delivery, intermodal solutions, and real-time container tracking for your logistics needs.',
-    images: [
-      {
-        url: '/container-services.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Southern Haulers Container Services'
-      }
+  ]
+}
+
+interface ServiceSection {
+  icon: LucideIcon
+  title: string
+  description: string
+}
+
+interface FeatureSection {
+  icon: LucideIcon
+  title: string
+  features: string[]
+}
+
+const portOperations: ServiceSection[] = [
+  {
+    icon: Container,
+    title: 'Port Drayage',
+    description: 'Efficient container movement between ports and inland destinations with real-time tracking and status updates.'
+  },
+  {
+    icon: Truck,
+    title: 'Intermodal Solutions',
+    description: 'Seamless integration of rail and road transportation for optimal container movement across the Southeast.'
+  }
+]
+
+const services: FeatureSection[] = [
+  {
+    icon: Route,
+    title: 'Transportation',
+    features: [
+      'Port-to-door delivery',
+      'Cross-border services',
+      'Express delivery options'
+    ]
+  },
+  {
+    icon: Container,
+    title: 'Container Types',
+    features: [
+      'Standard containers',
+      'High-cube containers',
+      'Special equipment'
+    ]
+  },
+  {
+    icon: BarChart3,
+    title: 'Tracking & Visibility',
+    features: [
+      'Real-time GPS tracking',
+      'EDI integration',
+      'Status notifications'
     ]
   }
-}
+]
 
 export default function ContainersPage() {
   return (
@@ -67,24 +111,15 @@ export default function ContainersPage() {
           <section id="port" className="scroll-mt-16">
             <h2 className="text-3xl font-bold mb-8">Port Operations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card>
-                <CardContent className="p-6">
-                  <Container className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Port Drayage</h3>
-                  <p className="text-muted-foreground">
-                    Efficient container movement between ports and inland destinations with real-time tracking and status updates.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <Truck className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Intermodal Solutions</h3>
-                  <p className="text-muted-foreground">
-                    Seamless integration of rail and road transportation for optimal container movement across the Southeast.
-                  </p>
-                </CardContent>
-              </Card>
+              {portOperations.map((operation, index) => (
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <operation.icon className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-2">{operation.title}</h3>
+                    <p className="text-muted-foreground">{operation.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </section>
 
@@ -92,59 +127,17 @@ export default function ContainersPage() {
           <section id="drayage" className="scroll-mt-16">
             <h2 className="text-3xl font-bold mb-8">Our Container Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="space-y-4">
-                <Route className="h-8 w-8 text-primary" />
-                <h3 className="text-xl font-bold">Transportation</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Port-to-door delivery</li>
-                  <li>• Cross-border services</li>
-                  <li>• Express delivery options</li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <Container className="h-8 w-8 text-primary" />
-                <h3 className="text-xl font-bold">Container Types</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Standard containers</li>
-                  <li>• High-cube containers</li>
-                  <li>• Special equipment</li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <BarChart3 className="h-8 w-8 text-primary" />
-                <h3 className="text-xl font-bold">Tracking & Visibility</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Real-time GPS tracking</li>
-                  <li>• EDI integration</li>
-                  <li>• Status notifications</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* Technology Section */}
-          <section id="tracking" className="scroll-mt-16 bg-muted rounded-lg p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Advanced Tracking Technology</h2>
-                <p className="text-muted-foreground mb-6">
-                  Our state-of-the-art tracking systems provide real-time visibility into your container movements, ensuring transparency and control throughout the supply chain.
-                </p>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Real-time location updates</li>
-                  <li>• Automated status notifications</li>
-                  <li>• Custom reporting capabilities</li>
-                  <li>• Mobile app access</li>
-                </ul>
-              </div>
-              <div className="relative h-[300px] rounded-lg overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1586528116493-d2f45325d43d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                  alt="Container tracking system"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              {services.map((service, index) => (
+                <div key={index} className="space-y-4">
+                  <service.icon className="h-8 w-8 text-primary" />
+                  <h3 className="text-xl font-bold">{service.title}</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx}>• {feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </section>
 

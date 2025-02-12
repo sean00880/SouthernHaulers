@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import { Box, ClipboardCheck, BarChart3, Warehouse } from "lucide-react"
+import { LucideIcon } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Warehouse Solutions & Distribution Services | Southern Haulers',
@@ -23,20 +24,78 @@ export const metadata: Metadata = {
     'warehouse distribution',
     'real-time inventory tracking',
     'value-added warehousing'
-  ],
-  openGraph: {
-    title: 'Warehouse Solutions & Distribution Services | Southern Haulers',
-    description: 'State-of-the-art warehousing facilities with advanced inventory management, climate-controlled storage, and comprehensive distribution solutions in South Georgia.',
-    images: [
-      {
-        url: '/warehouse-solutions.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Southern Haulers Warehouse Solutions'
-      }
-    ]
-  }
+  ]
 }
+
+interface FeatureWithDescription {
+  icon: LucideIcon
+  title: string
+  description: string
+}
+
+interface FeatureWithList {
+  icon: LucideIcon
+  title: string
+  features: string[]
+}
+
+interface FeatureSection {
+  id: string
+  title: string
+  items: FeatureWithDescription[] | FeatureWithList[]
+}
+
+const features: FeatureSection[] = [
+  {
+    id: 'storage',
+    title: 'Storage Solutions',
+    items: [
+      {
+        icon: Box,
+        title: 'Flexible Storage Options',
+        description: 'From small parcels to bulk storage, our facilities accommodate various storage needs with customizable space solutions.'
+      },
+      {
+        icon: ClipboardCheck,
+        title: 'Inventory Management',
+        description: 'Real-time tracking and advanced inventory management systems ensure accurate stock levels and efficient operations.'
+      }
+    ] as FeatureWithDescription[]
+  },
+  {
+    id: 'inventory',
+    title: 'Key Features',
+    items: [
+      {
+        icon: BarChart3,
+        title: 'Analytics & Reporting',
+        features: [
+          'Real-time inventory tracking',
+          'Custom reporting solutions',
+          'Performance analytics'
+        ]
+      },
+      {
+        icon: Warehouse,
+        title: 'Facility Features',
+        features: [
+          'Climate-controlled storage',
+          '24/7 security monitoring',
+          'Modern handling equipment'
+        ]
+      },
+      {
+        icon: Box,
+        title: 'Value-Added Services',
+        features: [
+          'Cross-docking',
+          'Pick and pack',
+          'Kitting and assembly'
+        ]
+      }
+    ] as FeatureWithList[]
+  }
+]
 
 export default function WarehousePage() {
   return (
@@ -64,63 +123,38 @@ export default function WarehousePage() {
           </div>
 
           {/* Features Grid */}
-          <section id="storage" className="scroll-mt-16">
-            <h2 className="text-3xl font-bold mb-8">Storage Solutions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card>
-                <CardContent className="p-6">
-                  <Box className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Flexible Storage Options</h3>
-                  <p className="text-muted-foreground">
-                    From small parcels to bulk storage, our facilities accommodate various storage needs with customizable space solutions.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <ClipboardCheck className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Inventory Management</h3>
-                  <p className="text-muted-foreground">
-                    Real-time tracking and advanced inventory management systems ensure accurate stock levels and efficient operations.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
-
-          {/* Features List */}
-          <section id="inventory" className="scroll-mt-16">
-            <h2 className="text-3xl font-bold mb-8">Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="space-y-4">
-                <BarChart3 className="h-8 w-8 text-primary" />
-                <h3 className="text-xl font-bold">Analytics & Reporting</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Real-time inventory tracking</li>
-                  <li>• Custom reporting solutions</li>
-                  <li>• Performance analytics</li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <Warehouse className="h-8 w-8 text-primary" />
-                <h3 className="text-xl font-bold">Facility Features</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Climate-controlled storage</li>
-                  <li>• 24/7 security monitoring</li>
-                  <li>• Modern handling equipment</li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <Box className="h-8 w-8 text-primary" />
-                <h3 className="text-xl font-bold">Value-Added Services</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Cross-docking</li>
-                  <li>• Pick and pack</li>
-                  <li>• Kitting and assembly</li>
-                </ul>
-              </div>
-            </div>
-          </section>
+          {features.map((section) => (
+            <section key={section.id} id={section.id} className="scroll-mt-16">
+              <h2 className="text-3xl font-bold mb-8">{section.title}</h2>
+              {section.items[0] && 'description' in section.items[0] ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {(section.items as FeatureWithDescription[]).map((item, idx) => (
+                    <Card key={idx}>
+                      <CardContent className="p-6">
+                        <item.icon className="h-12 w-12 text-primary mb-4" />
+                        <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                        <p className="text-muted-foreground">{item.description}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {(section.items as FeatureWithList[]).map((item, idx) => (
+                    <div key={idx} className="space-y-4">
+                      <item.icon className="h-8 w-8 text-primary" />
+                      <h3 className="text-xl font-bold">{item.title}</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        {item.features.map((feature, featureIdx) => (
+                          <li key={featureIdx}>• {feature}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </section>
+          ))}
 
           {/* CTA Section */}
           <section className="bg-muted rounded-lg p-8 text-center">
