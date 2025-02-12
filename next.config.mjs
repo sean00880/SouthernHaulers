@@ -43,11 +43,7 @@ const nextConfig = {
     domains: ['images.unsplash.com'],
     unoptimized: true,
   },
-  experimental: {
-    webpackBuildWorker: true,
-    parallelServerBuildTraces: true,
-    parallelServerCompiles: true,
-  },
+  distDir: 'out',
 }
 
 export default mergeConfig(nextConfig, userConfig?.default)
