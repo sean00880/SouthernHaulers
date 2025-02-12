@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -41,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/careers">Driver Application</Link>
             </Button>
             <Button asChild>
-              <Link href="/contact">Request a Quote</Link>
+              <Link href="/contact">Request Quote</Link>
             </Button>
           </div>
         </div>

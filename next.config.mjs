@@ -1,8 +1,32 @@
 let userConfig = undefined
 try {
-  userConfig = await import('./v0-user-next.config')
+  userConfig = await import('./v0-user-next.config.js')
 } catch (e) {
   // ignore error
+}
+
+function mergeConfig(baseConfig, userConfig) {
+  if (!userConfig) {
+    return baseConfig
+  }
+
+  const mergedConfig = { ...baseConfig }
+
+  for (const key in userConfig) {
+    if (
+      typeof mergedConfig[key] === 'object' &&
+      !Array.isArray(mergedConfig[key])
+    ) {
+      mergedConfig[key] = {
+        ...mergedConfig[key],
+        ...userConfig[key],
+      }
+    } else {
+      mergedConfig[key] = userConfig[key]
+    }
+  }
+
+  return mergedConfig
 }
 
 /** @type {import('next').NextConfig} */
@@ -14,6 +38,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    domains: ['images.unsplash.com'],
     unoptimized: true,
   },
   experimental: {
@@ -21,28 +46,30 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/services/containers/page',
+        destination: '/services/containers',
+        permanent: true,
+      },
+      {
+        source: '/services/page',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/refrigerated/page',
+        destination: '/services/refrigerated',
+        permanent: true,
+      },
+      {
+        source: '/services/warehouse/page',
+        destination: '/services/warehouse',
+        permanent: true,
+      },
+    ]
+  },
 }
 
-mergeConfig(nextConfig, userConfig)
-
-function mergeConfig(nextConfig, userConfig) {
-  if (!userConfig) {
-    return
-  }
-
-  for (const key in userConfig) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
-      nextConfig[key] = {
-        ...nextConfig[key],
-        ...userConfig[key],
-      }
-    } else {
-      nextConfig[key] = userConfig[key]
-    }
-  }
-}
-
-export default nextConfig
+export default mergeConfig(nextConfig, userConfig?.default)

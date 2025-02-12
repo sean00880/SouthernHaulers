@@ -1,5 +1,3 @@
-"use client"
-
 import { Layout } from "@/components/layout"
 import { ServicesSidebar } from "@/components/services-sidebar"
 import { Button } from "@/components/ui/button"

@@ -1,4 +1,3 @@
-"use client"
 
 import { Layout } from "@/components/layout"
 import { ServicesSidebar } from "@/components/services-sidebar"
@@ -8,6 +7,15 @@ import { Warehouse, Container, Snowflake } from "lucide-react"
 import { LucideIcon } from 'lucide-react'
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Our Services',
+  description: 'Comprehensive logistics and transportation solutions',
+  openGraph: {
+    images: [{ url: '/og-services.jpg' }]
+  }
+}
 
 interface Service {
   title: string
