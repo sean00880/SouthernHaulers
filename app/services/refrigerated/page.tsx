@@ -73,7 +73,7 @@ export default function RefrigeratedPage() {
 
       <div className="space-y-24">
         {features.map((section, sectionIndex) => (
-          <section key={sectionIndex} className="relative">
+          <section key={sectionIndex} id={section.title.toLowerCase().replace(" ", "-")} className="relative">
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div className={`relative h-[300px] rounded-lg overflow-hidden ${sectionIndex % 2 === 1 ? 'md:order-last' : ''}`}>
                 <Image

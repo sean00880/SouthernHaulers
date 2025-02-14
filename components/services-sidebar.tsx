@@ -14,10 +14,8 @@ const serviceRoutes = [
     href: "/services/warehouse",
     description: "State-of-the-art warehousing and distribution",
     sections: [
-      { title: "Storage Solutions", href: "/services/warehouse#storage" },
-      { title: "Inventory Management", href: "/services/warehouse#inventory" },
-      { title: "Distribution Services", href: "/services/warehouse#distribution" },
-      { title: "Value-Added Services", href: "/services/warehouse#value-added" },
+      { title: "Storage Solutions", href: "/services/warehouse#storage-solutions" },
+      { title: "Key Features", href: "/services/warehouse#key-features" }
     ],
   },
   {
@@ -25,10 +23,8 @@ const serviceRoutes = [
     href: "/services/containers",
     description: "Comprehensive container and drayage solutions",
     sections: [
-      { title: "Port Operations", href: "/services/containers#port" },
-      { title: "Drayage Services", href: "/services/containers#drayage" },
-      { title: "Intermodal Solutions", href: "/services/containers#intermodal" },
-      { title: "Container Tracking", href: "/services/containers#tracking" },
+      { title: "Transport Solutions", href: "/services/containers#transport-solutions" },
+      { title: "Key Features", href: "/services/containers#key-features" }
     ],
   },
   {
@@ -36,10 +32,8 @@ const serviceRoutes = [
     href: "/services/refrigerated",
     description: "Temperature-controlled logistics solutions",
     sections: [
-      { title: "Cold Chain Solutions", href: "/services/refrigerated#cold-chain" },
-      { title: "Temperature Monitoring", href: "/services/refrigerated#monitoring" },
-      { title: "Specialized Equipment", href: "/services/refrigerated#equipment" },
-      { title: "Industry Compliance", href: "/services/refrigerated#compliance" },
+      { title: "Temperature Control", href: "/services/refrigerated#temperature-control" },
+      { title: "Key Features", href: "/services/refrigerated#key-features" }
     ],
   },
 ]
