@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: 'State-of-the-art warehousing facilities with advanced inventory management, climate-controlled storage, and comprehensive distribution solutions in South Georgia.',
     images: [
       {
-        url: '/warehouse-solutions.jpg',
+        url: '/services/warehouse-hero.jpg',
         width: 1200,
         height: 630,
         alt: 'Southern Haulers Warehouse Solutions'

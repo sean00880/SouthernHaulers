@@ -8,7 +8,7 @@ export default function WarehousePage() {
   const features = [
     {
       title: "Storage Solutions",
-      image: "https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+      image: "/services/warehouse-storage.jpg",
       items: [
         {
           icon: Box,
@@ -24,7 +24,7 @@ export default function WarehousePage() {
     },
     {
       title: "Key Features",
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+      image: "/services/warehouse-features.jpg",
       items: [
         {
           icon: BarChart3,
@@ -52,7 +52,7 @@ export default function WarehousePage() {
     <div>
       <div className="relative h-[400px] rounded-lg overflow-hidden mb-16">
         <Image
-          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+          src="/services/warehouse-hero.jpg"
           alt="Modern warehouse facility"
           fill
           className="object-cover"

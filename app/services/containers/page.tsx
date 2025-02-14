@@ -8,7 +8,7 @@ export default function ContainersPage() {
   const features = [
     {
       title: "Transport Solutions",
-      image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+      image: "/services/containers-transport.jpg",
       items: [
         {
           icon: Truck,
@@ -24,7 +24,7 @@ export default function ContainersPage() {
     },
     {
       title: "Key Features",
-      image: "https://images.unsplash.com/photo-1577791465485-b80039b4d69a?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+      image: "/services/containers-features.jpg",
       items: [
         {
           icon: BarChart3,
@@ -52,7 +52,7 @@ export default function ContainersPage() {
     <div>
       <div className="relative h-[400px] rounded-lg overflow-hidden mb-16">
         <Image
-          src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+          src="/services/containers-hero.jpg"
           alt="Container terminal operations"
           fill
           className="object-cover"

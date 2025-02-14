@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: 'Expert container handling and drayage services in South Georgia. Efficient port-to-door delivery, intermodal solutions, and real-time container tracking for your logistics needs.',
     images: [
       {
-        url: '/container-services.jpg',
+        url: '/services/containers-hero.jpg',
         width: 1200,
         height: 630,
         alt: 'Southern Haulers Container Services'

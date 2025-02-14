@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: 'Comprehensive logistics solutions including warehousing, container services, and refrigerated transport. Southern Haulers delivers excellence in South Georgia transportation.',
     images: [
       {
-        url: '/services-overview.jpg',
+        url: '/services/warehouse-hero.jpg',
         width: 1200,
         height: 630,
         alt: 'Southern Haulers Services Overview'

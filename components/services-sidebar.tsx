@@ -82,7 +82,7 @@ export function ServicesSidebar({ className }: ServicesSidebarProps) {
                       href={section.href}
                       className={cn(
                         "block rounded-md px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground",
-                        pathname + location.hash === section.href && "bg-accent"
+                        pathname === section.href.split('#')[0] && "bg-accent"
                       )}
                     >
                       {section.title}
@@ -117,7 +117,7 @@ export function ServicesSidebar({ className }: ServicesSidebarProps) {
                   href={section.href}
                   className={cn(
                     "block rounded-md px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground",
-                    pathname + location.hash === section.href && "bg-accent"
+                    pathname === section.href.split('#')[0] && "bg-accent"
                   )}
                 >
                   {section.title}

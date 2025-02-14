@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: 'Professional temperature-controlled transportation services ensuring product integrity. Advanced cold chain solutions with real-time monitoring and HACCP compliance.',
     images: [
       {
-        url: '/refrigerated-transport.jpg',
+        url: '/services/refrigerated-hero.jpg',
         width: 1200,
         height: 630,
         alt: 'Southern Haulers Refrigerated Transport'
