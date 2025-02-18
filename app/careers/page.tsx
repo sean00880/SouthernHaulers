@@ -1,4 +1,3 @@
-import { Layout } from "@/components/layout"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -7,8 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function Careers() {
   return (
-    <Layout>
-      <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-8">Driver Opportunities</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
@@ -79,7 +77,5 @@ export default function Careers() {
           </Card>
         </div>
       </div>
-    </Layout>
   )
 }
-

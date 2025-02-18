@@ -6,14 +6,19 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image"
 import type React from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
-  { name: "Careers", href: "/careers" },
-  { name: "Contact", href: "/contact" },
+  { name: "Forms", href: "/forms" },
 ]
 
 const services = [
@@ -56,13 +61,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </nav>
           
           <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-4">
-              <Button variant="outline" asChild className="font-medium">
-                <Link href="/careers">Driver Application</Link>
-              </Button>
-              <Button asChild className="font-medium">
-                <Link href="/contact">Request Quote</Link>
-              </Button>
+            <div className="hidden md:flex items-center">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button className="bg-primary text-white hover:bg-primary/90">
+                    Request
+                    <ChevronDown className="ml-2 h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem asChild>
+                    <Link href="/forms?tab=quote">General Quote</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/forms?tab=hauling">Hauling Quote</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/forms?tab=driver">Driver Application</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
             
             {/* Mobile Menu */}
@@ -86,16 +104,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     </Link>
                   ))}
                   <div className="h-px bg-border my-4" />
-                  <Button asChild className="w-full font-medium">
-                    <Link href="/contact" onClick={() => setIsOpen(false)}>
-                      Request Quote
-                    </Link>
-                  </Button>
-                  <Button variant="outline" asChild className="w-full font-medium">
-                    <Link href="/careers" onClick={() => setIsOpen(false)}>
-                      Driver Application
-                    </Link>
-                  </Button>
+                  <div className="space-y-2">
+                    <Button asChild className="w-full font-medium">
+                      <Link href="/forms?tab=quote" onClick={() => setIsOpen(false)}>
+                        General Quote
+                      </Link>
+                    </Button>
+                    <Button asChild className="w-full font-medium">
+                      <Link href="/forms?tab=hauling" onClick={() => setIsOpen(false)}>
+                        Hauling Quote
+                      </Link>
+                    </Button>
+                    <Button variant="outline" asChild className="w-full font-medium">
+                      <Link href="/forms?tab=driver" onClick={() => setIsOpen(false)}>
+                        Driver Application
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -126,20 +151,51 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </p>
             </div>
             
-            <div>
-              <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-              <ul className="space-y-3">
-                {navigation.map((item) => (
-                  <li key={item.name}>
+            <div className="grid gap-8">
+              <div>
+                <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+                <ul className="space-y-3">
+                  {navigation.map((item) => (
+                    <li key={item.name}>
+                      <Link 
+                        href={item.href}
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg mb-4">Request Forms</h3>
+                <ul className="space-y-3">
+                  <li>
                     <Link 
-                      href={item.href}
+                      href="/forms?tab=quote"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      {item.name}
+                      General Quote
                     </Link>
                   </li>
-                ))}
-              </ul>
+                  <li>
+                    <Link 
+                      href="/forms?tab=hauling"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      Hauling Quote
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="/forms?tab=driver"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      Driver Application
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
             
             <div>

@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { TableOfContents } from "@/components/table-of-contents"
 import Image from "next/image"
 import Link from "next/link"
 import { Thermometer, Truck, Shield, Snowflake } from "lucide-react"
@@ -8,7 +9,7 @@ export default function RefrigeratedPage() {
   const features = [
     {
       title: "Temperature Control",
-      image: "https://images.unsplash.com/photo-1635348728281-a57a5341ae82?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+      image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
       items: [
         {
           icon: Thermometer,
@@ -24,7 +25,7 @@ export default function RefrigeratedPage() {
     },
     {
       title: "Key Features",
-      image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+      image: "https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
       items: [
         {
           icon: Snowflake,
@@ -48,11 +49,49 @@ export default function RefrigeratedPage() {
     }
   ]
 
+  const sections = [
+    {
+      title: "Temperature Control",
+      items: [
+        {
+          title: "Multi-Temperature Zones",
+          description: "Advanced temperature control systems allowing multiple temperature zones in a single shipment."
+        },
+        {
+          title: "Quality Assurance",
+          description: "Continuous monitoring and documentation ensuring product integrity throughout transit."
+        }
+      ]
+    },
+    {
+      title: "Key Features",
+      items: [
+        {
+          title: "Cold Chain Solutions",
+          features: [
+            "Temperature monitoring",
+            "Real-time alerts",
+            "Compliance reporting"
+          ]
+        },
+        {
+          title: "Transport Options",
+          features: [
+            "Local delivery",
+            "Long-haul transport",
+            "Cross-border shipping"
+          ]
+        }
+      ]
+    }
+  ]
+
   return (
     <div>
+      <TableOfContents sections={sections} />
       <div className="relative h-[400px] rounded-lg overflow-hidden mb-16">
         <Image
-          src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+          src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
           alt="Refrigerated transport fleet"
           fill
           className="object-cover"
@@ -120,7 +159,7 @@ export default function RefrigeratedPage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="bg-white text-black hover:bg-white/90">
-            <Link href="/contact">Request a Quote</Link>
+            <Link href="/forms?tab=hauling">Request a Quote</Link>
           </Button>
           <Button variant="outline" asChild size="lg" className="text-white border-white bg-primary/80 hover:bg-white hover:text-primary focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all">
             <Link href="/services">Back to Services</Link>

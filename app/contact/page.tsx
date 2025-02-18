@@ -1,4 +1,3 @@
-import { Layout } from "@/components/layout"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -8,8 +7,7 @@ import { Phone, Mail, MapPin } from "lucide-react"
 
 export default function Contact() {
   return (
-    <Layout>
-      <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8">
@@ -84,6 +82,5 @@ export default function Contact() {
           </Card>
         </div>
       </div>
-    </Layout>
   )
 }

@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { TableOfContents } from "@/components/table-of-contents"
 import Image from "next/image"
 import Link from "next/link"
 import { Box, ClipboardCheck, BarChart3, Warehouse } from "lucide-react"
@@ -48,11 +49,49 @@ export default function WarehousePage() {
     }
   ]
 
+  const sections = [
+    {
+      title: "Storage Solutions",
+      items: [
+        {
+          title: "Flexible Storage Options",
+          description: "From small parcels to bulk storage, our facilities accommodate various storage needs with customizable space solutions."
+        },
+        {
+          title: "Inventory Management",
+          description: "Real-time tracking and advanced inventory management systems ensure accurate stock levels and efficient operations."
+        }
+      ]
+    },
+    {
+      title: "Key Features",
+      items: [
+        {
+          title: "Analytics & Reporting",
+          features: [
+            "Real-time inventory tracking",
+            "Custom reporting solutions",
+            "Performance analytics"
+          ]
+        },
+        {
+          title: "Facility Features",
+          features: [
+            "Climate-controlled storage",
+            "24/7 security monitoring",
+            "Modern handling equipment"
+          ]
+        }
+      ]
+    }
+  ]
+
   return (
     <div>
+      <TableOfContents sections={sections} />
       <div className="relative h-[400px] rounded-lg overflow-hidden mb-16">
         <Image
-          src="/services/warehouse-hero.jpg"
+          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000"
           alt="Modern warehouse facility"
           fill
           className="object-cover"
@@ -77,7 +116,11 @@ export default function WarehousePage() {
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div className={`relative h-[300px] rounded-lg overflow-hidden ${sectionIndex % 2 === 1 ? 'md:order-last' : ''}`}>
                 <Image
-                  src={section.image}
+          src={
+            section.title === "Storage Solutions"
+              ? "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2000"
+              : "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2000"
+          }
                   alt={section.title}
                   fill
                   className="object-cover"
@@ -120,7 +163,7 @@ export default function WarehousePage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="bg-white text-black hover:bg-white/90">
-            <Link href="/contact">Request a Quote</Link>
+            <Link href="/forms?tab=hauling">Request a Quote</Link>
           </Button>
           <Button variant="outline" asChild size="lg" className="text-white border-white bg-primary/80 hover:bg-white hover:text-primary focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all">
             <Link href="/services">Back to Services</Link>

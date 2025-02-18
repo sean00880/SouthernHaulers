@@ -1,6 +1,5 @@
 "use client"
 
-import { Layout } from "@/components/layout"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
@@ -14,7 +13,7 @@ export default function About() {
   const parallaxOffset = useParallax()
 
   return (
-    <Layout>
+    <div>
       {/* Hero Section */}
       <section className="relative min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40" />
@@ -215,6 +214,6 @@ export default function About() {
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   )
 }

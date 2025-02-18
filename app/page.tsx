@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Layout } from "@/components/layout"
 import { Card, CardContent } from "@/components/ui/card"
 import { Counter } from "@/components/counter"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
@@ -17,7 +16,7 @@ export default function Home() {
   const parallaxOffset = useParallax()
   
   return (
-    <Layout>
+    <div>
       {/* Hero Section with Background Image */}
       <section className="relative min-h-[600px] h-[80vh] max-h-[800px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40" />
@@ -287,6 +286,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   )
 }

@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { TableOfContents } from "@/components/table-of-contents"
 import Image from "next/image"
 import Link from "next/link"
 import { Truck, Ship, BarChart3, Container } from "lucide-react"
@@ -48,11 +49,49 @@ export default function ContainersPage() {
     }
   ]
 
+  const sections = [
+    {
+      title: "Transport Solutions",
+      items: [
+        {
+          title: "Drayage Services",
+          description: "Efficient port-to-destination container transportation with real-time tracking and scheduling."
+        },
+        {
+          title: "Port Operations",
+          description: "Seamless coordination with port authorities and shipping lines for smooth container handling."
+        }
+      ]
+    },
+    {
+      title: "Key Features",
+      items: [
+        {
+          title: "Container Tracking",
+          features: [
+            "Real-time location updates",
+            "Status monitoring",
+            "Delivery estimates"
+          ]
+        },
+        {
+          title: "Container Types",
+          features: [
+            "Standard containers",
+            "High-cube containers",
+            "Special equipment"
+          ]
+        }
+      ]
+    }
+  ]
+
   return (
     <div>
+      <TableOfContents sections={sections} />
       <div className="relative h-[400px] rounded-lg overflow-hidden mb-16">
         <Image
-          src="/services/containers-hero.jpg"
+          src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2000"
           alt="Container terminal operations"
           fill
           className="object-cover"
@@ -77,7 +116,11 @@ export default function ContainersPage() {
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div className={`relative h-[300px] rounded-lg overflow-hidden ${sectionIndex % 2 === 1 ? 'md:order-last' : ''}`}>
                 <Image
-                  src={section.image}
+          src={
+            section.title === "Transport Solutions"
+              ? "https://images.unsplash.com/photo-1577791465291-47b1c61074f5?q=80&w=2000"
+              : "https://images.unsplash.com/photo-1569063386798-345908ef9a62?q=80&w=2000"
+          }
                   alt={section.title}
                   fill
                   className="object-cover"
@@ -120,7 +163,7 @@ export default function ContainersPage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="bg-white text-black hover:bg-white/90">
-            <Link href="/contact">Request a Quote</Link>
+            <Link href="/forms?tab=hauling">Request a Quote</Link>
           </Button>
           <Button variant="outline" asChild size="lg" className="text-white border-white bg-primary/80 hover:bg-white hover:text-primary focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all">
             <Link href="/services">Back to Services</Link>
