@@ -9,7 +9,8 @@ import { ServiceMap } from "@/components/service-map"
 import Link from "next/link"
 import Image from "next/image"
 import { useParallax } from "@/hooks/use-parallax"
-import { Warehouse, Container, Snowflake, Users, CheckCircle, Clock, Shield, Trophy } from "lucide-react"
+import { Warehouse, Container, Snowflake, Users, CheckCircle, Clock, Shield, Trophy, Linkedin, Instagram, Facebook } from "lucide-react"
+import { PartnersMarquee } from "@/components/partners-marquee"
 
 export default function Home() {
   const [isImageLoaded, setIsImageLoaded] = useState(false)
@@ -17,50 +18,71 @@ export default function Home() {
   
   return (
     <div>
-      {/* Hero Section with Background Image */}
-      <section className="relative min-h-[600px] h-[80vh] max-h-[800px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40" />
-        {!isImageLoaded && (
-          <div className="absolute inset-0 bg-gray-900 animate-pulse" />
-        )}
-        <Image
-          src="/services/warehouse-hero.jpg"
-          alt="Fleet of Southern Haulers trucks on highway"
-          fill
-          style={{
-            objectFit: 'cover',
-            transform: `translate3d(0, ${parallaxOffset}px, 0) scale(1.1)`,
-            transition: 'transform 0.1s linear'
-          }}
-          className={`transition-opacity duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
-          onLoad={() => setIsImageLoaded(true)}
-          priority
-        />
-        <div className="relative container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            South Georgia's Premier
-            <span className="block mt-2">Transportation Partner</span>
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-8 leading-relaxed font-light">
-            Delivering excellence in agricultural transport, container drayage, and
-            warehouse solutions across the southeastern United States.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              asChild 
-              className="bg-white text-black hover:bg-white/90 focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-lg py-6 px-8"
-            >
-              <Link href="/contact">Get a Quote</Link>
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              asChild 
-              className="text-white border-white hover:bg-white hover:text-primary focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-lg py-6 px-8"
-            >
-              <Link href="/careers">Join Our Team</Link>
-            </Button>
+      {/* Hero Section with Image Background */}
+      <section className="relative min-h-[600px] h-[80vh] max-h-[800px] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/services/warehouse-hero.jpg"
+            alt="Fleet of Southern Haulers trucks"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+        </div>
+        
+        <div className="relative h-full">
+          <div className="container mx-auto px-4 h-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 h-full items-center gap-12">
+              {/* Left Column - Content */}
+              <div className="text-white">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+                  South Georgia's Premier
+                  <span className="block mt-2">Transportation Partner</span>
+                </h1>
+                <p className="text-lg sm:text-xl md:text-2xl max-w-2xl mb-8 leading-relaxed font-light">
+                  Delivering excellence in agricultural transport, container drayage, and
+                  warehouse solutions across the southeastern United States.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                  <Button 
+                    size="lg" 
+                    asChild 
+                    className="bg-white text-black hover:bg-white/90 focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-lg py-6 px-8"
+                  >
+                    <Link href="/contact">Get a Quote</Link>
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    asChild 
+                    className="text-white border-white hover:bg-white hover:text-primary focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-lg py-6 px-8"
+                  >
+                    <Link href="/careers">Join Our Team</Link>
+                  </Button>
+                </div>
+                {/* Social Icons */}
+                <div className="flex gap-4">
+                  <Link href="https://linkedin.com" target="_blank" className="text-white hover:text-primary transition-colors">
+                    <Linkedin className="w-6 h-6" />
+                  </Link>
+                  <Link href="https://instagram.com" target="_blank" className="text-white hover:text-primary transition-colors">
+                    <Instagram className="w-6 h-6" />
+                  </Link>
+                  <Link href="https://facebook.com" target="_blank" className="text-white hover:text-primary transition-colors">
+                    <Facebook className="w-6 h-6" />
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Right Column - Empty for video focus */}
+              <div></div>
+            </div>
+          </div>
+          
+          {/* Partners Marquee */}
+          <div className="absolute bottom-0 left-0 right-0">
+            <PartnersMarquee />
           </div>
         </div>
       </section>
@@ -118,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* Services Section with Images */}
-      <section className="py-24">
+      <section id="services" className="py-24 scroll-mt-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">What We Do</h2>
           <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
@@ -130,21 +152,21 @@ export default function Home() {
                 title: "Warehouse Solutions",
                 description: "State-of-the-art warehousing facilities with advanced inventory management and distribution capabilities.",
                 icon: Warehouse,
-                href: "/services/warehouse",
+                href: "#services",
                 image: "/services/warehouse-features.jpg",
               },
               {
                 title: "Container Services",
                 description: "Comprehensive container handling, drayage, and intermodal transportation solutions.",
                 icon: Container,
-                href: "/services/containers",
+                href: "#services",
                 image: "/services/containers-features.jpg",
               },
               {
                 title: "Refrigerated Transport",
                 description: "Temperature-controlled logistics ensuring product integrity throughout the supply chain.",
                 icon: Snowflake,
-                href: "/services/refrigerated",
+                href: "#services",
                 image: "/services/refrigerated-features.jpg",
               },
             ].map((service, index) => (
@@ -152,7 +174,11 @@ export default function Home() {
                 key={index} 
                 className="group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                <Link href={service.href} className="focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                <Link 
+                  href={service.href} 
+                  className="focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  scroll={false}
+                >
                   <div className="relative h-56 w-full overflow-hidden">
                     <Image
                       src={service.image}

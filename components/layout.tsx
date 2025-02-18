@@ -16,15 +16,10 @@ import {
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
-  { name: "Forms", href: "/forms" },
-]
-
-const services = [
-  { name: "Warehouse Solutions", href: "/services/warehouse" },
-  { name: "Container Services", href: "/services/containers" },
-  { name: "Refrigerated Transport", href: "/services/refrigerated" },
+  { name: "Services", href: "/#services", scroll: false },
+  { name: "Join Us", href: "/join-us" },
+  { name: "Contact", href: "/request-quote" },
 ]
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -54,6 +49,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 key={item.name}
                 href={item.href}
                 className="text-sm font-medium hover:text-primary transition-colors"
+                scroll={item.scroll}
               >
                 {item.name}
               </Link>
@@ -71,13 +67,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuItem asChild>
-                    <Link href="/forms?tab=quote">General Quote</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/forms?tab=hauling">Hauling Quote</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/forms?tab=driver">Driver Application</Link>
+                    <Link href="/request-quote">Request a Quote</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -98,7 +88,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       key={item.name}
                       href={item.href}
                       className="text-lg font-medium hover:text-primary transition-colors"
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => {
+                        setIsOpen(false)
+                        if (item.scroll === false) {
+                          document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
+                        }
+                      }}
                     >
                       {item.name}
                     </Link>
@@ -106,18 +101,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   <div className="h-px bg-border my-4" />
                   <div className="space-y-2">
                     <Button asChild className="w-full font-medium">
-                      <Link href="/forms?tab=quote" onClick={() => setIsOpen(false)}>
-                        General Quote
-                      </Link>
-                    </Button>
-                    <Button asChild className="w-full font-medium">
-                      <Link href="/forms?tab=hauling" onClick={() => setIsOpen(false)}>
-                        Hauling Quote
+                      <Link href="/request-quote" onClick={() => setIsOpen(false)}>
+                        Request a Quote
                       </Link>
                     </Button>
                     <Button variant="outline" asChild className="w-full font-medium">
-                      <Link href="/forms?tab=driver" onClick={() => setIsOpen(false)}>
-                        Driver Application
+                      <Link href="/join-us" onClick={() => setIsOpen(false)}>
+                        Join Our Team
                       </Link>
                     </Button>
                   </div>
@@ -168,51 +158,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold text-lg mb-4">Request Forms</h3>
+                <h3 className="font-bold text-lg mb-4">Quick Actions</h3>
                 <ul className="space-y-3">
                   <li>
                     <Link 
-                      href="/forms?tab=quote"
+                      href="/request-quote"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      General Quote
+                      Request a Quote
                     </Link>
                   </li>
                   <li>
                     <Link 
-                      href="/forms?tab=hauling"
+                      href="/join-us"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      Hauling Quote
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/forms?tab=driver"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      Driver Application
+                      Join Our Team
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
             
-            <div>
-              <h3 className="font-bold text-lg mb-4">Services</h3>
-              <ul className="space-y-3">
-                {services.map((service) => (
-                  <li key={service.name}>
-                    <Link
-                      href={service.href}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {service.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
             
             <div>
               <h3 className="font-bold text-lg mb-4">Contact</h3>
