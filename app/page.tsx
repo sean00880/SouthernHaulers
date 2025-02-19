@@ -11,6 +11,7 @@ import Image from "next/image"
 import { useParallax } from "@/hooks/use-parallax"
 import { Warehouse, Container, Snowflake, Users, CheckCircle, Clock, Shield, Trophy, Linkedin, Instagram, Facebook } from "lucide-react"
 import { PartnersMarquee } from "@/components/partners-marquee"
+import { motion, useInView } from "framer-motion"
 
 export default function Home() {
   const [isImageLoaded, setIsImageLoaded] = useState(false)
@@ -19,16 +20,20 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section with Image Background */}
-      <section className="relative min-h-[600px] h-[80vh] max-h-[800px] overflow-hidden">
+      <section 
+        className="relative min-h-[600px] h-[80vh] max-h-[800px] overflow-hidden"
+        aria-label="Main hero section"
+      >
         <div className="absolute inset-0">
           <Image
             src="/services/warehouse-hero.jpg"
-            alt="Fleet of Southern Haulers trucks"
+            alt="Professional warehouse and transportation fleet"
             fill
             className="object-cover"
             priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+            sizes="(max-width: 768px) 100vw, 100vw"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
         </div>
         
         <div className="relative h-full">
@@ -36,10 +41,16 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 h-full items-center gap-12">
               {/* Left Column - Content */}
               <div className="text-white">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+                <motion.h1 
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8 }}
+                >
                   South Georgia's Premier
                   <span className="block mt-2">Transportation Partner</span>
-                </h1>
+                </motion.h1>
+                
                 <p className="text-lg sm:text-xl md:text-2xl max-w-2xl mb-8 leading-relaxed font-light">
                   Delivering excellence in agricultural transport, container drayage, and
                   warehouse solutions across the southeastern United States.
