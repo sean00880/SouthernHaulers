@@ -32,8 +32,9 @@ export default function Home() {
             className="object-cover"
             priority
             sizes="(max-width: 768px) 100vw, 100vw"
-            placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+            placeholder="blur"
+          />
         </div>
         
         <div className="relative h-full">
