@@ -1,12 +1,13 @@
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://southern-haulers.com'),
+  metadataBase: new URL('https://www.southernhaulers.net'),
   title: {
     default: 'Southern Haulers - Container Drayage & Agricultural Hauling Services',
     template: '%s | Southern Haulers',
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://southern-haulers.com',
+    url: 'https://www.southernhaulers.net',
     siteName: 'Southern Haulers',
     title: 'Southern Haulers - Container Drayage & Agricultural Hauling',
     description: 'Premier container drayage and agricultural hauling services across the Southeast with 300+ container capacity and real-time tracking.',
@@ -76,7 +77,7 @@ export const metadata: Metadata = {
     // bing: 'your-bing-verification-code',
   },
   alternates: {
-    canonical: 'https://southern-haulers.com',
+    canonical: 'https://www.southernhaulers.net',
   },
 };
 
@@ -87,7 +88,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -5,7 +5,7 @@ import { LOCATIONS } from '@/data/locations';
 import { PORTS } from '@/data/ports';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://southern-haulers.com';
+  const baseUrl = 'https://www.southernhaulers.net';
   const currentDate = new Date();
 
   // Static pages

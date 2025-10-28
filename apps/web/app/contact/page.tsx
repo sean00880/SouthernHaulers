@@ -51,7 +51,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground">dispatch@southern-haulers.com</p>
+                    <p className="text-muted-foreground">dispatch@southernhaulers.net</p>
                     <p className="text-sm text-muted-foreground">We respond within 2-4 hours</p>
                   </div>
                 </div>

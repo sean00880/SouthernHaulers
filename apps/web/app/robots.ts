@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin/', '/api/', '/private/'],
       },
     ],
-    sitemap: 'https://southern-haulers.com/sitemap.xml',
+    sitemap: 'https://www.southernhaulers.net/sitemap.xml',
   };
 }

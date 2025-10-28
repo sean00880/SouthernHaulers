@@ -238,8 +238,8 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
 
 # Application Configuration
-NEXT_PUBLIC_SITE_URL=https://southern-haulers.com
-NEXT_PUBLIC_CONTACT_EMAIL=dispatch@southern-haulers.com
+NEXT_PUBLIC_SITE_URL=https://www.southernhaulers.net
+NEXT_PUBLIC_CONTACT_EMAIL=dispatch@southernhaulers.net
 ```
 
 ### Supabase Client Features
@@ -628,8 +628,8 @@ cp apps/web/.env.local.example apps/web/.env.local
 NEXT_PUBLIC_SUPABASE_URL=https://your-actual-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-actual-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-actual-service-role-key
-NEXT_PUBLIC_SITE_URL=https://southern-haulers.com
-NEXT_PUBLIC_CONTACT_EMAIL=dispatch@southern-haulers.com
+NEXT_PUBLIC_SITE_URL=https://www.southernhaulers.net
+NEXT_PUBLIC_CONTACT_EMAIL=dispatch@southernhaulers.net
 ```
 
 ### Database Setup

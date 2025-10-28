@@ -70,10 +70,10 @@ NEXT_PUBLIC_HOTJAR_ID=your_hotjar_id
 
 # Contact Form
 RESEND_API_KEY=your_resend_api_key
-CONTACT_EMAIL=dispatch@southern-haulers.com
+CONTACT_EMAIL=dispatch@southernhaulers.net
 
 # Quote System
-QUOTE_NOTIFICATION_EMAIL=quotes@southern-haulers.com
+QUOTE_NOTIFICATION_EMAIL=quotes@southernhaulers.net
 
 # Tracking System
 TRACKING_API_KEY=your_tracking_api_key
@@ -215,7 +215,7 @@ vercel --prod
 
 ```bash
 # Add domain via Vercel CLI
-vercel domains add southern-haulers.com
+vercel domains add southernhaulers.net
 
 # Or via Vercel Dashboard:
 # 1. Go to Project Settings > Domains
@@ -319,7 +319,7 @@ docker run -p 3000:3000 \
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | `https://abc123.supabase.co` |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key | `eyJhbGc...` |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key | `eyJhbGc...` |
-| `NEXT_PUBLIC_APP_URL` | Application URL | `https://southern-haulers.com` |
+| `NEXT_PUBLIC_APP_URL` | Application URL | `https://www.southernhaulers.net` |
 
 ### Optional Variables
 

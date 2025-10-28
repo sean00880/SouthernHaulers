@@ -107,18 +107,25 @@ export function ServicesSectionEnhanced({ services }: ServicesSectionProps) {
                 {/* Image Side */}
                 <div className={`relative ${isReversed ? 'md:col-start-1 md:row-start-1' : ''}`}>
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border shadow-2xl">
-                    {/* Placeholder gradient for now */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${
-                      index % 4 === 0 ? 'from-blue-500 to-indigo-600' :
-                      index % 4 === 1 ? 'from-green-500 to-emerald-600' :
-                      index % 4 === 2 ? 'from-purple-500 to-pink-600' :
-                      'from-orange-500 to-red-600'
-                    } opacity-20`} />
+                    {/* Service Images */}
+                    <Image
+                      src={
+                        service.id === 'container-drayage' 
+                          ? 'https://images.unsplash.com/photo-1678182451047-196f22a4143e?w=1200&q=80'
+                          : service.id === 'agricultural-hauling'
+                          ? 'https://images.pexels.com/photos/31226932/pexels-photo-31226932.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80'
+                          : service.id === 'warehousing'
+                          ? 'https://plus.unsplash.com/premium_photo-1681426728047-2164a00fe3dc?w=1200&q=80'
+                          : 'https://images.pexels.com/photos/6563903/pexels-photo-6563903.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80'
+                      }
+                      alt={service.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                     
-                    {/* Icon watermark */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                      <Icon className="h-48 w-48" />
-                    </div>
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-background/10 via-transparent to-background/10" />
 
                     {/* Overlay badge */}
                     <div className="absolute top-6 left-6 px-4 py-2 rounded-full bg-background/90 backdrop-blur-sm border shadow-lg">

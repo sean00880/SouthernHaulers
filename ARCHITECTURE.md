@@ -675,7 +675,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://southern-haulers.com',
+    url: 'https://www.southernhaulers.net',
     siteName: 'Southern Haulers',
   },
 };
@@ -689,7 +689,7 @@ export function OrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Southern Haulers',
-    url: 'https://southern-haulers.com',
+    url: 'https://www.southernhaulers.net',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Southern_Company_logo_new.svg/2560px-Southern_Company_logo_new.svg.png',
     // ...
   };
@@ -703,14 +703,14 @@ export function OrganizationSchema() {
 // app/sitemap.ts
 export default function sitemap(): MetadataRoute.Sitemap {
   const services = SERVICES.map((service) => ({
-    url: `https://southern-haulers.com/services/${service.slug}`,
+    url: `https://www.southernhaulers.net/services/${service.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
 
   const locations = LOCATIONS.map((location) => ({
-    url: `https://southern-haulers.com/locations/${location.id}`,
+    url: `https://www.southernhaulers.net/locations/${location.id}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.7,
@@ -718,7 +718,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: 'https://southern-haulers.com',
+      url: 'https://www.southernhaulers.net',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
@@ -739,7 +739,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/api/'],
     },
-    sitemap: 'https://southern-haulers.com/sitemap.xml',
+    sitemap: 'https://www.southernhaulers.net/sitemap.xml',
   };
 }
 ```
