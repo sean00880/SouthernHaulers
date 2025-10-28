@@ -21,9 +21,31 @@ driver app, enterprise hiring portal, proprietary quote CRM, and more.
 - **Supabase/PostGIS/pgvector** based data layer with row level security and real‑time updates.
 - **WorkOS authentication** for enterprise SSO and directory sync.
 
-The current state of the repository is a skeleton intended to bootstrap development. It includes a
-simple landing page with a neon truck hero image, placeholder pages for each portal, a basic design
-system, and documentation.
+The current state of the repository includes a fully functional landing page with comprehensive UI/UX
+enhancements, business features, and a professional design system.
+
+## Recent Enhancements (October 2025)
+
+### 🎨 Design System
+- **Depth System** - 3-shadows pattern with tonal layers for visual hierarchy
+- **Typography System** - Fluid responsive type scale using clamp()
+- **Light/Dark Mode** - Automatic theme adaptation with consistent styling
+- **Utility Classes** - Reusable depth effects, animations, and layouts
+
+### 🆕 New Features
+- **Container LFD Tracker** - Track containers across 8 ports/terminals with demurrage alerts
+- **Enhanced Quote Calculator** - Real-time pricing ($2.25/mile × 2) with South Georgia hubs
+- **Professional Services Section** - 5 service types with depth-enhanced cards
+- **Improved Navigation** - Tabbed tracking interface
+
+### 📍 Ports & Terminals
+- Port of Savannah (Garden City & Ocean terminals)
+- Nashville, Memphis, Huntsville, Mobile, Crandall, Atlanta rail terminals
+
+### 📚 Documentation
+- `DESIGN_SYSTEM_GUIDE.md` - Comprehensive design system documentation
+- `ENHANCEMENTS_SUMMARY.md` - Detailed changelog and features
+- `docs/QuickStart.md` - Getting started guide
 
 ## Contributing
 

@@ -4,6 +4,44 @@
 
 @layer base {
   :root {
+    /* Base size for scaling */
+    font-size: 16px;
+
+    /* Brand colors */
+    --brand-h: 220;
+    --brand-s: 10%;
+
+    /* Depth System - Tonal Layers (Light Mode) */
+    --L-bg: 98%;
+    --L-surface: 100%;
+    --L-elevated: 100%;
+    --L-highlight: 96%;
+
+    /* Shadows - 3-Shadow System */
+    --shadow-ambient: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-press: 0 3px 8px rgba(0, 0, 0, 0.18);
+    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.16);
+    --rim-light: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+    /* Typography System - Fluid Type Scale */
+    --step--1: clamp(0.80rem, 0.75rem + 0.2vw, 0.90rem);  /* labels */
+    --step-0: clamp(0.94rem, 0.90rem + 0.2vw, 1.00rem);   /* body */
+    --step-1: clamp(1.13rem, 1.05rem + 0.3vw, 1.25rem);   /* h6/h5 */
+    --step-2: clamp(1.35rem, 1.20rem + 0.5vw, 1.50rem);   /* h4/h3 */
+    --step-3: clamp(1.62rem, 1.40rem + 0.8vw, 1.88rem);   /* h2 */
+    --step-4: clamp(1.94rem, 1.60rem + 1.2vw, 2.35rem);   /* h1 */
+
+    /* Optical spacing */
+    --lh-tight: 1.1;   /* large headings */
+    --lh-base: 1.45;   /* body */
+    --ls-tight: -0.01em;  /* big headings */
+    --ls-base: 0.01em;    /* labels/buttons */
+
+    /* Text contrast via HSL */
+    --text-L: 14%;
+    --muted-L: 36%;
+
+    /* Original Tailwind tokens for compatibility */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -27,6 +65,23 @@
   }
 
   .dark {
+    /* Depth System - Inverted for Dark Mode */
+    --L-bg: 14%;
+    --L-surface: 18%;
+    --L-elevated: 24%;
+    --L-highlight: 32%;
+
+    /* Shadows adjusted for dark mode */
+    --shadow-ambient: 0 8px 24px rgba(0, 0, 0, 0.24);
+    --shadow-press: 0 3px 8px rgba(0, 0, 0, 0.32);
+    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.28);
+    --rim-light: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    /* Text contrast inverted */
+    --text-L: 86%;
+    --muted-L: 64%;
+
+    /* Original Tailwind tokens */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 9%;
@@ -65,10 +120,52 @@
     @apply bg-background text-foreground antialiased;
     min-height: 100%;
     overflow-x: hidden;
+    font-size: var(--step-0);
+    line-height: var(--lh-base);
+  }
+
+  /* Typography System Application */
+  h1 {
+    font-size: var(--step-4);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: var(--step-3);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: var(--step-2);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+    font-weight: 600;
+  }
+
+  h4, h5, h6 {
+    font-size: var(--step-1);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+    font-weight: 600;
+  }
+
+  p {
+    font-size: var(--step-0);
+    line-height: var(--lh-base);
+  }
+
+  small, .small-label {
+    font-size: var(--step--1);
+    letter-spacing: var(--ls-base);
   }
 }
 
 @layer utilities {
+  /* Animations */
   @keyframes gradient-shift {
     0%, 100% {
       background-position: 0% 50%;
@@ -78,11 +175,106 @@
     }
   }
 
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-from-bottom {
+    from {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient-shift 15s ease infinite;
   }
 
+  .animate-in {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  .fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  .slide-in-from-bottom-4 {
+    animation: slide-in-from-bottom 0.5s ease-out;
+  }
+
+  /* Depth System - Tonal Backgrounds */
+  .bg-tonal-bg {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-bg));
+  }
+
+  .bg-tonal-surface {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-surface));
+  }
+
+  .bg-tonal-elevated {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-elevated));
+  }
+
+  .bg-tonal-highlight {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-highlight));
+  }
+
+  /* Depth System - Cards with Shadows */
+  .card-depth {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-surface));
+    box-shadow: var(--rim-light), var(--shadow-ambient);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-depth:hover {
+    box-shadow: var(--rim-light), var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .card-depth:active {
+    box-shadow: var(--rim-light), var(--shadow-press);
+    transform: translateY(0);
+  }
+
+  /* Button Depth Effects */
+  .button-depth {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-elevated));
+    box-shadow: var(--rim-light), var(--shadow-ambient);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .button-depth:hover {
+    box-shadow: var(--rim-light), var(--shadow-hover);
+    transform: translateY(-1px);
+  }
+
+  .button-depth:active {
+    box-shadow: var(--rim-light), var(--shadow-press);
+    transform: translateY(1px);
+  }
+
+  /* Input Depth Effects */
+  .input-depth {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-surface));
+    box-shadow: var(--rim-light), 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+  }
+
+  .input-depth:focus {
+    box-shadow: var(--rim-light), 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Hero Gradients */
   .hero-gradient {
     background: linear-gradient(
       135deg,
@@ -103,5 +295,19 @@
       hsl(214.3, 31.8%, 91.4%) 75%,
       hsl(210, 40%, 98%) 100%
     );
+  }
+
+  /* Text Contrast Classes */
+  .text-contrast {
+    color: hsl(0 0% var(--text-L));
+  }
+
+  .text-muted-contrast {
+    color: hsl(0 0% var(--muted-L));
+  }
+
+  /* Section Height */
+  .section-full {
+    min-height: 100vh;
   }
 }

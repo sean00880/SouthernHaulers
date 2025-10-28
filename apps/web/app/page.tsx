@@ -6,6 +6,7 @@ import { QuoteCalculator } from '../components/quote-calculator';
 import { TrackingDemo } from '../components/tracking-demo';
 import { TerminalStatus } from '../components/terminal-status';
 import { LogoCloud } from '../components/logo-cloud';
+import { ServicesSection } from '../components/services-section';
 import { SouthernHaulersOrganizationSchema, SouthernHaulersLocalBusinessSchema, FAQSchema } from '../components/structured-data';
 
 export default function HomePage() {
@@ -342,90 +343,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="border-t container py-24">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Comprehensive Transportation Solutions
-          </h2>
-          <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
-            Specialized drayage, agricultural hauling, and warehousing services across the Southeastern United States.
-          </p>
-        </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="group rounded-lg border bg-card p-6 space-y-3 transition-all hover:shadow-lg hover:border-primary/50 hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center transition-all group-hover:bg-primary/20">
-              <Package className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
-            </div>
-            <h3 className="text-xl font-semibold">Container Drayage</h3>
-            <p className="text-muted-foreground">
-              Port-to-door and door-to-port container transport. Serving Savannah, Charleston, and Jacksonville with live tracking and automated appointment scheduling.
-            </p>
-            <a href="/services/drayage" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-              Learn more <ArrowRight className="h-3 w-3" />
-            </a>
-          </div>
-          <div className="group rounded-lg border bg-card p-6 space-y-3 transition-all hover:shadow-lg hover:border-primary/50 hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center transition-all group-hover:bg-primary/20">
-              <Truck className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
-            </div>
-            <h3 className="text-xl font-semibold">Agricultural Hauling</h3>
-            <p className="text-muted-foreground">
-              Specialized bulk agricultural transport for peanuts, pecans, cotton, feed, and fertilizer. Equipment and expertise for commodity handling.
-            </p>
-            <a href="/services/agricultural" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-              Learn more <ArrowRight className="h-3 w-3" />
-            </a>
-          </div>
-          <div className="group rounded-lg border bg-card p-6 space-y-3 transition-all hover:shadow-lg hover:border-primary/50 hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center transition-all group-hover:bg-primary/20">
-              <Warehouse className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
-            </div>
-            <h3 className="text-xl font-semibold">Warehousing & Transloading</h3>
-            <p className="text-muted-foreground">
-              300+ container storage capacity with on-site transloading, cross-docking, and distribution. Short-term and long-term storage solutions.
-            </p>
-            <a href="/services/warehousing" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-              Learn more <ArrowRight className="h-3 w-3" />
-            </a>
-          </div>
-          <div className="group rounded-lg border bg-card p-6 space-y-3 transition-all hover:shadow-lg hover:border-primary/50 hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center transition-all group-hover:bg-primary/20">
-              <Thermometer className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
-            </div>
-            <h3 className="text-xl font-semibold">Refrigerated Transport</h3>
-            <p className="text-muted-foreground">
-              Temperature-controlled freight services for perishable agricultural products. Continuous monitoring and compliance documentation.
-            </p>
-            <a href="/services/refrigerated" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-              Learn more <ArrowRight className="h-3 w-3" />
-            </a>
-          </div>
-          <div className="group rounded-lg border bg-card p-6 space-y-3 transition-all hover:shadow-lg hover:border-primary/50 hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center transition-all group-hover:bg-primary/20">
-              <MapPin className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
-            </div>
-            <h3 className="text-xl font-semibold">Real-Time Tracking</h3>
-            <p className="text-muted-foreground">
-              Live GPS tracking, automated status updates, and customer portal access. Complete shipment visibility from pickup to delivery.
-            </p>
-            <a href="/track" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-              Track shipment <ArrowRight className="h-3 w-3" />
-            </a>
-          </div>
-          <div className="group rounded-lg border bg-card p-6 space-y-3 transition-all hover:shadow-lg hover:border-primary/50 hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center transition-all group-hover:bg-primary/20">
-              <Shield className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
-            </div>
-            <h3 className="text-xl font-semibold">Safety & Compliance</h3>
-            <p className="text-muted-foreground">
-              FMCSA compliant, TWIC certified drivers, Truth-in-Leasing documentation, and comprehensive insurance coverage for your peace of mind.
-            </p>
-            <a href="/about/safety" className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-              Our commitment <ArrowRight className="h-3 w-3" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <ServicesSection />
 
       {/* Testimonials */}
       <section className="container py-24">

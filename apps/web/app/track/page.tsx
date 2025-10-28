@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { ContainerLFDTracker } from '../../components/container-lfd-tracker';
 
 interface ShipmentStatus {
   id: string;
@@ -23,6 +24,7 @@ interface ShipmentStatus {
 }
 
 export default function TrackPage() {
+  const [activeTab, setActiveTab] = useState<'shipment' | 'container'>('shipment');
   const [searchQuery, setSearchQuery] = useState('');
   const [shipment, setShipment] = useState<ShipmentStatus | null>(null);
   const [loading, setLoading] = useState(false);
@@ -99,120 +101,152 @@ export default function TrackPage() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-12">
+    <div className="w-full max-w-6xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-8 text-center">Track Your Shipment</h1>
 
-      <form onSubmit={handleSearch} className="mb-8">
-        <div className="flex gap-2">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Enter shipment number, BOL, or container number..."
-            className="flex-1 px-4 py-3 rounded-lg bg-gray-900 border border-gray-800 focus:border-indigo-500 focus:outline-none"
-            required
-          />
+      {/* Tabs */}
+      <div className="flex justify-center mb-8">
+        <div className="inline-flex rounded-lg border bg-card p-1 card-depth">
           <button
-            type="submit"
-            disabled={loading}
-            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:bg-gray-700 rounded-lg font-medium transition-colors"
+            onClick={() => setActiveTab('shipment')}
+            className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+              activeTab === 'shipment'
+                ? 'bg-primary text-primary-foreground button-depth'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
           >
-            {loading ? 'Searching...' : 'Track'}
+            Shipment Tracking
+          </button>
+          <button
+            onClick={() => setActiveTab('container')}
+            className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+              activeTab === 'container'
+                ? 'bg-primary text-primary-foreground button-depth'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            Container LFD Tracker
           </button>
         </div>
-      </form>
+      </div>
 
-      {error && (
-        <div className="p-4 rounded-lg bg-red-900/30 border border-red-800 text-red-400 mb-8">
-          {error}
-        </div>
-      )}
-
-      {shipment && (
-        <div className="space-y-6">
-          {/* Status Header */}
-          <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h2 className="text-2xl font-bold">{shipment.shipment_number}</h2>
-                <p className="text-gray-400">Container: {shipment.container_number || 'N/A'}</p>
-              </div>
-              <span className={`px-4 py-2 rounded-full font-medium ${getStatusColor(shipment.status)}`}>
-                {shipment.status.replace('_', ' ').toUpperCase()}
-              </span>
+      {activeTab === 'shipment' ? (
+        <div>
+          <form onSubmit={handleSearch} className="mb-8">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Enter shipment number, BOL, or container number..."
+                className="flex-1 px-4 py-3 rounded-lg bg-gray-900 border border-gray-800 focus:border-indigo-500 focus:outline-none"
+                required
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:bg-gray-700 rounded-lg font-medium transition-colors"
+              >
+                {loading ? 'Searching...' : 'Track'}
+              </button>
             </div>
+          </form>
 
-            {shipment.current_location && (
-              <div className="p-4 rounded-lg bg-gray-800/50">
-                <p className="text-sm text-gray-400 mb-1">Current Location</p>
-                <p className="text-lg">{shipment.current_location}</p>
-              </div>
-            )}
-          </div>
-
-          {/* Route Information */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
-              <h3 className="text-lg font-semibold mb-4 text-indigo-400">Origin</h3>
-              <p className="mb-2">{shipment.origin}</p>
-              <p className="text-sm text-gray-400">
-                Pickup: {formatDate(shipment.pickup_date)}
-              </p>
+          {error && (
+            <div className="p-4 rounded-lg bg-red-900/30 border border-red-800 text-red-400 mb-8">
+              {error}
             </div>
+          )}
 
-            <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
-              <h3 className="text-lg font-semibold mb-4 text-indigo-400">Destination</h3>
-              <p className="mb-2">{shipment.destination}</p>
-              <p className="text-sm text-gray-400">
-                Delivery: {formatDate(shipment.delivery_date)}
-              </p>
-            </div>
-          </div>
+          {shipment && (
+            <div className="space-y-6">
+              {/* Status Header */}
+              <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <h2 className="text-2xl font-bold">{shipment.shipment_number}</h2>
+                    <p className="text-gray-400">Container: {shipment.container_number || 'N/A'}</p>
+                  </div>
+                  <span className={`px-4 py-2 rounded-full font-medium ${getStatusColor(shipment.status)}`}>
+                    {shipment.status.replace('_', ' ').toUpperCase()}
+                  </span>
+                </div>
 
-          {/* Driver & Important Dates */}
-          <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
-            <h3 className="text-lg font-semibold mb-4 text-indigo-400">Details</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <p className="text-sm text-gray-400">Driver</p>
-                <p className="text-lg">{shipment.driver_name || 'Not assigned'}</p>
+                {shipment.current_location && (
+                  <div className="p-4 rounded-lg bg-gray-800/50">
+                    <p className="text-sm text-gray-400 mb-1">Current Location</p>
+                    <p className="text-lg">{shipment.current_location}</p>
+                  </div>
+                )}
               </div>
-              <div>
-                <p className="text-sm text-gray-400">Last Free Day</p>
-                <p className="text-lg">{formatDate(shipment.last_free_day)}</p>
-              </div>
-            </div>
-          </div>
 
-          {/* Documents */}
-          {shipment.documents.length > 0 && (
-            <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
-              <h3 className="text-lg font-semibold mb-4 text-indigo-400">Documents</h3>
-              <div className="space-y-2">
-                {shipment.documents.map((doc) => (
-                  <a
-                    key={doc.id}
-                    href={doc.url}
-                    className="flex items-center justify-between p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800 transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                      <div>
-                        <p className="font-medium">{doc.type}</p>
-                        <p className="text-sm text-gray-400">{doc.filename}</p>
-                      </div>
-                    </div>
-                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                  </a>
-                ))}
+              {/* Route Information */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
+                  <h3 className="text-lg font-semibold mb-4 text-indigo-400">Origin</h3>
+                  <p className="mb-2">{shipment.origin}</p>
+                  <p className="text-sm text-gray-400">
+                    Pickup: {formatDate(shipment.pickup_date)}
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
+                  <h3 className="text-lg font-semibold mb-4 text-indigo-400">Destination</h3>
+                  <p className="mb-2">{shipment.destination}</p>
+                  <p className="text-sm text-gray-400">
+                    Delivery: {formatDate(shipment.delivery_date)}
+                  </p>
+                </div>
               </div>
+
+              {/* Driver & Important Dates */}
+              <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
+                <h3 className="text-lg font-semibold mb-4 text-indigo-400">Details</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-gray-400">Driver</p>
+                    <p className="text-lg">{shipment.driver_name || 'Not assigned'}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Last Free Day</p>
+                    <p className="text-lg">{formatDate(shipment.last_free_day)}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Documents */}
+              {shipment.documents.length > 0 && (
+                <div className="p-6 rounded-lg bg-gray-900 border border-gray-800">
+                  <h3 className="text-lg font-semibold mb-4 text-indigo-400">Documents</h3>
+                  <div className="space-y-2">
+                    {shipment.documents.map((doc) => (
+                      <a
+                        key={doc.id}
+                        href={doc.url}
+                        className="flex items-center justify-between p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800 transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          <svg className="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                          </svg>
+                          <div>
+                            <p className="font-medium">{doc.type}</p>
+                            <p className="text-sm text-gray-400">{doc.filename}</p>
+                          </div>
+                        </div>
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
+      ) : (
+        <ContainerLFDTracker />
       )}
     </div>
   );
