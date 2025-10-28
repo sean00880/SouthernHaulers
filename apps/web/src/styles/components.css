@@ -1,0 +1,322 @@
+
+/**
+ * Component Styles
+ * Reusable component patterns and utilities
+ */
+
+@layer components {
+  /* ==========================================================================
+     Section Components
+     ========================================================================== */
+
+  /* 100vh sections - all sections are full viewport height */
+  .section-full {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-full {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  /* Alternating sections - background colors */
+  .section-default {
+    @apply bg-background;
+  }
+
+  .section-alternate {
+    @apply bg-muted/50;
+  }
+
+  /* ==========================================================================
+     Card Components
+     ========================================================================== */
+
+  /* Depth-based cards with shadows */
+  .card-depth {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-surface));
+    box-shadow: var(--rim-light), var(--shadow-ambient);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: var(--radius);
+  }
+
+  .card-depth:hover {
+    box-shadow: var(--rim-light), var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .card-depth:active {
+    box-shadow: var(--rim-light), var(--shadow-press);
+    transform: translateY(0);
+  }
+
+  /* Glass-morphism card */
+  .card-glass {
+    @apply backdrop-blur-xl bg-background/80 border border-border/50;
+    box-shadow: var(--rim-light), var(--shadow-ambient);
+  }
+
+  /* Gradient card */
+  .card-gradient {
+    @apply bg-gradient-to-br from-card to-card/50 border border-border;
+  }
+
+  /* ==========================================================================
+     Button Components
+     ========================================================================== */
+
+  /* Quartz-style button with depth */
+  .button-depth {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-elevated));
+    box-shadow: var(--rim-light), var(--shadow-ambient);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: var(--radius);
+  }
+
+  .button-depth:hover {
+    box-shadow: var(--rim-light), var(--shadow-hover);
+    transform: translateY(-1px);
+  }
+
+  .button-depth:active {
+    box-shadow: var(--rim-light), var(--shadow-press);
+    transform: translateY(1px);
+  }
+
+  /* Primary button with enhanced styling */
+  .button-primary {
+    @apply bg-primary text-primary-foreground shadow-md;
+    @apply border-[0.5px] border-white/25 shadow-black/20;
+    @apply hover:bg-primary/90 transition-all duration-200;
+  }
+
+  /* Outline button */
+  .button-outline {
+    @apply shadow-sm shadow-black/15 border border-transparent bg-background;
+    @apply ring-1 ring-foreground/10 hover:bg-muted/50;
+  }
+
+  /* ==========================================================================
+     Input Components
+     ========================================================================== */
+
+  .input-depth {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-surface));
+    box-shadow: var(--rim-light), 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    border-radius: var(--radius);
+  }
+
+  .input-depth:focus {
+    box-shadow: var(--rim-light), 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  /* ==========================================================================
+     Layout Components
+     ========================================================================== */
+
+  /* Container with max width */
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 md:px-6;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  /* Split layout - alternating left/right */
+  .split-layout {
+    @apply grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center;
+  }
+
+  .split-layout-reverse {
+    @apply grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center;
+    direction: rtl;
+  }
+
+  .split-layout-reverse > * {
+    direction: ltr;
+  }
+
+  /* Bento grid layout */
+  .bento-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6;
+  }
+
+  .bento-grid-large {
+    @apply col-span-1 md:col-span-2 lg:col-span-2;
+  }
+
+  .bento-grid-tall {
+    @apply row-span-2;
+  }
+
+  /* ==========================================================================
+     Depth System - Tonal Backgrounds
+     ========================================================================== */
+
+  .bg-tonal-bg {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-bg));
+  }
+
+  .bg-tonal-surface {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-surface));
+  }
+
+  .bg-tonal-elevated {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-elevated));
+  }
+
+  .bg-tonal-highlight {
+    background: hsl(var(--brand-h) var(--brand-s) var(--L-highlight));
+  }
+
+  /* ==========================================================================
+     Gradient Backgrounds
+     ========================================================================== */
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(240, 10%, 3.9%) 0%,
+      hsl(238.7, 83.5%, 15%) 25%,
+      hsl(238.7, 83.5%, 20%) 50%,
+      hsl(238.7, 83.5%, 15%) 75%,
+      hsl(240, 10%, 3.9%) 100%
+    );
+  }
+
+  .hero-gradient-light {
+    background: linear-gradient(
+      135deg,
+      hsl(0, 0%, 100%) 0%,
+      hsl(240, 5.9%, 90%) 25%,
+      hsl(238.7, 83.5%, 95%) 50%,
+      hsl(240, 5.9%, 90%) 75%,
+      hsl(0, 0%, 100%) 100%
+    );
+  }
+
+  /* Grid pattern overlay */
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--border)) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  /* Dot pattern overlay */
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* ==========================================================================
+     Text Utilities
+     ========================================================================== */
+
+  .text-contrast {
+    color: hsl(0 0% var(--text-L));
+  }
+
+  .text-muted-contrast {
+    color: hsl(0 0% var(--muted-L));
+  }
+
+  /* Gradient text */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-foreground to-primary bg-clip-text text-transparent;
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* ==========================================================================
+     Feature Icons
+     ========================================================================== */
+
+  .feature-icon {
+    @apply w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center;
+  }
+
+  .feature-icon-lg {
+    @apply w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center;
+  }
+
+  /* ==========================================================================
+     Testimonial Cards
+     ========================================================================== */
+
+  .testimonial-card {
+    @apply rounded-lg border bg-card p-6 space-y-4;
+    @apply hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .testimonial-stars {
+    @apply flex items-center gap-1 text-primary;
+  }
+
+  /* ==========================================================================
+     FAQ Accordion
+     ========================================================================== */
+
+  .faq-item {
+    @apply rounded-lg border bg-card p-6 space-y-3;
+    @apply hover:border-primary/50 transition-colors duration-200;
+  }
+
+  /* ==========================================================================
+     Stats Display
+     ========================================================================== */
+
+  .stat-card {
+    @apply text-center space-y-2;
+  }
+
+  .stat-value {
+    @apply text-4xl md:text-5xl font-bold text-primary;
+  }
+
+  .stat-label {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /* ==========================================================================
+     Navigation
+     ========================================================================== */
+
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-foreground font-medium;
+  }
+
+  /* ==========================================================================
+     Footer
+     ========================================================================== */
+
+  .footer-section {
+    @apply space-y-3;
+  }
+
+  .footer-heading {
+    @apply text-sm font-semibold text-foreground;
+  }
+
+  .footer-link {
+    @apply text-sm text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+}
+
