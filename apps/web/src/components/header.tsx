@@ -157,7 +157,7 @@ export default function HeaderOne() {
                         'has-data-[state=open]:ring-foreground/5 has-data-[state=open]:bg-card/75 has-data-[state=open]:shadow-lg has-data-[state=open]:backdrop-blur has-data-[state=open]:border-b has-data-[state=open]:shadow-black/10 has-data-[state=open]:h-[calc(var(--navigation-menu-viewport-height)+3.4rem)]',
                         'max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:bg-background/75 max-lg:in-data-[state=active]:backdrop-blur max-lg:h-14 max-lg:overflow-hidden max-lg:border-b'
                     )}>
-                    <div className="mx-auto max-w-7xl px-6 lg:px-12 w-full">
+                    <div className="w-full px-6 lg:px-12">
                         <div className="relative flex items-center justify-between h-14 lg:h-18 lg:py-5">
                             <div
                                 aria-hidden
