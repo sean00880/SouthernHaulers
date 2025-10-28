@@ -6,7 +6,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
+      ],
+      "@/app/*": [
+        "./app/*"
       ],
       "@southernhaulers/ui": [
         "../../packages/ui/src"

@@ -174,6 +174,11 @@
     animation: slide-in-from-bottom 0.6s ease-out;
   }
 
+  .animate-fade-in-up {
+    animation: slide-in-from-bottom 0.6s ease-out;
+    animation-fill-mode: both;
+  }
+
   .animate-slide-in-top {
     animation: slide-in-from-top 0.6s ease-out;
   }
