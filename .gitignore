@@ -67,4 +67,4 @@ logs
 *.temp
 
 # MCP Server backups (from configuration fixes)
-*.backup.*
+*.backup.*core
