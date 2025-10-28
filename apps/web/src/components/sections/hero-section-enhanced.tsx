@@ -7,7 +7,7 @@ import { Button } from '../ui/button';
 
 export function HeroSectionEnhanced() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-16">
+    <section className="relative h-screen w-full flex items-center overflow-hidden pt-16">
       {/* Animated Background with Google Colors */}
       <div className="absolute inset-0 z-0">
         {/* Base gradient with Google colors */}

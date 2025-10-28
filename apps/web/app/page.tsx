@@ -1,6 +1,6 @@
 
 import { Metadata } from 'next';
-import { Header } from '@/components/sections/header';
+import HeaderOne from '@/components/header';
 import { HeroSectionEnhanced } from '@/components/sections/hero-section-enhanced';
 import { ServicesSectionEnhanced } from '@/components/sections/services-section-enhanced';
 import { LocationsPortsSectionEnhanced } from '@/components/sections/locations-ports-section-enhanced';
@@ -41,7 +41,7 @@ export default function HomePage() {
   return (
     <>
       {/* Header Navigation */}
-      <Header />
+      <HeaderOne />
 
       <main className="min-h-screen">
         {/* JSON-LD Structured Data */}

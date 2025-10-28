@@ -27,9 +27,9 @@ export function Header() {
             <Image
               src="/logo.avif"
               alt="Southern Haulers Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto object-contain dark:brightness-110"
+              width={150}
+              height={50}
+              className="h-12 w-auto object-contain dark:brightness-110"
               priority
             />
           </Link>
