@@ -3,6 +3,11 @@
  * Main stylesheet importing modular CSS architecture
  */
 
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Import modular stylesheets */
 @import '../src/styles/base.css';
 @import '../src/styles/components.css';

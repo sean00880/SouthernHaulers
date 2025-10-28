@@ -1,268 +1,211 @@
-
 /**
  * Base Styles
  * Foundation styles, CSS variables, and resets
  */
 
-@import 'tailwindcss';
-@import "tw-animate-css";
-
-@plugin 'tailwindcss-animate';
-
-@custom-variant dark (&:is(.dark *));
-
-/* ==========================================================================
-   Tailark Quartz Theme Configuration
-   ========================================================================== */
-
-@theme {
-  /* Font Configuration */
-  --font-mono: 'Geist Mono', 'Fira Code', monospace;
-
-  /* Color System - Map to CSS variables */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-illustration: var(--illustration);
-  --color-border-illustration: var(--border-illustration);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-
-  /* Chart Colors */
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  /* Border Radius */
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
-}
-
 /* ==========================================================================
    Root CSS Variables
    ========================================================================== */
 
-@layer base {
-  :root {
-    /* Base size for scaling */
-    font-size: 16px;
+:root {
+  /* Base size for scaling */
+  font-size: 16px;
 
-    /* Brand colors */
-    --brand-h: 220;
-    --brand-s: 10%;
+  /* Brand colors */
+  --brand-h: 220;
+  --brand-s: 10%;
 
-    /* Quartz Theme - Depth System (Light Mode) */
-    --L-bg: 98%;
-    --L-surface: 100%;
-    --L-elevated: 100%;
-    --L-highlight: 96%;
+  /* Quartz Theme - Depth System (Light Mode) */
+  --L-bg: 98%;
+  --L-surface: 100%;
+  --L-elevated: 100%;
+  --L-highlight: 96%;
 
-    /* Quartz Theme - Shadow System */
-    --shadow-ambient: 0 8px 24px rgba(0, 0, 0, 0.12);
-    --shadow-press: 0 3px 8px rgba(0, 0, 0, 0.18);
-    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.16);
-    --rim-light: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  /* Quartz Theme - Shadow System */
+  --shadow-ambient: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-press: 0 3px 8px rgba(0, 0, 0, 0.18);
+  --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.16);
+  --rim-light: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
-    /* Typography System - Fluid Type Scale */
-    --step--1: clamp(0.80rem, 0.75rem + 0.2vw, 0.90rem);  /* labels */
-    --step-0: clamp(0.94rem, 0.90rem + 0.2vw, 1.00rem);   /* body */
-    --step-1: clamp(1.13rem, 1.05rem + 0.3vw, 1.25rem);   /* h6/h5 */
-    --step-2: clamp(1.35rem, 1.20rem + 0.5vw, 1.50rem);   /* h4/h3 */
-    --step-3: clamp(1.62rem, 1.40rem + 0.8vw, 1.88rem);   /* h2 */
-    --step-4: clamp(1.94rem, 1.60rem + 1.2vw, 2.35rem);   /* h1 */
-    --step-5: clamp(2.33rem, 1.90rem + 1.5vw, 2.93rem);   /* hero */
+  /* Typography System - Fluid Type Scale */
+  --step--1: clamp(0.80rem, 0.75rem + 0.2vw, 0.90rem);  /* labels */
+  --step-0: clamp(0.94rem, 0.90rem + 0.2vw, 1.00rem);   /* body */
+  --step-1: clamp(1.13rem, 1.05rem + 0.3vw, 1.25rem);   /* h6/h5 */
+  --step-2: clamp(1.35rem, 1.20rem + 0.5vw, 1.50rem);   /* h4/h3 */
+  --step-3: clamp(1.62rem, 1.40rem + 0.8vw, 1.88rem);   /* h2 */
+  --step-4: clamp(1.94rem, 1.60rem + 1.2vw, 2.35rem);   /* h1 */
+  --step-5: clamp(2.33rem, 1.90rem + 1.5vw, 2.93rem);   /* hero */
 
-    /* Optical spacing */
-    --lh-tight: 1.1;      /* large headings */
-    --lh-base: 1.45;      /* body */
-    --lh-relaxed: 1.75;   /* long-form content */
-    --ls-tight: -0.01em;  /* big headings */
-    --ls-base: 0.01em;    /* labels/buttons */
+  /* Optical spacing */
+  --lh-tight: 1.1;      /* large headings */
+  --lh-base: 1.45;      /* body */
+  --lh-relaxed: 1.75;   /* long-form content */
+  --ls-tight: -0.01em;  /* big headings */
+  --ls-base: 0.01em;    /* labels/buttons */
 
-    /* Text contrast via HSL */
-    --text-L: 14%;
-    --muted-L: 36%;
+  /* Text contrast via HSL */
+  --text-L: 14%;
+  --muted-L: 36%;
 
-    /* Quartz Theme Colors - Light Mode */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --illustration: 0 0% 100%;
-    --border-illustration: color-mix(in oklab, hsl(240 10% 3.9%) 7.5%, transparent);
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    
-    /* Primary - Indigo */
-    --primary: 238.7 83.5% 66.7%;
-    --primary-foreground: 0 0% 100%;
-    
-    /* Secondary - Sky */
-    --secondary: 204 93.8% 93.7%;
-    --secondary-foreground: 199 89.1% 48.4%;
-    
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    
-    --destructive: 0 72.2% 50.6%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 238.7 83.5% 66.7%;
-    
-    /* Chart colors */
-    --chart-1: 238.7 83.5% 66.7%;
-    --chart-2: 204 93.8% 93.7%;
-    --chart-3: 240 4.8% 95.9%;
-    --chart-4: 0 72.2% 50.6%;
-    --chart-5: 199 89.1% 48.4%;
-    
-    /* Border radius */
-    --radius: 0.625rem;
-  }
+  /* Quartz Theme Colors - Light Mode */
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --illustration: 0 0% 100%;
+  --border-illustration: color-mix(in oklab, hsl(240 10% 3.9%) 7.5%, transparent);
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  
+  /* Primary - Indigo */
+  --primary: 238.7 83.5% 66.7%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Secondary - Sky */
+  --secondary: 204 93.8% 93.7%;
+  --secondary-foreground: 199 89.1% 48.4%;
+  
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  
+  --destructive: 0 72.2% 50.6%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 238.7 83.5% 66.7%;
+  
+  /* Chart colors */
+  --chart-1: 238.7 83.5% 66.7%;
+  --chart-2: 204 93.8% 93.7%;
+  --chart-3: 240 4.8% 95.9%;
+  --chart-4: 0 72.2% 50.6%;
+  --chart-5: 199 89.1% 48.4%;
+  
+  /* Border radius */
+  --radius: 0.625rem;
+}
 
-  /* Dark Mode */
-  .dark {
-    /* Depth System - Inverted for Dark Mode */
-    --L-bg: 14%;
-    --L-surface: 18%;
-    --L-elevated: 24%;
-    --L-highlight: 32%;
+/* Dark Mode */
+.dark {
+  /* Depth System - Inverted for Dark Mode */
+  --L-bg: 14%;
+  --L-surface: 18%;
+  --L-elevated: 24%;
+  --L-highlight: 32%;
 
-    /* Shadows adjusted for dark mode */
-    --shadow-ambient: 0 8px 24px rgba(0, 0, 0, 0.24);
-    --shadow-press: 0 3px 8px rgba(0, 0, 0, 0.32);
-    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.28);
-    --rim-light: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  /* Shadows adjusted for dark mode */
+  --shadow-ambient: 0 8px 24px rgba(0, 0, 0, 0.24);
+  --shadow-press: 0 3px 8px rgba(0, 0, 0, 0.32);
+  --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.28);
+  --rim-light: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 
-    /* Text contrast inverted */
-    --text-L: 86%;
-    --muted-L: 64%;
+  /* Text contrast inverted */
+  --text-L: 86%;
+  --muted-L: 64%;
 
-    /* Dark mode colors */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 100%;
-    --card: 240 10% 8%;
-    --card-foreground: 0 0% 100%;
-    --popover: 240 10% 8%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 240 10% 3.9%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
+  /* Dark mode colors */
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 100%;
+  --card: 240 10% 8%;
+  --card-foreground: 0 0% 100%;
+  --popover: 240 10% 8%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 240 10% 3.9%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
 }
 
 /* ==========================================================================
    Base Element Styles
    ========================================================================== */
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  body {
-    @apply bg-background text-foreground antialiased;
-    min-height: 100%;
-    overflow-x: hidden;
-    font-size: var(--step-0);
-    line-height: var(--lh-base);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  /* Typography System Application */
-  h1 {
-    font-size: var(--step-4);
-    line-height: var(--lh-tight);
-    letter-spacing: var(--ls-tight);
-    font-weight: 700;
-  }
-
-  h2 {
-    font-size: var(--step-3);
-    line-height: var(--lh-tight);
-    letter-spacing: var(--ls-tight);
-    font-weight: 700;
-  }
-
-  h3 {
-    font-size: var(--step-2);
-    line-height: var(--lh-tight);
-    letter-spacing: var(--ls-tight);
-    font-weight: 600;
-  }
-
-  h4, h5, h6 {
-    font-size: var(--step-1);
-    line-height: var(--lh-tight);
-    letter-spacing: var(--ls-tight);
-    font-weight: 600;
-  }
-
-  p {
-    font-size: var(--step-0);
-    line-height: var(--lh-base);
-  }
-
-  small, .small-label {
-    font-size: var(--step--1);
-    letter-spacing: var(--ls-base);
-  }
-
-  /* Selection styling */
-  ::selection {
-    @apply bg-primary text-primary-foreground;
-  }
-
-  /* Focus visible outline */
-  *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-ring;
-  }
-
-  /* Smooth scrolling for anchor links */
-  @media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
-    }
-  }
+* {
+  @apply border-border outline-ring/50;
 }
 
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-size: var(--step-0);
+  line-height: var(--lh-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography System Application */
+h1 {
+  font-size: var(--step-4);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--step-3);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--step-2);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  font-weight: 600;
+}
+
+h4, h5, h6 {
+  font-size: var(--step-1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  font-weight: 600;
+}
+
+p {
+  font-size: var(--step-0);
+  line-height: var(--lh-base);
+}
+
+small, .small-label {
+  font-size: var(--step--1);
+  letter-spacing: var(--ls-base);
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-primary text-primary-foreground;
+}
+
+/* Focus visible outline */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-ring;
+}
+
+/* Smooth scrolling for anchor links */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

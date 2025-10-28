@@ -4,130 +4,135 @@
  * Theme-specific overrides and customizations
  */
 
-@layer components {
-  /* ==========================================================================
-     Quartz Theme Specific Styles
-     ========================================================================== */
+/* ==========================================================================
+   Quartz Theme Specific Styles
+   ========================================================================== */
 
-  [data-theme="quartz"] {
-    --radius: 0.625rem;
-    --color-primary: var(--color-indigo-500);
-    --color-border-illustration: color-mix(in oklab, var(--color-zinc-950) 7.5%, transparent);
+[data-theme="quartz"] {
+  --radius: 0.625rem;
+  --color-primary: var(--color-indigo-500);
+  --color-border-illustration: color-mix(in oklab, var(--color-zinc-950) 7.5%, transparent);
+}
+
+/* ==========================================================================
+   Theme Toggle Animations
+   ========================================================================== */
+
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================================================
+   Light Mode Specific Styles
+   ========================================================================== */
+
+:root:not(.dark) {
+  /* Light mode specific overrides */
+  .hero-section {
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
   }
 
-  /* ==========================================================================
-     Theme Toggle Animations
-     ========================================================================== */
-
-  .theme-transition {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  .feature-icon {
+    background-color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
   }
 
-  /* ==========================================================================
-     Light Mode Specific Styles
-     ========================================================================== */
-
-  :root:not(.dark) {
-    /* Light mode specific overrides */
-    .hero-section {
-      @apply bg-hero-gradient-light;
-    }
-
-    .feature-icon {
-      @apply bg-primary/10 text-primary;
-    }
-
-    .stat-card {
-      @apply text-foreground;
-    }
-  }
-
-  /* ==========================================================================
-     Dark Mode Specific Styles
-     ========================================================================== */
-
-  .dark {
-    /* Dark mode specific overrides */
-    .hero-section {
-      @apply bg-hero-gradient;
-    }
-
-    .feature-icon {
-      @apply bg-primary/20 text-primary;
-    }
-
-    .stat-card {
-      @apply text-foreground;
-    }
-
-    /* Adjust shadows for dark mode */
-    .card-depth {
-      box-shadow: var(--rim-light), var(--shadow-ambient),
-        0 0 0 1px hsl(var(--border));
-    }
-
-    /* Enhance borders in dark mode */
-    .border {
-      @apply border-border/50;
-    }
-  }
-
-  /* ==========================================================================
-     Theme-Specific Component Variants
-     ========================================================================== */
-
-  /* Glass morphism works better in dark mode */
-  .dark .card-glass {
-    @apply backdrop-blur-2xl bg-background/60 border-border/30;
-  }
-
-  /* Gradient adjustments for dark mode */
-  .dark .text-gradient-primary {
-    @apply bg-gradient-to-r from-primary via-blue-400 to-purple-400 bg-clip-text text-transparent;
-  }
-
-  /* ==========================================================================
-     Print Styles
-     ========================================================================== */
-
-  @media print {
-    .no-print {
-      display: none !important;
-    }
-
-    body {
-      background: white !important;
-      color: black !important;
-    }
-
-    a {
-      text-decoration: underline;
-    }
-
-    .hero-gradient,
-    .hero-gradient-light {
-      background: white !important;
-    }
-  }
-
-  /* ==========================================================================
-     High Contrast Mode Support
-     ========================================================================== */
-
-  @media (prefers-contrast: high) {
-    * {
-      border-color: currentColor !important;
-    }
-
-    .card-depth,
-    .button-depth {
-      box-shadow: none !important;
-      border: 2px solid currentColor !important;
-    }
-
-    .text-muted-foreground {
-      @apply text-foreground;
-    }
+  .stat-card {
+    color: hsl(var(--foreground));
   }
 }
 
+/* ==========================================================================
+   Dark Mode Specific Styles
+   ========================================================================== */
+
+.dark {
+  /* Dark mode specific overrides */
+  .hero-section {
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%);
+  }
+
+  .feature-icon {
+    background-color: hsl(var(--primary) / 0.2);
+    color: hsl(var(--primary));
+  }
+
+  .stat-card {
+    color: hsl(var(--foreground));
+  }
+
+  /* Adjust shadows for dark mode */
+  .card-depth {
+    box-shadow: var(--rim-light), var(--shadow-ambient),
+      0 0 0 1px hsl(var(--border));
+  }
+
+  /* Enhance borders in dark mode */
+  .border {
+    border-color: hsl(var(--border) / 0.5);
+  }
+}
+
+/* ==========================================================================
+   Theme-Specific Component Variants
+   ========================================================================== */
+
+/* Glass morphism works better in dark mode */
+.dark .card-glass {
+  backdrop-filter: blur(40px);
+  background-color: hsl(var(--background) / 0.6);
+  border-color: hsl(var(--border) / 0.3);
+}
+
+/* Gradient adjustments for dark mode */
+.dark .text-gradient-primary {
+  background: linear-gradient(to right, hsl(var(--primary)), #60a5fa, #c084fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .hero-gradient,
+  .hero-gradient-light {
+    background: white !important;
+  }
+}
+
+/* ==========================================================================
+   High Contrast Mode Support
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+  * {
+    border-color: currentColor !important;
+  }
+
+  .card-depth,
+  .button-depth {
+    box-shadow: none !important;
+    border: 2px solid currentColor !important;
+  }
+
+  .text-muted-foreground {
+    color: hsl(var(--foreground));
+  }
+}
