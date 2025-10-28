@@ -4,9 +4,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    appDir: true,
-  },
   transpilePackages: [
     '@southernhaulers/domain',
     '@southernhaulers/db',
