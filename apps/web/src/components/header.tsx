@@ -158,33 +158,32 @@ export default function HeaderOne() {
                         'max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:bg-background/75 max-lg:in-data-[state=active]:backdrop-blur max-lg:h-14 max-lg:overflow-hidden max-lg:border-b'
                     )}>
                     <div className="mx-auto max-w-7xl px-6 lg:px-12 w-full">
-                        <div className="relative flex flex-wrap items-center justify-between lg:py-5">
+                        <div className="relative flex items-center justify-between h-14 lg:h-18 lg:py-5">
                             <div
                                 aria-hidden
                                 className="in-has-data-[state=open]:block absolute inset-x-0 bottom-0 hidden h-px bg-[length:4px_1px] bg-repeat-x opacity-20 [background-image:linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)]"
                             />
-                            <div className="flex justify-between gap-8 max-lg:h-14 max-lg:w-full max-lg:border-b w-full lg:w-auto">
+                            
+                            {/* Logo */}
+                            <div className="flex items-center">
                                 <Link
                                     href="/"
                                     aria-label="home"
                                     className="flex items-center space-x-2">
                                     <Logo />
                                 </Link>
-
-                                {isLarge && <NavMenu />}
-                                <button
-                                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                    aria-label={isMobileMenuOpen == true ? 'Close Menu' : 'Open Menu'}
-                                    className="relative z-20 -m-2.5 -mr-3 block cursor-pointer p-2.5 lg:hidden">
-                                    <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-5 duration-200" />
-                                    <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-5 -rotate-180 scale-0 opacity-0 duration-200" />
-                                </button>
                             </div>
 
-                            {!isLarge && isMobileMenuOpen && <MobileMenu closeMenu={() => setIsMobileMenuOpen(false)} />}
+                            {/* Navigation Menu - Desktop */}
+                            {isLarge && (
+                                <div className="flex-1 flex justify-center">
+                                    <NavMenu />
+                                </div>
+                            )}
 
-                            <div className="max-lg:in-data-[state=active]:mt-6 in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-                                <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                            {/* Action Buttons - Desktop */}
+                            {isLarge && (
+                                <div className="flex items-center gap-3">
                                     <Button
                                         asChild
                                         variant="outline"
@@ -201,7 +200,44 @@ export default function HeaderOne() {
                                         </Link>
                                     </Button>
                                 </div>
-                            </div>
+                            )}
+
+                            {/* Mobile Menu Toggle */}
+                            {!isLarge && (
+                                <button
+                                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                    aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+                                    className="relative z-20 -m-2.5 -mr-3 block cursor-pointer p-2.5">
+                                    <Menu className={cn("m-auto size-5 transition-all duration-200", isMobileMenuOpen && "rotate-180 scale-0 opacity-0")} />
+                                    <X className={cn("absolute inset-0 m-auto size-5 -rotate-180 scale-0 opacity-0 transition-all duration-200", isMobileMenuOpen && "rotate-0 scale-100 opacity-100")} />
+                                </button>
+                            )}
+
+                            {/* Mobile Menu */}
+                            {!isLarge && isMobileMenuOpen && (
+                                <div className="absolute top-full left-0 right-0 pt-4">
+                                    <MobileMenu closeMenu={() => setIsMobileMenuOpen(false)} />
+                                    <div className="flex flex-col gap-3 p-6 border-t">
+                                        <Button
+                                            asChild
+                                            variant="outline"
+                                            size="sm"
+                                            className="w-full">
+                                            <Link href="#">
+                                                <span>Login</span>
+                                            </Link>
+                                        </Button>
+                                        <Button
+                                            asChild
+                                            size="sm"
+                                            className="w-full">
+                                            <Link href="#">
+                                                <span>Get Started</span>
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
