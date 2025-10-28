@@ -5,6 +5,7 @@ import { PortCoverageMap } from '../components/port-coverage-map';
 import { QuoteCalculator } from '../components/quote-calculator';
 import { TrackingDemo } from '../components/tracking-demo';
 import { TerminalStatus } from '../components/terminal-status';
+import { LogoCloud } from '../components/logo-cloud';
 import { SouthernHaulersOrganizationSchema, SouthernHaulersLocalBusinessSchema, FAQSchema } from '../components/structured-data';
 
 export default function HomePage() {
@@ -102,6 +103,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Logo Cloud */}
+      <LogoCloud />
 
       {/* Stats Section */}
       <section className="border-y bg-muted/50">
