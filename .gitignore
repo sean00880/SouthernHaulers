@@ -68,3 +68,4 @@ logs
 
 # MCP Server backups (from configuration fixes)
 *.backup.*core
+core

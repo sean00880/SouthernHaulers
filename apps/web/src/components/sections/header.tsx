@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from '../../../components/theme-toggle';
@@ -23,10 +24,14 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">SH</span>
-            </div>
-            <span className="font-bold text-lg hidden sm:inline">Southern Haulers</span>
+            <Image
+              src="/logo.avif"
+              alt="Southern Haulers Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain dark:brightness-110"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

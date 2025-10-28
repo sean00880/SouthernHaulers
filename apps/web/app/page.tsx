@@ -1,11 +1,11 @@
 
 import { Metadata } from 'next';
 import { Header } from '@/components/sections/header';
-import { HeroSection } from '@/components/sections/hero-section';
+import { HeroSectionEnhanced } from '@/components/sections/hero-section-enhanced';
 import { ServicesSectionEnhanced } from '@/components/sections/services-section-enhanced';
-import { LocationsPortsSection } from '@/components/sections/locations-ports-section';
+import { LocationsPortsSectionEnhanced } from '@/components/sections/locations-ports-section-enhanced';
 import { FeaturesBentoSection } from '@/components/sections/features-bento-section';
-import { CalculatorSectionEnhanced } from '@/components/sections/calculator-section-enhanced';
+import { QuoteLFDSection } from '@/components/sections/quote-lfd-section';
 import { StatsSection } from '@/components/sections/stats-section';
 import { TestimonialsSection } from '@/components/sections/testimonials-section';
 import { FAQSection } from '@/components/sections/faq-section';
@@ -75,8 +75,8 @@ export default function HomePage() {
           }}
         />
 
-        {/* Hero Section - 100vh */}
-        <HeroSection />
+        {/* Hero Section - Enhanced with truck graphic */}
+        <HeroSectionEnhanced />
 
         {/* Services Section with Alternating Splits */}
         <ServicesSectionEnhanced services={featuredServices} />
@@ -84,14 +84,14 @@ export default function HomePage() {
         {/* Stats Section */}
         <StatsSection stats={featuredStats.length > 0 ? featuredStats : STATS} />
 
-        {/* Locations & Ports Section */}
-        <LocationsPortsSection ports={PORTS} locations={cities} />
+        {/* Locations & Ports Section - Enhanced with all 9 locations */}
+        <LocationsPortsSectionEnhanced ports={PORTS} locations={cities} />
 
         {/* Features Bento Grid Section */}
         <FeaturesBentoSection features={FEATURES} />
 
-        {/* Enhanced Calculator Section */}
-        <CalculatorSectionEnhanced />
+        {/* Quote Calculator & LFD Tracker Section */}
+        <QuoteLFDSection />
 
         {/* Testimonials Section */}
         <TestimonialsSection testimonials={featuredTestimonials.length > 0 ? featuredTestimonials : TESTIMONIALS} />

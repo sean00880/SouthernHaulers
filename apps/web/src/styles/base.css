@@ -57,13 +57,19 @@
   --popover: 0 0% 100%;
   --popover-foreground: 240 10% 3.9%;
   
-  /* Primary - Indigo */
-  --primary: 238.7 83.5% 66.7%;
+  /* Primary - Google Blue */
+  --primary: 217 89% 61%;  /* #4285F4 */
   --primary-foreground: 0 0% 100%;
   
-  /* Secondary - Sky */
-  --secondary: 204 93.8% 93.7%;
-  --secondary-foreground: 199 89.1% 48.4%;
+  /* Secondary - Google Green */
+  --secondary: 142 66% 48%;  /* #34A853 */
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Accent colors for Google brand */
+  --google-red: 4 90% 58%;  /* #EA4335 */
+  --google-yellow: 45 100% 51%;  /* #FBBC04 */
+  --google-green: 142 66% 48%;  /* #34A853 */
+  --google-blue: 217 89% 61%;  /* #4285F4 */
   
   --muted: 240 4.8% 95.9%;
   --muted-foreground: 240 3.8% 46.1%;
@@ -76,14 +82,14 @@
   
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
-  --ring: 238.7 83.5% 66.7%;
+  --ring: 217 89% 61%;  /* Google Blue */
   
-  /* Chart colors */
-  --chart-1: 238.7 83.5% 66.7%;
-  --chart-2: 204 93.8% 93.7%;
-  --chart-3: 240 4.8% 95.9%;
-  --chart-4: 0 72.2% 50.6%;
-  --chart-5: 199 89.1% 48.4%;
+  /* Chart colors - Google brand */
+  --chart-1: 217 89% 61%;  /* Google Blue */
+  --chart-2: 4 90% 58%;    /* Google Red */
+  --chart-3: 45 100% 51%;  /* Google Yellow */
+  --chart-4: 142 66% 48%;  /* Google Green */
+  --chart-5: 240 5.9% 10%; /* Black */
   
   /* Border radius */
   --radius: 0.625rem;
