@@ -1,0 +1,60 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@supabase/mcp-server-supabase@latest"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "sb_secret_kbozMX-f9akjXet3WS2VIA_QI0yanAh",
+        "SUPABASE_URL": "https://mbbvmtspkotbamorqkml.supabase.co",
+        "SUPABASE_PROJECT_REF": "mbbvmtspkotbamorqkml"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "list_edge_functions",
+        "deploy_edge_function",
+        "get_anon_key",
+        "generate_typescript_types",
+        "search_docs",
+        "get_project_url",
+        "get_advisors",
+        "get_logs",
+        "execute_sql",
+        "apply_migration",
+        "list_migrations",
+        "list_extensions",
+        "rebase_branch",
+        "list_tables",
+        "reset_branch",
+        "merge_branch",
+        "delete_branch",
+        "list_branches",
+        "create_branch"
+      ]
+    },
+    "postgres": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://postgres:password@db.mbbvmtspkotbamorqkml.supabase.co:5432/postgres"
+      ],
+      "disabled": false,
+      "autoApprove": [
+        "query",
+        "execute",
+        "list_tables",
+        "describe_table",
+        "insert",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}

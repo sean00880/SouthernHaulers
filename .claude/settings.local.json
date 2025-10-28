@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run web:*)",
+      "Bash(taskkill:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "perplexity",
+    "github",
+    "context7",
+    "firecrawl",
+    "chrome-devtools",
+    "ide",
+    "taskmaster",
+    "sentry",
+    "stripe",
+    "dynamodb",
+    "supabase",
+    "postgres",
+    "redis"
+  ]
+}

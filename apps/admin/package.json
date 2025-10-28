@@ -1,0 +1,19 @@
+{
+  "name": "admin",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start --port 3001"
+  },
+  "dependencies": {
+    "@southernhaulers/domain": "*",
+    "@southernhaulers/agents": "*",
+    "@southernhaulers/db": "*",
+    "@supabase/supabase-js": "^2.76.1",
+    "next": "14.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zod": "^4.1.12"
+  }
+}

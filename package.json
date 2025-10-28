@@ -1,0 +1,29 @@
+{
+  "name": "southernhaulers-sota",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "integration/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "web": "cd apps/web && npm run dev",
+    "admin": "cd apps/admin && npm run dev",
+    "driver": "cd apps/driver && npm run dev",
+    "recruiting": "cd apps/recruiting && npm run dev",
+    "quote-crm": "cd apps/quote-crm && npm run dev"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.4.0",
+    "turbo": "^2.5.8",
+    "typescript": "^5.3.3"
+  }
+}

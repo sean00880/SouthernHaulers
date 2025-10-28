@@ -1,0 +1,19 @@
+{
+  "name": "driver",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3002",
+    "build": "next build",
+    "start": "next start --port 3002"
+  },
+  "dependencies": {
+    "@southernhaulers/domain": "*",
+    "@southernhaulers/db": "*",
+    "@supabase/supabase-js": "^2.76.1",
+    "next": "14.2.0",
+    "next-pwa": "^5.6.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zod": "^4.1.12"
+  }
+}
