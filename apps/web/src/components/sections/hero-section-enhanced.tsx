@@ -39,12 +39,12 @@ export function HeroSectionEnhanced() {
 
       {/* Theme-aware Truck Wireframe Overlay */}
       {mounted && (
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-[0.08] dark:opacity-[0.12] pointer-events-none">
+        <div className="absolute right-0 bottom-0 translate-y-1/4 lg:top-1/2 lg:bottom-auto lg:-translate-y-1/2 lg:translate-y-0 w-1/2 h-full opacity-[0.08] dark:opacity-[0.12] pointer-events-none">
           <Image
             src={truckSrc}
             alt=""
             fill
-            className="object-contain object-right"
+            className="object-contain object-right object-bottom lg:object-center"
             priority
           />
         </div>
