@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { Facebook, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Logo } from '@/components/logo';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,11 +34,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">SH</span>
-              </div>
-              <span className="font-bold text-xl">Southern Haulers</span>
+            <Link href="/" className="inline-block mb-4">
+              <Logo />
             </Link>
             <p className="text-sm text-muted-foreground mb-4 max-w-sm">
               Premier container drayage and agricultural hauling services across the Southeast. Strategic hub with 300+ container capacity and real-time GPS tracking.
