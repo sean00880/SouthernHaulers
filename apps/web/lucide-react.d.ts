@@ -93,4 +93,5 @@ declare module 'lucide-react' {
   export const Bell: LucideIcon;
   export const Boxes: LucideIcon;
   export const Calculator: LucideIcon;
+  export const LayoutDashboard: LucideIcon;
 }
