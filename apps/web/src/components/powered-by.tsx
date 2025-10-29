@@ -15,7 +15,7 @@ export function PoweredBy() {
 
   if (!mounted) {
     return (
-      <div className="h-8 w-24 animate-pulse bg-muted rounded" />
+      <div className="h-10 w-32 animate-pulse bg-muted rounded" />
     );
   }
 
@@ -43,7 +43,7 @@ export function PoweredBy() {
       </span>
 
       {/* Logo with hover effects */}
-      <div className="relative h-6 w-20 transition-all duration-300 group-hover:scale-110 group-hover:brightness-110">
+      <div className="relative h-10 w-32 transition-all duration-300 group-hover:scale-110 group-hover:brightness-110">
         <Image
           src={logoSrc}
           alt="GROWSZ Logo"
