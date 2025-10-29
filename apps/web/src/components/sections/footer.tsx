@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Facebook, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Logo } from '@/components/logo';
+import { PoweredBy } from '@/components/powered-by';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -115,10 +116,13 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-body-small text-muted-foreground">
+            {/* Copyright - Left */}
+            <p className="text-body-small text-muted-foreground order-2 md:order-1">
               © {currentYear} Southern Haulers. All rights reserved.
             </p>
-            <div className="flex items-center gap-4">
+
+            {/* Social Media - Center */}
+            <div className="flex items-center gap-4 order-1 md:order-2">
               <a
                 href="https://www.facebook.com/southernhaulers"
                 target="_blank"
@@ -137,6 +141,11 @@ export function Footer() {
               >
                 <Linkedin className="h-5 w-5" />
               </a>
+            </div>
+
+            {/* Powered By GROWSZ - Right */}
+            <div className="order-3">
+              <PoweredBy />
             </div>
           </div>
         </div>
