@@ -83,5 +83,6 @@ declare module 'lucide-react' {
   export const Globe: LucideIcon;
   export const Anchor: LucideIcon;
   export const Building: LucideIcon;
+  export const Building2: LucideIcon;
   export const Factory: LucideIcon;
 }
