@@ -97,7 +97,7 @@ export function SolutionsTechnologySection({ features }: SolutionsTechnologySect
             <Zap className="h-4 w-4 mr-2" />
             Enterprise Solutions
           </Badge>
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-br from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-semibold tracking-tight mb-6 bg-gradient-to-br from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent">
             Solutions & Technology
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground">
@@ -204,7 +204,7 @@ function OverviewContentEnhanced({
 
       {/* Featured Capabilities - Two Column with Carousel */}
       <div>
-        <h3 className="text-3xl font-bold mb-8">Featured Capabilities</h3>
+        <h3 className="text-3xl font-semibold mb-8">Featured Capabilities</h3>
         <div className="grid md:grid-cols-[1.2fr_1fr] lg:grid-cols-[1.5fr_1fr] gap-6 lg:gap-8">
           {/* Left Column - Carousel */}
           <div className="relative min-w-0 pb-12">
@@ -335,7 +335,7 @@ function TechnologyContent({ features, getIcon, featureRefs }: any) {
                 <Icon className="h-3 w-3 mr-2" />
                 {feature.category.toUpperCase()}
               </Badge>
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">{feature.name}</h3>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-4">{feature.name}</h3>
               <p className="text-lg text-muted-foreground mb-6">{feature.description}</p>
 
               {/* Details */}
@@ -394,7 +394,7 @@ function StatCard({ value, label, icon: Icon }: { value: string; label: string; 
   return (
     <Card className="p-6 text-center hover:shadow-lg transition-shadow">
       <Icon className="h-8 w-8 mx-auto mb-3 text-primary" />
-      <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{value}</div>
+      <div className="text-3xl md:text-4xl font-semibold text-primary mb-2">{value}</div>
       <div className="text-xs md:text-sm text-muted-foreground">{label}</div>
     </Card>
   );
@@ -413,7 +413,7 @@ function FeatureCategoryList({
 }) {
   return (
     <div>
-      <h3 className="text-2xl font-bold mb-6">{title}</h3>
+      <h3 className="text-2xl font-semibold mb-6">{title}</h3>
       <div className="space-y-4">
         {features.map(feature => {
           const Icon = getIcon(feature.icon);
@@ -497,7 +497,7 @@ function GPSTrackingDemo({ compact = false }: { compact?: boolean }) {
                 <MapPin className="h-4 w-4 md:h-5 md:w-5 text-primary flex-shrink-0" />
                 <div className="flex-1 min-w-0">
                   <div className="text-xs font-medium text-muted-foreground truncate">Container #HLCU1234567</div>
-                  <div className="text-sm font-bold truncate">En Route to Savannah Port</div>
+                  <div className="text-sm font-semibold truncate">En Route to Savannah Port</div>
                   <div className="text-xs text-muted-foreground truncate">ETA: 2h 15m • Last update: 3 min ago</div>
                 </div>
               </div>
@@ -522,7 +522,7 @@ function TerminalSchedulingDemo({ compact = false }: { compact?: boolean }) {
         <div className="space-y-3 md:space-y-4">
           <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
             <Calendar className="h-5 w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
-            <h4 className="text-base md:text-lg font-bold">Terminal Appointments</h4>
+            <h4 className="text-base md:text-lg font-semibold">Terminal Appointments</h4>
           </div>
           {appointments.slice(0, compact ? 2 : 3).map((appt, idx) => (
             <div key={idx} className="p-3 md:p-4 bg-card rounded-lg border hover:shadow-md transition-shadow">
@@ -553,7 +553,7 @@ function CustomerPortalDemo({ compact = false }: { compact?: boolean }) {
           <div className="flex items-center justify-between pb-3 md:pb-4 border-b">
             <div className="flex items-center gap-2 md:gap-3">
               <Globe className="h-5 w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
-              <h4 className="text-base md:text-lg font-bold">Customer Portal</h4>
+              <h4 className="text-base md:text-lg font-semibold">Customer Portal</h4>
             </div>
             <Badge variant="outline" className="text-xs">Live Demo</Badge>
           </div>
@@ -597,14 +597,14 @@ function StorageFacilityDemo({ compact = false }: { compact?: boolean }) {
         <div className="space-y-4 md:space-y-6">
           <div className="flex items-center gap-2 md:gap-3">
             <Archive className="h-5 w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
-            <h4 className="text-base md:text-lg font-bold">Storage Capacity</h4>
+            <h4 className="text-base md:text-lg font-semibold">Storage Capacity</h4>
           </div>
           {/* Capacity Visualization */}
           <div className="space-y-3 md:space-y-4">
             <div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs md:text-sm font-medium">Container Positions</span>
-                <span className="text-xs md:text-sm font-bold text-primary">245 / 300</span>
+                <span className="text-xs md:text-sm font-semibold text-primary">245 / 300</span>
               </div>
               <div className="h-3 md:h-4 bg-muted rounded-full overflow-hidden">
                 <div className="h-full bg-gradient-to-r from-primary to-primary/70 rounded-full transition-all" style={{ width: '82%' }} />
@@ -615,7 +615,7 @@ function StorageFacilityDemo({ compact = false }: { compact?: boolean }) {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs md:text-sm font-medium">Reefer Plugs</span>
-                    <span className="text-xs md:text-sm font-bold text-primary">18 / 24</span>
+                    <span className="text-xs md:text-sm font-semibold text-primary">18 / 24</span>
                   </div>
                   <div className="h-3 md:h-4 bg-muted rounded-full overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all" style={{ width: '75%' }} />
@@ -624,7 +624,7 @@ function StorageFacilityDemo({ compact = false }: { compact?: boolean }) {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs md:text-sm font-medium">Warehouse Space</span>
-                    <span className="text-xs md:text-sm font-bold text-primary">32,500 / 50,000 sq ft</span>
+                    <span className="text-xs md:text-sm font-semibold text-primary">32,500 / 50,000 sq ft</span>
                   </div>
                   <div className="h-3 md:h-4 bg-muted rounded-full overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full transition-all" style={{ width: '65%' }} />
@@ -637,11 +637,11 @@ function StorageFacilityDemo({ compact = false }: { compact?: boolean }) {
           {!compact && (
             <div className="grid grid-cols-2 gap-3 pt-3 md:pt-4 border-t">
               <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-primary">24/7</div>
+                <div className="text-xl md:text-2xl font-semibold text-primary">24/7</div>
                 <div className="text-xs text-muted-foreground">Security</div>
               </div>
               <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-primary">$20/day</div>
+                <div className="text-xl md:text-2xl font-semibold text-primary">$20/day</div>
                 <div className="text-xs text-muted-foreground">Storage Rate</div>
               </div>
             </div>
@@ -666,7 +666,7 @@ function GenericFeatureDemo({ feature, compact = false }: { feature: Feature; co
             <Icon className={`${compact ? 'h-12 w-12' : 'h-12 w-12 md:h-16 md:w-16'} text-primary`} />
           </div>
           <div className="text-center space-y-2 flex-shrink-0">
-            <h4 className={`${compact ? 'text-base' : 'text-lg md:text-xl'} font-bold`}>{feature.shortName}</h4>
+            <h4 className={`${compact ? 'text-base' : 'text-lg md:text-xl'} font-semibold`}>{feature.shortName}</h4>
             <p className="text-xs md:text-sm text-muted-foreground max-w-xs px-2">{feature.description}</p>
           </div>
           {!compact && (

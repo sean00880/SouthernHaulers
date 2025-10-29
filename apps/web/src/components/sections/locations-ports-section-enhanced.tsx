@@ -35,7 +35,7 @@ export function LocationsPortsSectionEnhanced({ ports, locations }: LocationsPor
             <MapPin className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium">Service Coverage</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
             Southeast Port & Location Coverage
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -61,7 +61,7 @@ export function LocationsPortsSectionEnhanced({ ports, locations }: LocationsPor
                 >
                   {/* Rank Badge - Only for ranked ports */}
                   {port.rank > 0 && (
-                    <div className="absolute -top-3 -right-3 h-12 w-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow-lg">
+                    <div className="absolute -top-3 -right-3 h-12 w-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold shadow-lg">
                       #{port.rank}
                     </div>
                   )}
@@ -72,7 +72,7 @@ export function LocationsPortsSectionEnhanced({ ports, locations }: LocationsPor
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold mb-2">{port.name}</h3>
+                  <h3 className="text-xl font-semibold mb-2">{port.name}</h3>
                   <p className="text-sm text-muted-foreground mb-4">
                     {port.city}, {port.stateCode}
                   </p>
@@ -115,19 +115,19 @@ export function LocationsPortsSectionEnhanced({ ports, locations }: LocationsPor
             {/* Port Features */}
             <div className="grid md:grid-cols-4 gap-6 mt-12 p-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-2xl border border-primary/20">
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">10M+</div>
+                <div className="text-3xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">10M+</div>
                 <div className="text-sm text-muted-foreground">Combined TEU Capacity</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">10+</div>
+                <div className="text-3xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">10+</div>
                 <div className="text-sm text-muted-foreground">Terminals Served</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">2-4hr</div>
+                <div className="text-3xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">2-4hr</div>
                 <div className="text-sm text-muted-foreground">Turnaround Time</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">24/7</div>
+                <div className="text-3xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">24/7</div>
                 <div className="text-sm text-muted-foreground">Port Operations</div>
               </div>
             </div>
@@ -147,7 +147,7 @@ export function LocationsPortsSectionEnhanced({ ports, locations }: LocationsPor
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold mb-2">{terminal.name}</h3>
+                  <h3 className="text-xl font-semibold mb-2">{terminal.name}</h3>
                   <p className="text-sm text-muted-foreground mb-4">
                     {terminal.city}, {terminal.stateCode}
                   </p>
@@ -193,19 +193,19 @@ export function LocationsPortsSectionEnhanced({ ports, locations }: LocationsPor
             {/* Rail Terminal Features */}
             <div className="grid md:grid-cols-4 gap-6 mt-12 p-8 bg-gradient-to-r from-secondary/5 via-primary/5 to-secondary/5 rounded-2xl border border-secondary/20">
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">5</div>
+                <div className="text-3xl font-semibold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">5</div>
                 <div className="text-sm text-muted-foreground">Rail Terminals</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">4</div>
+                <div className="text-3xl font-semibold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">4</div>
                 <div className="text-sm text-muted-foreground">States Covered</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">100%</div>
+                <div className="text-3xl font-semibold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">100%</div>
                 <div className="text-sm text-muted-foreground">Intermodal Access</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">15min</div>
+                <div className="text-3xl font-semibold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">15min</div>
                 <div className="text-sm text-muted-foreground">Avg Wait Time</div>
               </div>
             </div>
@@ -237,7 +237,7 @@ export function LocationsPortsSectionEnhanced({ ports, locations }: LocationsPor
                   {/* Location Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="font-bold text-lg mb-1">{location.city}</h3>
+                      <h3 className="font-semibold text-lg mb-1">{location.city}</h3>
                       <p className="text-sm text-muted-foreground">{location.state}</p>
                     </div>
                     <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">

@@ -49,7 +49,7 @@ export function CalculatorSectionEnhanced() {
               <Calculator className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium">Instant Pricing</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
               Get Your Quote in Seconds
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -171,7 +171,7 @@ export function CalculatorSectionEnhanced() {
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">Estimated Quote</div>
-                      <div className="text-4xl font-bold text-primary">${quote}</div>
+                      <div className="text-4xl font-semibold text-primary">${quote}</div>
                     </div>
                     <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
                       <Calculator className="h-8 w-8 text-primary" />

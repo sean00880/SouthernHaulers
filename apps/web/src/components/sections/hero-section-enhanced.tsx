@@ -56,17 +56,17 @@ export function HeroSectionEnhanced() {
       <div className="w-full relative z-20">
         <div className="container max-w-4xl">
           {/* Badge */}
-          <div 
+          <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-card/50 backdrop-blur-sm mb-8 animate-fade-in-up"
             style={{ animationDelay: '0.1s' }}
           >
             <Package className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium">Premier Southeast Drayage & Agricultural Hauling</span>
+            <span className="text-body-small font-medium">Premier Southeast Drayage & Agricultural Hauling</span>
           </div>
 
           {/* Main Headline with Google colors accent */}
-          <h1 
-            className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in-up"
+          <h1
+            className="text-display font-semibold spacing-content animate-fade-in-up"
             style={{ animationDelay: '0.2s' }}
           >
             <span className="block">Container Drayage</span>
@@ -78,8 +78,8 @@ export function HeroSectionEnhanced() {
           </h1>
 
           {/* Subheadline */}
-          <p 
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl animate-fade-in-up"
+          <p
+            className="text-body-large text-muted-foreground spacing-content max-w-3xl animate-fade-in-up"
             style={{ animationDelay: '0.3s' }}
           >
             Strategic Southeast hub with <span className="font-semibold text-foreground">300+ container capacity</span>, 
@@ -87,7 +87,7 @@ export function HeroSectionEnhanced() {
           </p>
 
           {/* Key Features Grid */}
-          <div 
+          <div
             className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 animate-fade-in-up"
             style={{ animationDelay: '0.4s' }}
           >
@@ -96,28 +96,28 @@ export function HeroSectionEnhanced() {
                 <CheckCircle2 className="h-5 w-5 text-[hsl(217,89%,61%)]" />
               </div>
               <div>
-                <div className="font-semibold">98.5% On-Time</div>
-                <div className="text-sm text-muted-foreground">Delivery Rate</div>
+                <div className="text-body font-medium">98.5% On-Time</div>
+                <div className="text-body-small text-muted-foreground">Delivery Rate</div>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 backdrop-blur-sm border">
               <div className="h-10 w-10 rounded-lg bg-[hsl(4,90%,58%)]/10 flex items-center justify-center flex-shrink-0">
                 <CheckCircle2 className="h-5 w-5 text-[hsl(4,90%,58%)]" />
               </div>
               <div>
-                <div className="font-semibold">24/7 Dispatch</div>
-                <div className="text-sm text-muted-foreground">Always Available</div>
+                <div className="text-body font-medium">24/7 Dispatch</div>
+                <div className="text-body-small text-muted-foreground">Always Available</div>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 backdrop-blur-sm border">
               <div className="h-10 w-10 rounded-lg bg-[hsl(142,66%,48%)]/10 flex items-center justify-center flex-shrink-0">
                 <CheckCircle2 className="h-5 w-5 text-[hsl(142,66%,48%)]" />
               </div>
               <div>
-                <div className="font-semibold">TWIC Certified</div>
-                <div className="text-sm text-muted-foreground">Port Access</div>
+                <div className="text-body font-medium">TWIC Certified</div>
+                <div className="text-body-small text-muted-foreground">Port Access</div>
               </div>
             </div>
           </div>

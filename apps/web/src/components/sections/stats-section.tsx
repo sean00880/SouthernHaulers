@@ -53,18 +53,18 @@ export function StatsSection({ stats }: StatsSectionProps) {
   };
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex items-center py-24 md:py-32 bg-gradient-to-br from-primary/5 via-indigo-500/5 to-purple-500/5">
+    <section ref={sectionRef} className="min-h-screen flex items-center spacing-section bg-gradient-to-br from-primary/5 via-indigo-500/5 to-purple-500/5">
       <div className="container">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-background mb-6">
             <TrendingUp className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium">By The Numbers</span>
+            <span className="text-body-small font-medium">By The Numbers</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-heading-1 font-semibold spacing-content-sm">
             Trusted by Southeast Shippers
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-body-large text-muted-foreground">
             Industry-leading performance backed by years of experience and thousands of successful shipments.
           </p>
         </div>
@@ -96,26 +96,26 @@ export function StatsSection({ stats }: StatsSectionProps) {
                   {isVisible && (
                     <AnimatedCounter
                       value={stat.value.toString()}
-                      className="text-5xl font-bold text-primary"
+                      className="text-5xl font-semibold text-primary"
                     />
                   )}
                 </div>
 
                 {/* Label */}
-                <div className="relative text-sm text-muted-foreground font-medium mb-2">
+                <div className="relative text-body-small text-muted-foreground font-medium mb-2">
                   {stat.label}
                 </div>
 
                 {/* Description */}
                 {stat.description && (
-                  <p className="relative text-xs text-muted-foreground">
+                  <p className="relative text-caption text-muted-foreground">
                     {stat.description}
                   </p>
                 )}
 
                 {/* Trend Indicator */}
                 {stat.trend && (
-                  <div className={`relative mt-4 pt-4 border-t flex items-center gap-2 text-xs ${
+                  <div className={`relative mt-4 pt-4 border-t flex items-center gap-2 text-caption ${
                     stat.trend.direction === 'up' ? 'text-green-600 dark:text-green-400' :
                     stat.trend.direction === 'down' ? 'text-red-600 dark:text-red-400' :
                     'text-muted-foreground'
@@ -133,22 +133,22 @@ export function StatsSection({ stats }: StatsSectionProps) {
 
         {/* Bottom Banner */}
         <div className="mt-16 p-8 bg-card border rounded-2xl text-center">
-          <p className="text-lg text-muted-foreground mb-4">
-            Join <span className="font-bold text-foreground">hundreds of satisfied customers</span> who trust Southern Haulers for their drayage and hauling needs.
+          <p className="text-body text-muted-foreground mb-4">
+            Join <span className="font-semibold text-foreground">hundreds of satisfied customers</span> who trust Southern Haulers for their drayage and hauling needs.
           </p>
-          <div className="flex flex-wrap justify-center gap-8 text-sm">
+          <div className="flex flex-wrap justify-center gap-8 text-body-small">
             <div>
-              <span className="text-2xl font-bold text-primary">15+</span>
+              <span className="text-heading-3 font-semibold text-primary">15+</span>
               <span className="text-muted-foreground ml-2">Years Experience</span>
             </div>
             <div className="h-8 w-px bg-border" />
             <div>
-              <span className="text-2xl font-bold text-primary">94%</span>
+              <span className="text-heading-3 font-semibold text-primary">94%</span>
               <span className="text-muted-foreground ml-2">Customer Retention</span>
             </div>
             <div className="h-8 w-px bg-border" />
             <div>
-              <span className="text-2xl font-bold text-primary">4.9/5</span>
+              <span className="text-heading-3 font-semibold text-primary">4.9/5</span>
               <span className="text-muted-foreground ml-2">Customer Rating</span>
             </div>
           </div>

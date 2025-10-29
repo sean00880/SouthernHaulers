@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 
 export function CTASection() {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="spacing-section relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.primary-foreground/0.08)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.primary-foreground/0.08)_1px,transparent_1px)] bg-[size:30px_30px]" />
@@ -14,10 +14,10 @@ export function CTASection() {
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main CTA */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary-foreground mb-6">
+          <h2 className="text-display font-semibold text-primary-foreground spacing-content-sm">
             Ready to Transform Your Logistics?
           </h2>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto">
+          <p className="text-body-large text-primary-foreground/90 mb-12 max-w-2xl mx-auto">
             Join hundreds of satisfied customers who trust Southern Haulers for container drayage and agricultural hauling across the Southeast.
           </p>
 
@@ -41,7 +41,7 @@ export function CTASection() {
             <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-6 text-primary-foreground hover:bg-primary-foreground/15 transition-all">
               <Phone className="h-8 w-8 mx-auto mb-4" />
               <div className="font-semibold mb-2">24/7 Dispatch</div>
-              <a href="tel:+1-555-0123" className="opacity-90 hover:opacity-100 transition-opacity text-sm md:text-base">
+              <a href="tel:+1-555-0123" className="opacity-90 hover:opacity-100 transition-opacity text-body-small">
                 (555) 012-3456
               </a>
             </div>
@@ -49,7 +49,7 @@ export function CTASection() {
             <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-6 text-primary-foreground hover:bg-primary-foreground/15 transition-all">
               <Mail className="h-8 w-8 mx-auto mb-4" />
               <div className="font-semibold mb-2">Email Us</div>
-              <a href="mailto:dispatch@southernhaulers.com" className="opacity-90 hover:opacity-100 transition-opacity text-sm md:text-base break-all">
+              <a href="mailto:dispatch@southernhaulers.com" className="opacity-90 hover:opacity-100 transition-opacity text-body-small break-all">
                 dispatch@southernhaulers.com
               </a>
             </div>
@@ -57,14 +57,14 @@ export function CTASection() {
             <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-6 text-primary-foreground hover:bg-primary-foreground/15 transition-all">
               <MapPin className="h-8 w-8 mx-auto mb-4" />
               <div className="font-semibold mb-2">Location</div>
-              <div className="opacity-90 text-sm md:text-base">
+              <div className="opacity-90 text-body-small">
                 South Georgia Hub
               </div>
             </div>
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-primary-foreground/90 text-xs md:text-sm">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-primary-foreground/90 text-body-small">
             <div className="flex items-center gap-1">
               <span className="text-primary-foreground">✓</span> Same-day quotes
             </div>

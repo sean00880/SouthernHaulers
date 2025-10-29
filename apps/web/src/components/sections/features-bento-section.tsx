@@ -36,18 +36,18 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
   const highlightedFeatures = features.filter(f => f.highlighted).slice(0, 6);
   
   return (
-    <section className="min-h-screen flex items-center py-24 md:py-32">
+    <section className="min-h-screen flex items-center spacing-section">
       <div className="container w-full">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-primary/5 mb-6">
             <Zap className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium">Why Choose Us</span>
+            <span className="text-body-small font-medium">Why Choose Us</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-heading-1 font-semibold spacing-content-sm">
             Advanced Features & Capabilities
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-body-large text-muted-foreground">
             State-of-the-art technology and operational excellence powering your supply chain.
           </p>
         </div>
@@ -70,21 +70,21 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                <h3 className="text-heading-2 font-semibold mb-4">
                   {highlightedFeatures[0].name}
                 </h3>
-                <p className="text-muted-foreground mb-6 text-lg">
+                <p className="text-body text-muted-foreground mb-6">
                   {highlightedFeatures[0].description}
                 </p>
 
                 {/* Details List */}
                 <ul className="space-y-3">
                   {highlightedFeatures[0].details.slice(0, 4).map((detail, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm">
+                    <li key={idx} className="flex items-start gap-3">
                       <div className="mt-0.5 h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <div className="h-2 w-2 rounded-full bg-primary" />
                       </div>
-                      <span className="text-muted-foreground">{detail}</span>
+                      <span className="text-body-small text-muted-foreground">{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -106,8 +106,8 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold mb-3">{feature.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <h3 className="text-heading-3 font-semibold mb-3">{feature.name}</h3>
+                <p className="text-body-small text-muted-foreground mb-4">
                   {feature.description}
                 </p>
 
@@ -138,8 +138,8 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold mb-2">{feature.shortName}</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-heading-4 font-semibold mb-2">{feature.shortName}</h3>
+                <p className="text-body-small text-muted-foreground">
                   {feature.description}
                 </p>
               </div>
@@ -150,20 +150,20 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
         {/* Bottom Stats Bar */}
         <div className="grid md:grid-cols-4 gap-6 mt-12 p-8 bg-muted/30 rounded-2xl border">
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">100%</div>
-            <div className="text-sm text-muted-foreground">TWIC Certified</div>
+            <div className="text-heading-2 font-semibold text-primary mb-2">100%</div>
+            <div className="text-body-small text-muted-foreground">TWIC Certified</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-            <div className="text-sm text-muted-foreground">Dispatch Support</div>
+            <div className="text-heading-2 font-semibold text-primary mb-2">24/7</div>
+            <div className="text-body-small text-muted-foreground">Dispatch Support</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">15 min</div>
-            <div className="text-sm text-muted-foreground">GPS Updates</div>
+            <div className="text-heading-2 font-semibold text-primary mb-2">15 min</div>
+            <div className="text-body-small text-muted-foreground">GPS Updates</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">98.5%</div>
-            <div className="text-sm text-muted-foreground">On-Time Delivery</div>
+            <div className="text-heading-2 font-semibold text-primary mb-2">98.5%</div>
+            <div className="text-body-small text-muted-foreground">On-Time Delivery</div>
           </div>
         </div>
       </div>

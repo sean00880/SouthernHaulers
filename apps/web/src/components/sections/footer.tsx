@@ -37,21 +37,21 @@ export function Footer() {
             <Link href="/" className="inline-block mb-4">
               <Logo />
             </Link>
-            <p className="text-sm text-muted-foreground mb-4 max-w-sm">
+            <p className="text-body-small text-muted-foreground mb-4 max-w-sm">
               Premier container drayage and agricultural hauling services across the Southeast. Strategic hub with 300+ container capacity and real-time GPS tracking.
             </p>
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-body-small text-muted-foreground">
                 <MapPin className="h-4 w-4" />
                 <span>South Georgia Hub</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-body-small text-muted-foreground">
                 <Phone className="h-4 w-4" />
                 <a href="tel:+1-555-012-3456" className="hover:text-foreground">
                   +1-555-012-3456
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-body-small text-muted-foreground">
                 <Mail className="h-4 w-4" />
                 <a href="mailto:dispatch@southernhaulers.net" className="hover:text-foreground">
                   dispatch@southernhaulers.net
@@ -68,7 +68,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-body-small text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -85,7 +85,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-body-small text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -102,7 +102,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-body-small text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -115,7 +115,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-body-small text-muted-foreground">
               © {currentYear} Southern Haulers. All rights reserved.
             </p>
             <div className="flex items-center gap-4">

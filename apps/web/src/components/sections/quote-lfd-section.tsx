@@ -98,7 +98,7 @@ export function QuoteLFDSection() {
             <Calculator className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium">Instant Pricing & Tracking</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
             Get Your Quote & Track Containers
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -241,7 +241,7 @@ export function QuoteLFDSection() {
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <div className="text-sm text-muted-foreground mb-1">Estimated Round-Trip Quote</div>
-                        <div className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        <div className="text-4xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                           ${quote.toLocaleString()}
                         </div>
                         <div className="text-xs text-muted-foreground mt-1">
@@ -307,7 +307,7 @@ export function QuoteLFDSection() {
             <div className="bg-card border rounded-2xl shadow-xl overflow-hidden">
               <div className="p-8 md:p-10">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">Track Container Last Free Day</h3>
+                  <h3 className="text-2xl font-semibold mb-2">Track Container Last Free Day</h3>
                   <p className="text-muted-foreground">
                     Enter your container number and port to check the Last Free Day (LFD) status
                   </p>

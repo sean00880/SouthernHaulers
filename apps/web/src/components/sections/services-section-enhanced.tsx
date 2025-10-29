@@ -33,18 +33,18 @@ export function ServicesSectionEnhanced({ services }: ServicesSectionProps) {
   };
 
   return (
-    <section className="min-h-screen flex items-center py-24 md:py-32">
+    <section className="min-h-screen flex items-center spacing-section">
       <div className="container w-full">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-primary/5 mb-6">
             <Ship className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium">Our Services</span>
+            <span className="text-body-small font-medium">Our Services</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-heading-1 font-semibold spacing-content-sm">
             Comprehensive Drayage & Logistics Solutions
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-body-large text-muted-foreground">
             From port to door, we handle every aspect of your container transport with precision and care.
           </p>
         </div>
@@ -70,12 +70,12 @@ export function ServicesSectionEnhanced({ services }: ServicesSectionProps) {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
+                  <h3 className="text-heading-2 font-semibold">
                     {service.name}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-body text-muted-foreground">
                     {service.longDescription || service.description}
                   </p>
 
@@ -88,7 +88,7 @@ export function ServicesSectionEnhanced({ services }: ServicesSectionProps) {
                             <ArrowRight className="h-3 w-3 text-primary" />
                           </div>
                         </div>
-                        <span className="text-muted-foreground">{feature}</span>
+                        <span className="text-body-small text-muted-foreground">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -140,7 +140,7 @@ export function ServicesSectionEnhanced({ services }: ServicesSectionProps) {
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <div className="text-2xl font-bold">24/7</div>
+                        <div className="text-2xl font-semibold">24/7</div>
                         <div className="text-sm text-muted-foreground">Available</div>
                       </div>
                     </div>

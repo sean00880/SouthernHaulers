@@ -28,18 +28,18 @@ export function FAQSection({ faqs }: FAQSectionProps) {
   };
 
   return (
-    <section className="min-h-screen flex items-center py-24 md:py-32">
+    <section className="min-h-screen flex items-center spacing-section">
       <div className="container w-full">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-primary/5 mb-6">
             <HelpCircle className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium">FAQ</span>
+            <span className="text-body-small font-medium">FAQ</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-heading-1 font-semibold spacing-content-sm">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <p className="text-body-large text-muted-foreground mb-8">
             Everything you need to know about our drayage and hauling services.
           </p>
 
@@ -69,7 +69,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                     onClick={() => toggleFaq(faq.id)}
                     className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-muted/50 transition-colors"
                   >
-                    <span className="font-semibold text-lg pr-8">{faq.question}</span>
+                    <span className="font-semibold text-body pr-8">{faq.question}</span>
                     <ChevronDown
                       className={`h-5 w-5 text-muted-foreground flex-shrink-0 transition-transform ${
                         openId === faq.id ? 'rotate-180' : ''
@@ -78,14 +78,14 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                   </button>
 
                   {openId === faq.id && (
-                    <div className="px-6 pb-5 text-muted-foreground animate-fade-in-up">
+                    <div className="px-6 pb-5 text-body-small text-muted-foreground animate-fade-in-up">
                       {faq.answer}
                     </div>
                   )}
                 </div>
               ))
             ) : (
-              <div className="text-center py-12 text-muted-foreground">
+              <div className="text-center py-12 text-body text-muted-foreground">
                 <p>No questions found matching your search.</p>
               </div>
             )}
@@ -94,7 +94,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
 
         {/* Contact CTA */}
         <div className="mt-16 text-center">
-          <p className="text-lg text-muted-foreground mb-4">
+          <p className="text-body text-muted-foreground mb-4">
             Still have questions? We're here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
