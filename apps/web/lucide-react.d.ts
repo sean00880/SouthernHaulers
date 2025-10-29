@@ -94,4 +94,10 @@ declare module 'lucide-react' {
   export const Boxes: LucideIcon;
   export const Calculator: LucideIcon;
   export const LayoutDashboard: LucideIcon;
+  export const Facebook: LucideIcon;
+  export const Linkedin: LucideIcon;
+  export const HelpCircle: LucideIcon;
+  export const RefreshCw: LucideIcon;
+  export const Train: LucideIcon;
+  export const Weight: LucideIcon;
 }
