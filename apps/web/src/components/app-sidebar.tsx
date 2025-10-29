@@ -41,6 +41,13 @@ import {
 import { Registry } from '@/data/registry';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
+// Navigation types
+type NavItem = {
+  title: string;
+  href: string;
+  sub?: { title: string; href: string }[];
+};
+
 // Navigation structure
 const navigation = {
   main: [
@@ -62,10 +69,10 @@ const navigation = {
       icon: Ship,
       items: Registry.ports.map((port) => ({
         title: port.name,
-        href: `/ports/${port.slug}`,
+        href: `/ports/${port.id}`,
         sub: port.terminals.map((terminal) => ({
           title: terminal.name,
-          href: `/ports/${port.slug}#${terminal.slug}`,
+          href: `/ports/${port.id}#${terminal.id}`,
         })),
       })),
     },
@@ -74,7 +81,7 @@ const navigation = {
       icon: MapPin,
       items: Registry.locations.map((location) => ({
         title: `${location.city}, ${location.state}`,
-        href: `/locations/${location.slug}`,
+        href: `/locations/${location.id}`,
       })),
     },
   ],
@@ -184,13 +191,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 }
 
                 return (
-                  <Collapsible
-                    key={item.title}
-                    asChild
-                    defaultOpen={pathname.startsWith(`/${item.title.toLowerCase().split(' ')[0]}`)}
-                    className="group/collapsible"
-                  >
-                    <SidebarMenuItem>
+                  <SidebarMenuItem key={item.title}>
+                    <Collapsible
+                      defaultOpen={pathname.startsWith(`/${item.title.toLowerCase().split(' ')[0]}`)}
+                      className="group/collapsible"
+                    >
                       <CollapsibleTrigger asChild>
                         <SidebarMenuButton tooltip={item.title}>
                           {item.icon && <item.icon />}
@@ -200,7 +205,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub>
-                          {item.items.map((subItem) => {
+                          {item.items.map((subItem: NavItem) => {
                             if (!subItem.sub) {
                               return (
                                 <SidebarMenuSubItem key={subItem.title}>
@@ -217,13 +222,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                             }
 
                             return (
-                              <Collapsible
-                                key={subItem.title}
-                                asChild
-                                defaultOpen={pathname.startsWith(subItem.href)}
-                                className="group/collapsible-sub"
-                              >
-                                <SidebarMenuSubItem>
+                              <SidebarMenuSubItem key={subItem.title}>
+                                <Collapsible
+                                  defaultOpen={pathname.startsWith(subItem.href)}
+                                  className="group/collapsible-sub"
+                                >
                                   <CollapsibleTrigger asChild>
                                     <SidebarMenuSubButton>
                                       <span>{subItem.title}</span>
@@ -246,14 +249,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                       ))}
                                     </SidebarMenuSub>
                                   </CollapsibleContent>
-                                </SidebarMenuSubItem>
-                              </Collapsible>
+                                </Collapsible>
+                              </SidebarMenuSubItem>
                             );
                           })}
                         </SidebarMenuSub>
                       </CollapsibleContent>
-                    </SidebarMenuItem>
-                  </Collapsible>
+                    </Collapsible>
+                  </SidebarMenuItem>
                 );
               })}
             </SidebarMenu>
