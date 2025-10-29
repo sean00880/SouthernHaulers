@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { Inter, Archivo, Roboto } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { MainLayout } from "@/components/layout/main-layout";
+import HeaderOne from "@/components/navbar";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -108,7 +108,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <MainLayout>{children}</MainLayout>
+          <HeaderOne />
+          {children}
         </ThemeProvider>
       </body>
     </html>
