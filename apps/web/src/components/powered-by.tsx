@@ -23,8 +23,8 @@ export function PoweredBy() {
   const currentTheme = theme === 'system' ? systemTheme : theme;
   const isDark = currentTheme === 'dark';
   const logoSrc = isDark
-    ? '/images/growsz-logo-dark.png'
-    : '/images/growsz-logo-light.png';
+    ? '/images/Growsz-dark.png'
+    : '/images/Growsz-light.png';
 
   return (
     <a
