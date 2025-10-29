@@ -1,11 +1,23 @@
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Archivo, Roboto } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import HeaderOne from "@/components/navbar";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const archivo = Archivo({
+  weight: '200',
+  subsets: ["latin"],
+  variable: '--font-archivo',
+  display: 'swap',
+});
+const roboto = Roboto({
+  weight: '200',
+  subsets: ["latin"],
+  variable: '--font-roboto',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.southernhaulers.net'),
@@ -89,7 +101,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${archivo.variable} ${roboto.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

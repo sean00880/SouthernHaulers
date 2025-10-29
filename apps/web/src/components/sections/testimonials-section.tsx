@@ -32,9 +32,9 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-background mb-6">
             <Star className="h-4 w-4 text-primary fill-primary" />
-            <span className="text-body-small font-medium">Customer Success Stories</span>
+            <span className="text-body-small font-extralight">Customer Success Stories</span>
           </div>
-          <h2 className="text-heading-1 font-semibold spacing-content-sm">
+          <h2 className="text-heading-1 font-extralight spacing-content-sm">
             What Our Customers Say
           </h2>
           <p className="text-body-large text-muted-foreground">
@@ -60,7 +60,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
               </div>
 
               {/* Quote */}
-              <blockquote className="text-heading-2 font-semibold leading-relaxed mb-8">
+              <blockquote className="text-heading-2 font-extralight leading-relaxed mb-8">
                 "{current.fullText || current.quote}"
               </blockquote>
 
@@ -69,7 +69,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                 <div className="grid grid-cols-3 gap-6 mb-8 pb-8 border-b">
                   {current.metrics.map((metric, idx) => (
                     <div key={idx} className="text-center">
-                      <div className="text-heading-2 font-semibold text-primary mb-1">{metric.value}</div>
+                      <div className="text-heading-2 font-extralight text-primary mb-1">{metric.value}</div>
                       <div className="text-body-small text-muted-foreground">{metric.label}</div>
                       {metric.improvement && (
                         <div className="text-caption text-green-600 dark:text-green-400 mt-1">
@@ -83,11 +83,11 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold text-xl">
+                <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-extralight text-xl">
                   {current.author.name.charAt(0)}
                 </div>
                 <div>
-                  <div className="font-semibold text-body">{current.author.name}</div>
+                  <div className="font-extralight text-body">{current.author.name}</div>
                   <div className="text-body-small text-muted-foreground">{current.author.title}</div>
                   <div className="text-body-small text-muted-foreground">{current.author.company}</div>
                 </div>
@@ -151,7 +151,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
 
                 {/* Author */}
                 <div className="pt-4 border-t">
-                  <div className="font-semibold text-body-small">{testimonial.author.name}</div>
+                  <div className="font-extralight text-body-small">{testimonial.author.name}</div>
                   <div className="text-caption text-muted-foreground">{testimonial.author.title}</div>
                   <div className="text-caption text-muted-foreground">{testimonial.author.company}</div>
                 </div>

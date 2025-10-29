@@ -42,9 +42,9 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-primary/5 mb-6">
             <Zap className="h-4 w-4 text-primary" />
-            <span className="text-body-small font-medium">Why Choose Us</span>
+            <span className="text-body-small font-extralight">Why Choose Us</span>
           </div>
-          <h2 className="text-heading-1 font-semibold spacing-content-sm">
+          <h2 className="text-heading-1 font-extralight spacing-content-sm">
             Advanced Features & Capabilities
           </h2>
           <p className="text-body-large text-muted-foreground">
@@ -70,7 +70,7 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-heading-2 font-semibold mb-4">
+                <h3 className="text-heading-2 font-extralight mb-4">
                   {highlightedFeatures[0].name}
                 </h3>
                 <p className="text-body text-muted-foreground mb-6">
@@ -106,7 +106,7 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-heading-3 font-semibold mb-3">{feature.name}</h3>
+                <h3 className="text-heading-3 font-extralight mb-3">{feature.name}</h3>
                 <p className="text-body-small text-muted-foreground mb-4">
                   {feature.description}
                 </p>
@@ -138,7 +138,7 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-heading-4 font-semibold mb-2">{feature.shortName}</h3>
+                <h3 className="text-heading-4 font-extralight mb-2">{feature.shortName}</h3>
                 <p className="text-body-small text-muted-foreground">
                   {feature.description}
                 </p>
@@ -150,19 +150,19 @@ export function FeaturesBentoSection({ features }: FeaturesBentoSectionProps) {
         {/* Bottom Stats Bar */}
         <div className="grid md:grid-cols-4 gap-6 mt-12 p-8 bg-muted/30 rounded-2xl border">
           <div className="text-center">
-            <div className="text-heading-2 font-semibold text-primary mb-2">100%</div>
+            <div className="text-heading-2 font-extralight text-primary mb-2">100%</div>
             <div className="text-body-small text-muted-foreground">TWIC Certified</div>
           </div>
           <div className="text-center">
-            <div className="text-heading-2 font-semibold text-primary mb-2">24/7</div>
+            <div className="text-heading-2 font-extralight text-primary mb-2">24/7</div>
             <div className="text-body-small text-muted-foreground">Dispatch Support</div>
           </div>
           <div className="text-center">
-            <div className="text-heading-2 font-semibold text-primary mb-2">15 min</div>
+            <div className="text-heading-2 font-extralight text-primary mb-2">15 min</div>
             <div className="text-body-small text-muted-foreground">GPS Updates</div>
           </div>
           <div className="text-center">
-            <div className="text-heading-2 font-semibold text-primary mb-2">98.5%</div>
+            <div className="text-heading-2 font-extralight text-primary mb-2">98.5%</div>
             <div className="text-body-small text-muted-foreground">On-Time Delivery</div>
           </div>
         </div>

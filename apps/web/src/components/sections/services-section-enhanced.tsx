@@ -39,9 +39,9 @@ export function ServicesSectionEnhanced({ services }: ServicesSectionProps) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-primary/5 mb-6">
             <Ship className="h-4 w-4 text-primary" />
-            <span className="text-body-small font-medium">Our Services</span>
+            <span className="text-body-small font-extralight">Our Services</span>
           </div>
-          <h2 className="text-heading-1 font-semibold spacing-content-sm">
+          <h2 className="text-heading-1 font-extralight spacing-content-sm">
             Comprehensive Drayage & Logistics Solutions
           </h2>
           <p className="text-body-large text-muted-foreground">
@@ -70,7 +70,7 @@ export function ServicesSectionEnhanced({ services }: ServicesSectionProps) {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-heading-2 font-semibold">
+                  <h3 className="text-heading-2 font-extralight">
                     {service.name}
                   </h3>
 
@@ -129,7 +129,7 @@ export function ServicesSectionEnhanced({ services }: ServicesSectionProps) {
 
                     {/* Overlay badge */}
                     <div className="absolute top-6 left-6 px-4 py-2 rounded-full bg-background/90 backdrop-blur-sm border shadow-lg">
-                      <span className="text-sm font-semibold">{service.shortName}</span>
+                      <span className="text-sm font-extralight">{service.shortName}</span>
                     </div>
                   </div>
 
@@ -140,7 +140,7 @@ export function ServicesSectionEnhanced({ services }: ServicesSectionProps) {
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <div className="text-2xl font-semibold">24/7</div>
+                        <div className="text-2xl font-extralight">24/7</div>
                         <div className="text-sm text-muted-foreground">Available</div>
                       </div>
                     </div>

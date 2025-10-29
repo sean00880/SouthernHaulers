@@ -47,9 +47,9 @@ export function CalculatorSectionEnhanced() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-background mb-6">
               <Calculator className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium">Instant Pricing</span>
+              <span className="text-sm font-extralight">Instant Pricing</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-extralight tracking-tight mb-6">
               Get Your Quote in Seconds
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -171,7 +171,7 @@ export function CalculatorSectionEnhanced() {
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">Estimated Quote</div>
-                      <div className="text-4xl font-semibold text-primary">${quote}</div>
+                      <div className="text-4xl font-extralight text-primary">${quote}</div>
                     </div>
                     <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
                       <Calculator className="h-8 w-8 text-primary" />
@@ -200,7 +200,7 @@ export function CalculatorSectionEnhanced() {
                     <div className="h-2 w-2 rounded-full bg-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Transparent Pricing</div>
+                    <div className="font-extralight mb-1">Transparent Pricing</div>
                     <div className="text-muted-foreground">No hidden fees or surprises</div>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ export function CalculatorSectionEnhanced() {
                     <div className="h-2 w-2 rounded-full bg-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Volume Discounts</div>
+                    <div className="font-extralight mb-1">Volume Discounts</div>
                     <div className="text-muted-foreground">Save more with regular shipments</div>
                   </div>
                 </div>
@@ -218,7 +218,7 @@ export function CalculatorSectionEnhanced() {
                     <div className="h-2 w-2 rounded-full bg-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Same-Day Response</div>
+                    <div className="font-extralight mb-1">Same-Day Response</div>
                     <div className="text-muted-foreground">Get quotes within 2-4 hours</div>
                   </div>
                 </div>
@@ -230,7 +230,7 @@ export function CalculatorSectionEnhanced() {
           <div className="text-center mt-8">
             <p className="text-muted-foreground">
               Need help or have special requirements?{' '}
-              <a href="/contact" className="text-primary hover:underline font-semibold">
+              <a href="/contact" className="text-primary hover:underline font-extralight">
                 Contact our 24/7 dispatch team
               </a>
             </p>

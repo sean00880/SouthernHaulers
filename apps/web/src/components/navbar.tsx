@@ -408,7 +408,7 @@ const NavMenu = () => {
                                         <Truck className="w-12 h-12 text-primary/40" />
                                     </div>
                                     <div className="space-y-0.5">
-                                        <Link href="/about" className="text-foreground text-sm font-semibold block hover:underline">
+                                        <Link href="/about" className="text-foreground text-sm font-extralight block hover:underline">
                                             Premier Drayage
                                         </Link>
                                         <p className="text-muted-foreground text-xs">98.5% on-time, TWIC certified</p>
@@ -477,7 +477,7 @@ const NavMenu = () => {
                                         <MapPin className="w-12 h-12 text-red-500/40" />
                                     </div>
                                     <div className="space-y-0.5">
-                                        <Link href="/track" className="text-foreground text-sm font-semibold block hover:underline">
+                                        <Link href="/track" className="text-foreground text-sm font-extralight block hover:underline">
                                             GPS Tracking
                                         </Link>
                                         <p className="text-muted-foreground text-xs">Real-time updates & ETAs</p>
@@ -579,7 +579,7 @@ function ListItem({ title, description, children, href, ...props }: React.Compon
                     className="grid grid-cols-[auto_1fr] gap-3.5 p-2 rounded-lg hover:bg-muted/50 transition-colors">
                     <div className="bg-background ring-foreground/10 relative flex size-9 items-center justify-center rounded border border-transparent shadow shadow-sm ring-1">{children}</div>
                     <div className="space-y-0.5">
-                        <div className="text-foreground text-sm font-medium">{title}</div>
+                        <div className="text-foreground text-sm font-extralight">{title}</div>
                         <p className="text-muted-foreground line-clamp-1 text-xs">{description}</p>
                     </div>
                 </Link>

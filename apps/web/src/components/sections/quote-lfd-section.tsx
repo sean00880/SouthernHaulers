@@ -96,9 +96,9 @@ export function QuoteLFDSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-background mb-6">
             <Calculator className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium">Instant Pricing & Tracking</span>
+            <span className="text-sm font-extralight">Instant Pricing & Tracking</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-extralight tracking-tight mb-6">
             Get Your Quote & Track Containers
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -241,7 +241,7 @@ export function QuoteLFDSection() {
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <div className="text-sm text-muted-foreground mb-1">Estimated Round-Trip Quote</div>
-                        <div className="text-4xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        <div className="text-4xl font-extralight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                           ${quote.toLocaleString()}
                         </div>
                         <div className="text-xs text-muted-foreground mt-1">
@@ -275,7 +275,7 @@ export function QuoteLFDSection() {
                       <div className="h-2 w-2 rounded-full bg-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold mb-1">Transparent Pricing</div>
+                      <div className="font-extralight mb-1">Transparent Pricing</div>
                       <div className="text-muted-foreground">$2.25/mile standard rate</div>
                     </div>
                   </div>
@@ -284,7 +284,7 @@ export function QuoteLFDSection() {
                       <div className="h-2 w-2 rounded-full bg-secondary" />
                     </div>
                     <div>
-                      <div className="font-semibold mb-1">Round-Trip Included</div>
+                      <div className="font-extralight mb-1">Round-Trip Included</div>
                       <div className="text-muted-foreground">All quotes include return trip</div>
                     </div>
                   </div>
@@ -293,7 +293,7 @@ export function QuoteLFDSection() {
                       <div className="h-2 w-2 rounded-full bg-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold mb-1">Same-Day Response</div>
+                      <div className="font-extralight mb-1">Same-Day Response</div>
                       <div className="text-muted-foreground">Get quotes within 2-4 hours</div>
                     </div>
                   </div>
@@ -307,7 +307,7 @@ export function QuoteLFDSection() {
             <div className="bg-card border rounded-2xl shadow-xl overflow-hidden">
               <div className="p-8 md:p-10">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-semibold mb-2">Track Container Last Free Day</h3>
+                  <h3 className="text-2xl font-extralight mb-2">Track Container Last Free Day</h3>
                   <p className="text-muted-foreground">
                     Enter your container number and port to check the Last Free Day (LFD) status
                   </p>
@@ -382,22 +382,22 @@ export function QuoteLFDSection() {
 
                 {/* Info Section */}
                 <div className="mt-8 p-6 bg-muted/50 rounded-xl border">
-                  <h4 className="font-semibold mb-3">What is Last Free Day (LFD)?</h4>
+                  <h4 className="font-extralight mb-3">What is Last Free Day (LFD)?</h4>
                   <p className="text-sm text-muted-foreground mb-4">
                     The Last Free Day is the final day you can pick up your container from the port without 
                     incurring per diem or demurrage charges. Tracking LFD helps you avoid costly fees.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4 text-sm">
                     <div>
-                      <div className="font-semibold text-primary mb-1">Real-Time Updates</div>
+                      <div className="font-extralight text-primary mb-1">Real-Time Updates</div>
                       <div className="text-muted-foreground">Track status changes instantly</div>
                     </div>
                     <div>
-                      <div className="font-semibold text-secondary mb-1">SMS Alerts</div>
+                      <div className="font-extralight text-secondary mb-1">SMS Alerts</div>
                       <div className="text-muted-foreground">Get notified of critical dates</div>
                     </div>
                     <div>
-                      <div className="font-semibold text-[hsl(4,90%,58%)] mb-1">Avoid Fees</div>
+                      <div className="font-extralight text-[hsl(4,90%,58%)] mb-1">Avoid Fees</div>
                       <div className="text-muted-foreground">Stay ahead of demurrage</div>
                     </div>
                   </div>
@@ -411,7 +411,7 @@ export function QuoteLFDSection() {
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
             Need help or have special requirements?{' '}
-            <a href="/contact" className="text-primary hover:underline font-semibold">
+            <a href="/contact" className="text-primary hover:underline font-extralight">
               Contact our 24/7 dispatch team
             </a>
           </p>

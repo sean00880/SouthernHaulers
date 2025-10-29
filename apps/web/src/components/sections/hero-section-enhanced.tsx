@@ -61,12 +61,12 @@ export function HeroSectionEnhanced() {
             style={{ animationDelay: '0.1s' }}
           >
             <Package className="h-4 w-4 text-primary" />
-            <span className="text-body-small font-medium">Premier Southeast Drayage & Agricultural Hauling</span>
+            <span className="text-body-small font-extralight">Premier Southeast Drayage & Agricultural Hauling</span>
           </div>
 
           {/* Main Headline with Google colors accent */}
           <h1
-            className="text-display font-semibold spacing-content animate-fade-in-up"
+            className="text-display font-extralight spacing-content animate-fade-in-up"
             style={{ animationDelay: '0.2s' }}
           >
             <span className="block">Container Drayage</span>
@@ -82,8 +82,8 @@ export function HeroSectionEnhanced() {
             className="text-body-large text-muted-foreground spacing-content max-w-3xl animate-fade-in-up"
             style={{ animationDelay: '0.3s' }}
           >
-            Strategic Southeast hub with <span className="font-semibold text-foreground">300+ container capacity</span>, 
-            real-time GPS tracking, and direct service to <span className="font-semibold text-foreground">9 major ports and terminals</span>.
+            Strategic Southeast hub with <span className="font-extralight text-foreground">300+ container capacity</span>, 
+            real-time GPS tracking, and direct service to <span className="font-extralight text-foreground">9 major ports and terminals</span>.
           </p>
 
           {/* Key Features Grid */}
@@ -96,7 +96,7 @@ export function HeroSectionEnhanced() {
                 <CheckCircle2 className="h-5 w-5 text-[hsl(217,89%,61%)]" />
               </div>
               <div>
-                <div className="text-body font-medium">98.5% On-Time</div>
+                <div className="text-body font-extralight">98.5% On-Time</div>
                 <div className="text-body-small text-muted-foreground">Delivery Rate</div>
               </div>
             </div>
@@ -106,7 +106,7 @@ export function HeroSectionEnhanced() {
                 <CheckCircle2 className="h-5 w-5 text-[hsl(4,90%,58%)]" />
               </div>
               <div>
-                <div className="text-body font-medium">24/7 Dispatch</div>
+                <div className="text-body font-extralight">24/7 Dispatch</div>
                 <div className="text-body-small text-muted-foreground">Always Available</div>
               </div>
             </div>
@@ -116,7 +116,7 @@ export function HeroSectionEnhanced() {
                 <CheckCircle2 className="h-5 w-5 text-[hsl(142,66%,48%)]" />
               </div>
               <div>
-                <div className="text-body font-medium">TWIC Certified</div>
+                <div className="text-body font-extralight">TWIC Certified</div>
                 <div className="text-body-small text-muted-foreground">Port Access</div>
               </div>
             </div>

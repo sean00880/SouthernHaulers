@@ -66,12 +66,12 @@ export function HeroSection({ variant = 'default' }: HeroSectionProps) {
             style={{ animationDelay: '0.1s' }}
           >
             <Package className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium">Premier Southeast Drayage & Agricultural Hauling</span>
+            <span className="text-sm font-extralight">Premier Southeast Drayage & Agricultural Hauling</span>
           </div>
 
           {/* Main Headline */}
           <h1 
-            className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up"
+            className="text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight mb-6 animate-fade-in-up"
             style={{ animationDelay: '0.2s' }}
           >
             Container <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">Drayage</span>
@@ -84,7 +84,7 @@ export function HeroSection({ variant = 'default' }: HeroSectionProps) {
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl animate-fade-in-up"
             style={{ animationDelay: '0.3s' }}
           >
-            Strategic Southeast hub with <span className="font-semibold text-foreground">300+ container capacity</span>, real-time GPS tracking, and direct service to Savannah, Charleston, and Jacksonville ports.
+            Strategic Southeast hub with <span className="font-extralight text-foreground">300+ container capacity</span>, real-time GPS tracking, and direct service to Savannah, Charleston, and Jacksonville ports.
           </p>
 
           {/* Live Container Tracking */}
@@ -97,7 +97,7 @@ export function HeroSection({ variant = 'default' }: HeroSectionProps) {
                 <MapPin className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Live Container Tracking</h3>
+                <h3 className="font-extralight text-lg">Live Container Tracking</h3>
                 <p className="text-sm text-muted-foreground">Track your shipment in real-time</p>
               </div>
             </div>

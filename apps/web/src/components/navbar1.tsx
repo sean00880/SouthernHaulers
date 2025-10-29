@@ -437,7 +437,7 @@ const NavMenu = () => {
                                             <Truck className="w-12 h-12 text-primary/40" />
                                         </div>
                                         <div className="space-y-0.5">
-                                            <Link href="/about" className="text-foreground text-sm font-semibold block hover:underline">
+                                            <Link href="/about" className="text-foreground text-sm font-extralight block hover:underline">
                                                 Premier Drayage
                                             </Link>
                                             <p className="text-muted-foreground text-xs">98.5% on-time, TWIC certified</p>
@@ -508,7 +508,7 @@ const NavMenu = () => {
                                             <MapPin className="w-12 h-12 text-red-500/40" />
                                         </div>
                                         <div className="space-y-0.5">
-                                            <Link href="/track" className="text-foreground text-sm font-semibold block hover:underline">
+                                            <Link href="/track" className="text-foreground text-sm font-extralight block hover:underline">
                                                 GPS Tracking
                                             </Link>
                                             <p className="text-muted-foreground text-xs">Real-time updates & ETAs</p>
@@ -611,7 +611,7 @@ function ListItem({ title, description, children, href, ...props }: React.Compon
                     className="grid grid-cols-[auto_1fr] gap-3.5">
                     <div className="bg-background ring-foreground/10 before:mask-y-from-80% after:mask-x-from-80% before:border-foreground/[0.075] after:border-foreground/[0.075] relative flex size-10 items-center justify-center rounded border border-transparent shadow shadow-sm ring-1 before:absolute before:-inset-x-1 before:-inset-y-3 before:border-x before:border-dashed after:absolute after:-inset-x-3 after:-inset-y-1 after:border-y after:border-dashed">{children}</div>
                     <div className="space-y-0.5">
-                        <div className="text-foreground text-sm font-medium">{title}</div>
+                        <div className="text-foreground text-sm font-extralight">{title}</div>
                         <p className="text-muted-foreground line-clamp-1 text-xs">{description}</p>
                     </div>
                 </Link>

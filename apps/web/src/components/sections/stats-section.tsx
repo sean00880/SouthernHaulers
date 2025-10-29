@@ -59,9 +59,9 @@ export function StatsSection({ stats }: StatsSectionProps) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-background mb-6">
             <TrendingUp className="h-4 w-4 text-primary" />
-            <span className="text-body-small font-medium">By The Numbers</span>
+            <span className="text-body-small font-extralight">By The Numbers</span>
           </div>
-          <h2 className="text-heading-1 font-semibold spacing-content-sm">
+          <h2 className="text-heading-1 font-extralight spacing-content-sm">
             Trusted by Southeast Shippers
           </h2>
           <p className="text-body-large text-muted-foreground">
@@ -96,13 +96,13 @@ export function StatsSection({ stats }: StatsSectionProps) {
                   {isVisible && (
                     <AnimatedCounter
                       value={stat.value.toString()}
-                      className="text-5xl font-semibold text-primary"
+                      className="text-5xl font-extralight text-primary"
                     />
                   )}
                 </div>
 
                 {/* Label */}
-                <div className="relative text-body-small text-muted-foreground font-medium mb-2">
+                <div className="relative text-body-small text-muted-foreground font-extralight mb-2">
                   {stat.label}
                 </div>
 
@@ -134,21 +134,21 @@ export function StatsSection({ stats }: StatsSectionProps) {
         {/* Bottom Banner */}
         <div className="mt-16 p-8 bg-card border rounded-2xl text-center">
           <p className="text-body text-muted-foreground mb-4">
-            Join <span className="font-semibold text-foreground">hundreds of satisfied customers</span> who trust Southern Haulers for their drayage and hauling needs.
+            Join <span className="font-extralight text-foreground">hundreds of satisfied customers</span> who trust Southern Haulers for their drayage and hauling needs.
           </p>
           <div className="flex flex-wrap justify-center gap-8 text-body-small">
             <div>
-              <span className="text-heading-3 font-semibold text-primary">15+</span>
+              <span className="text-heading-3 font-extralight text-primary">15+</span>
               <span className="text-muted-foreground ml-2">Years Experience</span>
             </div>
             <div className="h-8 w-px bg-border" />
             <div>
-              <span className="text-heading-3 font-semibold text-primary">94%</span>
+              <span className="text-heading-3 font-extralight text-primary">94%</span>
               <span className="text-muted-foreground ml-2">Customer Retention</span>
             </div>
             <div className="h-8 w-px bg-border" />
             <div>
-              <span className="text-heading-3 font-semibold text-primary">4.9/5</span>
+              <span className="text-heading-3 font-extralight text-primary">4.9/5</span>
               <span className="text-muted-foreground ml-2">Customer Rating</span>
             </div>
           </div>

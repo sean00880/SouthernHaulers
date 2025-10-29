@@ -14,7 +14,7 @@ export function CTASection() {
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main CTA */}
-          <h2 className="text-display font-semibold text-primary-foreground spacing-content-sm">
+          <h2 className="text-display font-extralight text-primary-foreground spacing-content-sm">
             Ready to Transform Your Logistics?
           </h2>
           <p className="text-body-large text-primary-foreground/90 mb-12 max-w-2xl mx-auto">
@@ -40,7 +40,7 @@ export function CTASection() {
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
             <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-6 text-primary-foreground hover:bg-primary-foreground/15 transition-all">
               <Phone className="h-8 w-8 mx-auto mb-4" />
-              <div className="font-semibold mb-2">24/7 Dispatch</div>
+              <div className="font-extralight mb-2">24/7 Dispatch</div>
               <a href="tel:+1-555-0123" className="opacity-90 hover:opacity-100 transition-opacity text-body-small">
                 (555) 012-3456
               </a>
@@ -48,7 +48,7 @@ export function CTASection() {
 
             <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-6 text-primary-foreground hover:bg-primary-foreground/15 transition-all">
               <Mail className="h-8 w-8 mx-auto mb-4" />
-              <div className="font-semibold mb-2">Email Us</div>
+              <div className="font-extralight mb-2">Email Us</div>
               <a href="mailto:dispatch@southernhaulers.com" className="opacity-90 hover:opacity-100 transition-opacity text-body-small break-all">
                 dispatch@southernhaulers.com
               </a>
@@ -56,7 +56,7 @@ export function CTASection() {
 
             <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-6 text-primary-foreground hover:bg-primary-foreground/15 transition-all">
               <MapPin className="h-8 w-8 mx-auto mb-4" />
-              <div className="font-semibold mb-2">Location</div>
+              <div className="font-extralight mb-2">Location</div>
               <div className="opacity-90 text-body-small">
                 South Georgia Hub
               </div>
