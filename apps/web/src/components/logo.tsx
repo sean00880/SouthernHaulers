@@ -3,13 +3,23 @@
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
 import { cn } from '@/lib/utils'
+import { useEffect, useState } from 'react'
 
 export function Logo({ className }: { className?: string }) {
   const { resolvedTheme } = useTheme()
-  // Default to light logo (dark mode) until theme is resolved
-  const logoSrc = resolvedTheme === 'light'
-    ? '/southern-haulers-logo-dark.png'
-    : '/southern-haulers-logo-light.png'
+  const [mounted, setMounted] = useState(false)
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Use light logo (for dark backgrounds) as default during SSR
+  const logoSrc = mounted
+    ? resolvedTheme === 'light'
+      ? '/southern-haulers-logo-dark.png'
+      : '/southern-haulers-logo-light.png'
+    : '/southern-haulers-logo-dark.png'
 
   return (
     <div className={cn("flex items-center", className)}>
@@ -28,10 +38,19 @@ export function Logo({ className }: { className?: string }) {
 
 export function LogoIcon({ className }: { className?: string }) {
   const { resolvedTheme } = useTheme()
-  // Default to light logo (dark mode) until theme is resolved
-  const logoSrc = resolvedTheme === 'light'
-    ? '/southern-haulers-logo-dark.png'
-    : '/southern-haulers-logo-light.png'
+  const [mounted, setMounted] = useState(false)
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Use light logo (for dark backgrounds) as default during SSR
+  const logoSrc = mounted
+    ? resolvedTheme === 'light'
+      ? '/southern-haulers-logo-dark.png'
+      : '/southern-haulers-logo-light.png'
+    : '/southern-haulers-logo-dark.png'
 
   return (
     <Image

@@ -29,7 +29,7 @@ export function CTASection() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="h-14 px-8 text-base border-primary-foreground/60 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground">
+            <Button asChild size="lg" variant="outline" className="h-14 px-8 text-base border-primary-foreground/80 text-primary-foreground hover:bg-primary-foreground/15 hover:border-primary-foreground">
               <a href="/track">
                 Track Container
               </a>
