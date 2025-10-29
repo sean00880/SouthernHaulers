@@ -1,56 +1,54 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import { ArrowRight, Package, CheckCircle2, Truck } from 'lucide-react';
 import { Button } from '../ui/button';
 
 export function HeroSectionEnhanced() {
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const isDark = currentTheme === 'dark';
+  const truckSrc = isDark ? '/images/truckwireframe.png' : '/images/truckwireframe_light.png';
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden w-full">
-      {/* Animated Background with Google Colors */}
+      {/* Animated Background - Seamless gradient to next section */}
       <div className="absolute inset-0 z-0 w-full">
-        {/* Base gradient with Google colors */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-[hsl(217,89%,61%)]/5 to-[hsl(142,66%,48%)]/5 dark:from-background dark:via-[hsl(217,89%,61%)]/10 dark:to-[hsl(142,66%,48%)]/10" />
-        
+        {/* Base gradient fading to background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        
-        {/* Radial Gradient for Depth */}
-        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-background/80" />
-        
-        {/* Animated gradient orbs - Google colors */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[hsl(217,89%,61%)]/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[hsl(142,66%,48%)]/20 rounded-full blur-3xl animate-pulse delay-1000" />
+
+        {/* Radial Gradient for Depth - fades to transparent at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+
+        {/* Subtle animated gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      {/* Truck SVG Overlay */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-5 dark:opacity-10 pointer-events-none">
-        <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          {/* Semi-truck illustration */}
-          <g opacity="0.4">
-            {/* Trailer */}
-            <rect x="50" y="150" width="400" height="180" rx="8" fill="currentColor" className="text-primary" />
-            <rect x="60" y="160" width="380" height="160" rx="4" fill="currentColor" className="text-background" />
-            
-            {/* Cab */}
-            <path d="M450 150 L550 150 L580 200 L580 330 L450 330 Z" fill="currentColor" className="text-primary" />
-            <rect x="480" y="180" width="70" height="50" rx="4" fill="currentColor" className="text-background" />
-            
-            {/* Wheels */}
-            <circle cx="120" cy="330" r="30" fill="currentColor" className="text-foreground" />
-            <circle cx="120" cy="330" r="15" fill="currentColor" className="text-background" />
-            <circle cx="380" cy="330" r="30" fill="currentColor" className="text-foreground" />
-            <circle cx="380" cy="330" r="15" fill="currentColor" className="text-background" />
-            <circle cx="520" cy="330" r="30" fill="currentColor" className="text-foreground" />
-            <circle cx="520" cy="330" r="15" fill="currentColor" className="text-background" />
-            
-            {/* Details */}
-            <line x1="100" y1="200" x2="400" y2="200" stroke="currentColor" strokeWidth="2" className="text-primary/30" />
-            <line x1="100" y1="250" x2="400" y2="250" stroke="currentColor" strokeWidth="2" className="text-primary/30" />
-          </g>
-        </svg>
-      </div>
+      {/* Theme-aware Truck Wireframe Overlay */}
+      {mounted && (
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-[0.08] dark:opacity-[0.12] pointer-events-none">
+          <Image
+            src={truckSrc}
+            alt=""
+            fill
+            className="object-contain object-right"
+            priority
+          />
+        </div>
+      )}
 
       {/* Content */}
       <div className="w-full relative z-20">
@@ -64,15 +62,23 @@ export function HeroSectionEnhanced() {
             <span className="text-body-small font-extralight">Premier Southeast Drayage & Agricultural Hauling</span>
           </div>
 
-          {/* Main Headline with Google colors accent */}
+          {/* Main Headline with shimmer effect */}
           <h1
             className="text-display font-extralight spacing-content animate-fade-in-up"
             style={{ animationDelay: '0.2s' }}
           >
             <span className="block">Container Drayage</span>
             <span className="block mt-2">
-              <span className="bg-gradient-to-r from-[hsl(217,89%,61%)] via-[hsl(4,90%,58%)] to-[hsl(142,66%,48%)] bg-clip-text text-transparent">
-                Made Simple
+              <span className="relative inline-block">
+                <span className="text-foreground">Made Simple</span>
+                <span
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground/30 to-transparent bg-[length:200%_100%] animate-shimmer"
+                  aria-hidden="true"
+                  style={{
+                    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 50%, transparent 100%)',
+                    maskImage: 'linear-gradient(to right, transparent 0%, black 50%, transparent 100%)'
+                  }}
+                />
               </span>
             </span>
           </h1>

@@ -65,6 +65,7 @@
   --animate-scale-out: scale-out 0.2s ease-in;
   --animate-fade-in: fade-in 0.2s ease-out;
   --animate-fade-out: fade-out 0.2s ease-in;
+  --animate-shimmer: shimmer 2.5s infinite linear;
 
   @keyframes accordion-down {
     from {
@@ -223,6 +224,15 @@
     }
     to {
       opacity: 0;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
     }
   }
 
