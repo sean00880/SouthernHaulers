@@ -229,13 +229,13 @@ export default function Navbar() {
                     'has-data-[state=open]:ring-foreground/5 has-data-[state=open]:bg-card/75 has-data-[state=open]:shadow-lg has-data-[state=open]:backdrop-blur has-data-[state=open]:border-b has-data-[state=open]:shadow-black/10 has-data-[state=open]:min-h-[calc(var(--navigation-menu-viewport-height)+5rem)]',
                     'max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:bg-background/75 max-lg:in-data-[state=active]:backdrop-blur max-lg:h-20 max-lg:overflow-hidden max-lg:border-b max-lg:border-foreground/5'
                 )}>
-                <div className="mx-auto max-w-6xl px-6 lg:px-12">
+                <div className="mx-auto px-6 lg:px-12">
                     <div className="relative flex flex-wrap items-center justify-between py-2 lg:py-1">
                         <div
                             aria-hidden
                             className="in-has-data-[state=open]:block absolute inset-x-0 bottom-0 hidden h-px bg-[length:4px_1px] bg-repeat-x opacity-20 [background-image:linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)]"
                         />
-                        <div className="flex justify-between items-center gap-8 max-lg:h-20 max-lg:w-full max-lg:border-b max-lg:border-foreground/5">
+                        <div className="flex justify-between items-center gap-8 w-full max-lg:h-20 max-lg:border-b max-lg:border-foreground/5">
                             <Link
                                 href="/"
                                 aria-label="home"
