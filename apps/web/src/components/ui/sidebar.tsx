@@ -14,7 +14,7 @@ const SIDEBAR_COOKIE_NAME = 'sidebar:state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 const SIDEBAR_WIDTH = '16rem';
 const SIDEBAR_WIDTH_MOBILE = '18rem';
-const SIDEBAR_WIDTH_ICON = '3rem';
+const SIDEBAR_WIDTH_ICON = '50px';
 const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
 
 type SidebarContext = {
@@ -235,7 +235,8 @@ const Sidebar = React.forwardRef<
         >
           <div
             data-sidebar="sidebar"
-            className="flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
+            className="flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow overflow-hidden"
+            style={{ scrollbarGutter: 'stable' } as React.CSSProperties}
           >
             {children}
           </div>
@@ -305,12 +306,19 @@ const SidebarInset = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<'main'>
 >(({ className, ...props }, ref) => {
+  const { state } = useSidebar();
+
   return (
     <main
       ref={ref}
+      style={{
+        marginLeft: state === 'expanded' ? 'var(--sidebar-width)' : 'var(--sidebar-width-icon)',
+      }}
       className={cn(
-        'relative flex min-h-svh flex-1 flex-col bg-background',
+        'relative flex min-h-svh flex-1 flex-col bg-background transition-[margin] duration-200 ease-linear',
         'peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4))] md:peer-data-[variant=inset]:m-2 md:peer-data-[state=collapsed]:peer-data-[variant=inset]:ml-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow',
+        // On mobile, no margin
+        'max-md:!ml-0',
         className
       )}
       {...props}
@@ -358,9 +366,10 @@ const SidebarContent = React.forwardRef<
       ref={ref}
       data-sidebar="content"
       className={cn(
-        'flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden',
+        'flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto overflow-x-hidden group-data-[collapsible=icon]:overflow-hidden',
         className
       )}
+      style={{ scrollbarGutter: 'stable' } as React.CSSProperties}
       {...props}
     />
   );

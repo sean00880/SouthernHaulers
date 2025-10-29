@@ -36,6 +36,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarRail,
+  useSidebar,
 } from '@/components/ui/sidebar';
 import { Registry } from '@/data/registry';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -128,16 +129,40 @@ const navigation = {
   ],
 };
 
+// Sticky breadcrumb component that breaks out when sidebar is collapsed
+function StickyBreadcrumb() {
+  const { state } = useSidebar();
+  const isCollapsed = state === 'collapsed';
+
+  if (isCollapsed) {
+    return (
+      <div
+        className="fixed top-20 z-50 hidden md:block"
+        style={{
+          left: 'var(--sidebar-width-icon)',
+        }}
+      >
+        <div className="bg-background/95 backdrop-blur border-b border-border px-4 py-3">
+          <PageBreadcrumb />
+        </div>
+      </div>
+    );
+  }
+
+  return null;
+}
+
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
 
   return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <div className="px-3 py-2">
-          <PageBreadcrumb />
-        </div>
-      </SidebarHeader>
+    <>
+      <Sidebar collapsible="icon" {...props}>
+        <SidebarHeader className="sticky top-20 z-50 bg-sidebar border-b border-sidebar-border group-data-[state=collapsed]:hidden">
+          <div className="px-3 py-2">
+            <PageBreadcrumb />
+          </div>
+        </SidebarHeader>
       <SidebarContent>
         {/* Main Navigation */}
         <SidebarGroup>
@@ -283,6 +308,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarFooter>
       <SidebarRail />
-    </Sidebar>
+      </Sidebar>
+      <StickyBreadcrumb />
+    </>
   );
 }
