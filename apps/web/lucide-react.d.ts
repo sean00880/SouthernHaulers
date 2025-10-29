@@ -86,4 +86,11 @@ declare module 'lucide-react' {
   export const Building2: LucideIcon;
   export const Factory: LucideIcon;
   export const Thermometer: LucideIcon;
+  export const Wheat: LucideIcon;
+  export const TreeDeciduous: LucideIcon;
+  export const Flower2: LucideIcon;
+  export const Leaf: LucideIcon;
+  export const Bell: LucideIcon;
+  export const Boxes: LucideIcon;
+  export const Calculator: LucideIcon;
 }
