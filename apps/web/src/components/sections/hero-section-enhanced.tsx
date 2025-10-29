@@ -94,36 +94,36 @@ export function HeroSectionEnhanced() {
 
           {/* Key Features Grid */}
           <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 animate-fade-in-up"
+            className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mb-6 md:mb-8 animate-fade-in-up"
             style={{ animationDelay: '0.4s' }}
           >
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 backdrop-blur-sm border">
-              <div className="h-10 w-10 rounded-lg bg-[hsl(217,89%,61%)]/10 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="h-5 w-5 text-[hsl(217,89%,61%)]" />
+            <div className="flex items-center gap-2 md:gap-3 p-2.5 md:p-4 rounded-xl bg-card/50 backdrop-blur-sm border">
+              <div className="h-8 w-8 md:h-10 md:w-10 rounded-lg bg-[hsl(217,89%,61%)]/10 flex items-center justify-center flex-shrink-0">
+                <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-[hsl(217,89%,61%)]" />
               </div>
               <div>
-                <div className="text-body font-extralight">98.5% On-Time</div>
-                <div className="text-body-small text-muted-foreground">Delivery Rate</div>
+                <div className="text-sm md:text-body font-extralight">98.5% On-Time</div>
+                <div className="text-xs md:text-body-small text-muted-foreground">Delivery Rate</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 backdrop-blur-sm border">
-              <div className="h-10 w-10 rounded-lg bg-[hsl(4,90%,58%)]/10 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="h-5 w-5 text-[hsl(4,90%,58%)]" />
+            <div className="flex items-center gap-2 md:gap-3 p-2.5 md:p-4 rounded-xl bg-card/50 backdrop-blur-sm border">
+              <div className="h-8 w-8 md:h-10 md:w-10 rounded-lg bg-[hsl(4,90%,58%)]/10 flex items-center justify-center flex-shrink-0">
+                <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-[hsl(4,90%,58%)]" />
               </div>
               <div>
-                <div className="text-body font-extralight">24/7 Dispatch</div>
-                <div className="text-body-small text-muted-foreground">Always Available</div>
+                <div className="text-sm md:text-body font-extralight">24/7 Dispatch</div>
+                <div className="text-xs md:text-body-small text-muted-foreground">Always Available</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 backdrop-blur-sm border">
-              <div className="h-10 w-10 rounded-lg bg-[hsl(142,66%,48%)]/10 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="h-5 w-5 text-[hsl(142,66%,48%)]" />
+            <div className="flex items-center gap-2 md:gap-3 p-2.5 md:p-4 rounded-xl bg-card/50 backdrop-blur-sm border">
+              <div className="h-8 w-8 md:h-10 md:w-10 rounded-lg bg-[hsl(142,66%,48%)]/10 flex items-center justify-center flex-shrink-0">
+                <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-[hsl(142,66%,48%)]" />
               </div>
               <div>
-                <div className="text-body font-extralight">TWIC Certified</div>
-                <div className="text-body-small text-muted-foreground">Port Access</div>
+                <div className="text-sm md:text-body font-extralight">TWIC Certified</div>
+                <div className="text-xs md:text-body-small text-muted-foreground">Port Access</div>
               </div>
             </div>
           </div>
