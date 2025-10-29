@@ -85,4 +85,5 @@ declare module 'lucide-react' {
   export const Building: LucideIcon;
   export const Building2: LucideIcon;
   export const Factory: LucideIcon;
+  export const Thermometer: LucideIcon;
 }
