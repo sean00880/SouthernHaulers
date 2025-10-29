@@ -7,9 +7,9 @@ import { Button } from '../ui/button';
 
 export function HeroSectionEnhanced() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-16">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden w-full">
       {/* Animated Background with Google Colors */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 w-full">
         {/* Base gradient with Google colors */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-[hsl(217,89%,61%)]/5 to-[hsl(142,66%,48%)]/5 dark:from-background dark:via-[hsl(217,89%,61%)]/10 dark:to-[hsl(142,66%,48%)]/10" />
         
@@ -53,8 +53,8 @@ export function HeroSectionEnhanced() {
       </div>
 
       {/* Content */}
-      <div className="container relative z-20">
-        <div className="max-w-4xl">
+      <div className="w-full relative z-20">
+        <div className="container max-w-4xl">
           {/* Badge */}
           <div 
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-card/50 backdrop-blur-sm mb-8 animate-fade-in-up"

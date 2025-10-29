@@ -26,8 +26,8 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
   };
 
   return (
-    <section className="py-24 md:py-32 bg-muted/30">
-      <div className="container">
+    <section className="min-h-screen flex items-center py-24 md:py-32 bg-muted/30">
+      <div className="container w-full">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-background mb-6">

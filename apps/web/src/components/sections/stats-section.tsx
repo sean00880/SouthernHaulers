@@ -52,7 +52,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
   };
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-gradient-to-br from-primary/5 via-indigo-500/5 to-purple-500/5">
+    <section ref={sectionRef} className="min-h-screen flex items-center py-24 md:py-32 bg-gradient-to-br from-primary/5 via-indigo-500/5 to-purple-500/5">
       <div className="container">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

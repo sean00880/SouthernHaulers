@@ -1,10 +1,9 @@
 
 import { Metadata } from 'next';
-import { Header } from '@/components/sections/header';
 import { HeroSectionEnhanced } from '@/components/sections/hero-section-enhanced';
 import { ServicesSectionEnhanced } from '@/components/sections/services-section-enhanced';
 import { LocationsPortsSectionEnhanced } from '@/components/sections/locations-ports-section-enhanced';
-import { FeaturesBentoSection } from '@/components/sections/features-bento-section';
+import { SolutionsTechnologySection } from '@/components/sections/solutions-technology-section';
 import { QuoteLFDSection } from '@/components/sections/quote-lfd-section';
 import { StatsSection } from '@/components/sections/stats-section';
 import { TestimonialsSection } from '@/components/sections/testimonials-section';
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   // Get data
-  const featuredServices = SERVICES.filter(s => 
+  const featuredServices = SERVICES.filter(s =>
     ['container-drayage', 'agricultural-hauling', 'warehousing', 'refrigerated-transport'].includes(s.id)
   );
   const cities = getAllCities().slice(0, 9);
@@ -40,10 +39,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Header Navigation */}
-      <Header />
-
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-16">
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -87,8 +83,8 @@ export default function HomePage() {
         {/* Locations & Ports Section - Enhanced with all 9 locations */}
         <LocationsPortsSectionEnhanced ports={PORTS} locations={cities} />
 
-        {/* Features Bento Grid Section */}
-        <FeaturesBentoSection features={FEATURES} />
+        {/* Solutions & Technology Section - 200vh Tabbed Layout */}
+        <SolutionsTechnologySection features={FEATURES} />
 
         {/* Quote Calculator & LFD Tracker Section */}
         <QuoteLFDSection />

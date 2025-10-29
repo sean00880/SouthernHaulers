@@ -6,9 +6,9 @@ export function CTASection() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 dark:from-blue-900 dark:to-indigo-950" />
-      <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary dark:from-primary dark:to-primary/80" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:30px_30px]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
 
       {/* Content */}
       <div className="container relative z-10">
@@ -23,13 +23,13 @@ export function CTASection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button asChild size="lg" className="h-14 px-8 text-base bg-white text-blue-600 hover:bg-white/90">
+            <Button asChild size="lg" className="h-14 px-8 text-base bg-white text-primary hover:bg-white/90 hover:text-primary">
               <a href="/quote">
                 Get Instant Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="h-14 px-8 text-base border-white text-white hover:bg-white/10">
+            <Button asChild size="lg" variant="outline" className="h-14 px-8 text-base border-white/80 text-white hover:bg-white/10 hover:border-white">
               <a href="/track">
                 Track Container
               </a>
@@ -37,38 +37,46 @@ export function CTASection() {
           </div>
 
           {/* Contact Options */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white">
-              <Phone className="h-8 w-8 mx-auto mb-4" />
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/15 transition-all">
+              <Phone className="h-8 w-8 mx-auto mb-4 text-white" />
               <div className="font-semibold mb-2">24/7 Dispatch</div>
-              <a href="tel:+1-555-0123" className="text-white/90 hover:text-white transition-colors">
+              <a href="tel:+1-555-0123" className="text-white/90 hover:text-white transition-colors text-sm md:text-base">
                 (555) 012-3456
               </a>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white">
-              <Mail className="h-8 w-8 mx-auto mb-4" />
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/15 transition-all">
+              <Mail className="h-8 w-8 mx-auto mb-4 text-white" />
               <div className="font-semibold mb-2">Email Us</div>
-              <a href="mailto:dispatch@southernhaulers.com" className="text-white/90 hover:text-white transition-colors">
+              <a href="mailto:dispatch@southernhaulers.com" className="text-white/90 hover:text-white transition-colors text-sm md:text-base break-all">
                 dispatch@southernhaulers.com
               </a>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white">
-              <MapPin className="h-8 w-8 mx-auto mb-4" />
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:bg-white/15 transition-all">
+              <MapPin className="h-8 w-8 mx-auto mb-4 text-white" />
               <div className="font-semibold mb-2">Location</div>
-              <div className="text-white/90">
+              <div className="text-white/90 text-sm md:text-base">
                 South Georgia Hub
               </div>
             </div>
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
-            <div>✓ Same-day quotes</div>
-            <div>✓ 98.5% on-time delivery</div>
-            <div>✓ 300+ container capacity</div>
-            <div>✓ TWIC certified</div>
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-white/90 text-xs md:text-sm">
+            <div className="flex items-center gap-1">
+              <span className="text-white">✓</span> Same-day quotes
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-white">✓</span> 98.5% on-time delivery
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-white">✓</span> 300+ container capacity
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-white">✓</span> TWIC certified
+            </div>
           </div>
         </div>
       </div>
