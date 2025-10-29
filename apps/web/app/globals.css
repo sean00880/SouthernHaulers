@@ -300,6 +300,11 @@
     @apply outline-ring/50;
   }
 
+  html,
+  body {
+    @apply overflow-x-hidden;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
