@@ -100,4 +100,6 @@ declare module 'lucide-react' {
   export const RefreshCw: LucideIcon;
   export const Train: LucideIcon;
   export const Weight: LucideIcon;
+  export const Archive: LucideIcon;
+  export const ArrowLeft: LucideIcon;
 }

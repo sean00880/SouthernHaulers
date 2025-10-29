@@ -16,21 +16,24 @@ declare module '@radix-ui/react-accordion' {
     onValueChange?(value: string[]): void;
   }
 
-  export const Accordion: React.FC<AccordionSingleProps | AccordionMultipleProps>;
-  export const AccordionItem: React.FC<React.ComponentPropsWithoutRef<'div'> & { value: string }>;
-  export const AccordionTrigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
-  export const AccordionContent: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Root: React.FC<AccordionSingleProps | AccordionMultipleProps>;
+  export const Item: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & { value: string } & React.RefAttributes<HTMLDivElement>>;
+  export const Header: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Trigger: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'button'> & React.RefAttributes<HTMLButtonElement>>;
+  export const Content: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
 }
 
 declare module '@radix-ui/react-navigation-menu' {
   import * as React from 'react';
 
-  export const NavigationMenu: React.FC<React.ComponentPropsWithoutRef<'nav'>>;
-  export const NavigationMenuList: React.FC<React.ComponentPropsWithoutRef<'ul'>>;
-  export const NavigationMenuItem: React.FC<React.ComponentPropsWithoutRef<'li'>>;
-  export const NavigationMenuTrigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
-  export const NavigationMenuContent: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const NavigationMenuLink: React.FC<React.ComponentPropsWithoutRef<'a'>>;
+  export const Root: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'nav'> & { value?: string; onValueChange?: (value: string) => void } & React.RefAttributes<HTMLElement>>;
+  export const List: React.FC<React.ComponentPropsWithoutRef<'ul'>>;
+  export const Item: React.FC<React.ComponentPropsWithoutRef<'li'>>;
+  export const Trigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
+  export const Content: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Link: React.FC<React.ComponentPropsWithoutRef<'a'> & { asChild?: boolean; active?: boolean }>;
+  export const Viewport: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
+  export const Indicator: React.FC<React.ComponentPropsWithoutRef<'div'>>;
   export const navigationMenuTriggerStyle: () => string;
 }
 
@@ -47,80 +50,147 @@ declare module '@radix-ui/react-slot' {
 declare module '@radix-ui/react-dialog' {
   import * as React from 'react';
 
-  export const Dialog: React.FC<{ children?: React.ReactNode; open?: boolean; onOpenChange?(open: boolean): void }>;
-  export const DialogTrigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
-  export const DialogPortal: React.FC<{ children?: React.ReactNode }>;
-  export const DialogOverlay: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const DialogContent: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const DialogHeader: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const DialogFooter: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const DialogTitle: React.FC<React.ComponentPropsWithoutRef<'h2'>>;
-  export const DialogDescription: React.FC<React.ComponentPropsWithoutRef<'p'>>;
+  export const Root: React.FC<{ children?: React.ReactNode; open?: boolean; onOpenChange?(open: boolean): void }>;
+  export const Trigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
+  export const Portal: React.FC<{ children?: React.ReactNode }>;
+  export const Overlay: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
+  export const Content: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
+  export const Title: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'h2'> & React.RefAttributes<HTMLHeadingElement>>;
+  export const Description: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'p'> & React.RefAttributes<HTMLParagraphElement>>;
+  export const Close: React.FC<React.ComponentPropsWithoutRef<'button'>>;
 }
 
 declare module '@radix-ui/react-dropdown-menu' {
   import * as React from 'react';
 
-  export const DropdownMenu: React.FC<{ children?: React.ReactNode }>;
-  export const DropdownMenuTrigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
-  export const DropdownMenuContent: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const DropdownMenuItem: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const DropdownMenuSeparator: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const DropdownMenuLabel: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Root: React.FC<{ children?: React.ReactNode }>;
+  export const Trigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
+  export const Portal: React.FC<{ children?: React.ReactNode }>;
+  export const Content: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Item: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Separator: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Label: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Group: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Sub: React.FC<{ children?: React.ReactNode }>;
+  export const SubTrigger: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const SubContent: React.FC<React.ComponentPropsWithoutRef<'div'>>;
 }
 
 declare module '@radix-ui/react-label' {
   import * as React from 'react';
 
-  export const Label: React.FC<React.ComponentPropsWithoutRef<'label'>>;
+  export const Root: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'label'> & React.RefAttributes<HTMLLabelElement>>;
 }
 
 declare module '@radix-ui/react-select' {
   import * as React from 'react';
 
-  export const Select: React.FC<{ children?: React.ReactNode; value?: string; onValueChange?(value: string): void }>;
-  export const SelectTrigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
-  export const SelectValue: React.FC<{ placeholder?: string }>;
-  export const SelectContent: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const SelectItem: React.FC<React.ComponentPropsWithoutRef<'div'> & { value: string }>;
+  export const Root: React.FC<{ children?: React.ReactNode; value?: string; onValueChange?(value: string): void; open?: boolean; onOpenChange?(open: boolean): void }>;
+  export const Group: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
+  export const Trigger: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'button'> & React.RefAttributes<HTMLButtonElement>>;
+  export const Value: React.FC<{ placeholder?: string }>;
+  export const Icon: React.FC<React.ComponentPropsWithoutRef<'span'> & { asChild?: boolean }>;
+  export const Portal: React.FC<{ children?: React.ReactNode }>;
+  export const Content: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & { position?: string } & React.RefAttributes<HTMLDivElement>>;
+  export const Viewport: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
+  export const Item: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & { value: string } & React.RefAttributes<HTMLDivElement>>;
+  export const ItemText: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'span'> & React.RefAttributes<HTMLSpanElement>>;
+  export const ItemIndicator: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+  export const ScrollUpButton: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
+  export const ScrollDownButton: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
+  export const Label: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
+  export const Separator: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
 }
 
 declare module '@radix-ui/react-separator' {
   import * as React from 'react';
 
-  export const Separator: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Root: React.FC<React.ComponentPropsWithoutRef<'div'>>;
 }
 
 declare module '@radix-ui/react-tabs' {
   import * as React from 'react';
 
-  export const Tabs: React.FC<React.ComponentPropsWithoutRef<'div'> & { value?: string; onValueChange?(value: string): void }>;
-  export const TabsList: React.FC<React.ComponentPropsWithoutRef<'div'>>;
-  export const TabsTrigger: React.FC<React.ComponentPropsWithoutRef<'button'> & { value: string }>;
-  export const TabsContent: React.FC<React.ComponentPropsWithoutRef<'div'> & { value: string }>;
+  export const Root: React.FC<React.ComponentPropsWithoutRef<'div'> & { value?: string; onValueChange?(value: string): void }>;
+  export const List: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & React.RefAttributes<HTMLDivElement>>;
+  export const Trigger: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'button'> & { value: string } & React.RefAttributes<HTMLButtonElement>>;
+  export const Content: React.ForwardRefExoticComponent<React.ComponentPropsWithoutRef<'div'> & { value: string } & React.RefAttributes<HTMLDivElement>>;
 }
 
 declare module '@radix-ui/react-tooltip' {
   import * as React from 'react';
 
-  export const TooltipProvider: React.FC<{ children?: React.ReactNode }>;
-  export const Tooltip: React.FC<{ children?: React.ReactNode }>;
-  export const TooltipTrigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
-  export const TooltipContent: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Provider: React.FC<{ children?: React.ReactNode; delayDuration?: number; skipDelayDuration?: number }>;
+  export const Root: React.FC<{ children?: React.ReactNode; open?: boolean; onOpenChange?(open: boolean): void }>;
+  export const Trigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
+  export const Portal: React.FC<{ children?: React.ReactNode }>;
+  export const Content: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Arrow: React.FC<React.ComponentPropsWithoutRef<'svg'>>;
 }
 
 declare module '@radix-ui/react-popover' {
   import * as React from 'react';
 
-  export const Popover: React.FC<{ children?: React.ReactNode }>;
-  export const PopoverTrigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
-  export const PopoverContent: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Root: React.FC<{ children?: React.ReactNode; open?: boolean; onOpenChange?(open: boolean): void }>;
+  export const Trigger: React.FC<React.ComponentPropsWithoutRef<'button'>>;
+  export const Portal: React.FC<{ children?: React.ReactNode }>;
+  export const Content: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Anchor: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Close: React.FC<React.ComponentPropsWithoutRef<'button'>>;
 }
 
 declare module '@radix-ui/react-avatar' {
   import * as React from 'react';
 
-  export const Avatar: React.FC<React.ComponentPropsWithoutRef<'span'>>;
-  export const AvatarImage: React.FC<React.ComponentPropsWithoutRef<'img'>>;
-  export const AvatarFallback: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+  export const Root: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+  export const Image: React.FC<React.ComponentPropsWithoutRef<'img'>>;
+  export const Fallback: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+}
+
+declare module '@radix-ui/react-checkbox' {
+  import * as React from 'react';
+
+  export const Root: React.FC<React.ComponentPropsWithoutRef<'button'> & { checked?: boolean; onCheckedChange?(checked: boolean): void }>;
+  export const Indicator: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+}
+
+declare module '@radix-ui/react-radio-group' {
+  import * as React from 'react';
+
+  export const Root: React.FC<React.ComponentPropsWithoutRef<'div'> & { value?: string; onValueChange?(value: string): void }>;
+  export const Item: React.FC<React.ComponentPropsWithoutRef<'button'> & { value: string }>;
+  export const Indicator: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+}
+
+declare module '@radix-ui/react-switch' {
+  import * as React from 'react';
+
+  export const Root: React.FC<React.ComponentPropsWithoutRef<'button'> & { checked?: boolean; onCheckedChange?(checked: boolean): void }>;
+  export const Thumb: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+}
+
+declare module '@radix-ui/react-slider' {
+  import * as React from 'react';
+
+  export const Root: React.FC<React.ComponentPropsWithoutRef<'span'> & { value?: number[]; onValueChange?(value: number[]): void; min?: number; max?: number; step?: number }>;
+  export const Track: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+  export const Range: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+  export const Thumb: React.FC<React.ComponentPropsWithoutRef<'span'>>;
+}
+
+declare module '@radix-ui/react-progress' {
+  import * as React from 'react';
+
+  export const Root: React.FC<React.ComponentPropsWithoutRef<'div'> & { value?: number; max?: number }>;
+  export const Indicator: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+}
+
+declare module '@radix-ui/react-scroll-area' {
+  import * as React from 'react';
+
+  export const Root: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Viewport: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Scrollbar: React.FC<React.ComponentPropsWithoutRef<'div'> & { orientation?: 'horizontal' | 'vertical' }>;
+  export const Thumb: React.FC<React.ComponentPropsWithoutRef<'div'>>;
+  export const Corner: React.FC<React.ComponentPropsWithoutRef<'div'>>;
 }
