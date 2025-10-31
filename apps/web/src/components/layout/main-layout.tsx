@@ -13,7 +13,7 @@ function LayoutContent({ children }: MainLayoutProps) {
   return (
     <SidebarInset>
       {/* Main content */}
-      <div className="flex-1 p-4 lg:p-6">
+      <div className="flex-1 p-2 lg:p-6">
         {children}
       </div>
 
